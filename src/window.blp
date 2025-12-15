@@ -1,0 +1,164 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $TomatilloWindow: Adw.ApplicationWindow {
+  name: "io.github.diegopvlk.Tomatillo";
+  title: "Tomatillo";
+  default-width: 360;
+  height-request: 370;
+
+  content: Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [end]
+      MenuButton {
+        primary: true;
+        icon-name: "open-menu-symbolic";
+        tooltip-text: _("Main Menu");
+        menu-model: primary_menu;
+      }
+    }
+
+    content: Box {
+      valign: center;
+      orientation: vertical;
+      spacing: 18;
+
+      Box timer_box {
+        height-request: 234;
+        width-request: 234;
+        valign: center;
+        halign: center;
+        orientation: vertical;
+        homogeneous: true;
+
+        styles [
+          "timer-box",
+        ]
+
+        Label label_cycles {
+          label: "1/4";
+
+          styles [
+            "numeric",
+            "cycles",
+          ]
+        }
+
+        Label label_timer {
+          label: "--:--";
+
+          styles [
+            "timer",
+            "numeric",
+          ]
+        }
+
+        Image focus_icon {
+          styles [
+            "focus-icon",
+          ]
+
+          margin-bottom: 12;
+          valign: center;
+          halign: center;
+          icon-size: large;
+          icon-name: "tomatillo-focus-symbolic";
+          visible: bind break_icon.visible inverted;
+        }
+
+        Image break_icon {
+          styles [
+            "break-icon",
+          ]
+
+          margin-bottom: 12;
+          valign: center;
+          halign: center;
+          icon-size: large;
+          icon-name: "tomatillo-break-symbolic";
+        }
+      }
+
+      Box button_box {
+        spacing: 12;
+        margin-bottom: 12;
+        halign: center;
+
+        MenuButton btn_menu_reset {
+          valign: center;
+
+          styles [
+            "circular",
+          ]
+
+          icon-name: "tomatillo-more-symbolic";
+          tooltip-text: _("Reset");
+          menu-model: reset_menu;
+          direction: up;
+        }
+
+        Button btn_start_pause {
+          valign: center;
+
+          styles [
+            "pill",
+            "btn-start-pause",
+            "suggested-action",
+          ]
+
+          label: _("Start");
+        }
+
+        Button btn_next {
+          valign: center;
+
+          styles [
+            "circular",
+          ]
+
+          icon-name: "tomatillo-skip-symbolic";
+          tooltip-text: _("Skip");
+        }
+      }
+    };
+  };
+}
+
+menu primary_menu {
+  section {
+    item {
+      label: _("Preferences");
+      action: "app.preferences";
+    }
+
+    // item {
+    //   label: _("Keyboard Shortcuts");
+    //   action: "app.shortcuts";
+    // }
+    //
+    item {
+      label: _("About Tomatillo");
+      action: "app.about";
+    }
+
+    item {
+      label: _("Quit");
+      action: "app.quit";
+    }
+  }
+}
+
+menu reset_menu {
+  section {
+    item {
+      label: _("Reset Session");
+      action: "app.reset-session";
+    }
+
+    item {
+      label: _("Reset Current Timer");
+      action: "app.reset-curr-timer";
+    }
+  }
+}

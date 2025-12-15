@@ -1,0 +1,147 @@
+.slate-bg,
+.green-bg,
+.teal-bg {
+	color: var(--fg-color);
+	background-color: var(--bg-color);
+	transition: background-color 300ms;
+}
+
+.timer-box {
+	box-shadow: inset 0 0 0 var(--fg-color), inset 0 0 0 3px var(--fg-color);
+	border-radius: 50%;
+	transition: box-shadow 300ms ease;
+}
+
+@media (prefers-color-scheme: light) {
+	.slate-bg {
+		--bg-color: #d9edff;
+		--fg-color: #3d4f61;
+	}
+	.green-bg {
+		--bg-color: #dffcec;
+		--fg-color: #00633e;
+	}
+	.teal-bg {
+		--bg-color: #d9f8ff;
+		--fg-color: #005a6d;
+	}
+	.fill-timer-box-shadow {
+		box-shadow: inset 0 0 20px var(--fg-color), inset 0 0 0 9px var(--fg-color);
+		transition-duration: 1s;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.slate-bg {
+		--bg-color: #233545;
+		--fg-color: #d9edff;
+	}
+	.green-bg {
+		--bg-color: #004625;
+		--fg-color: #dffcec;
+	}
+	.teal-bg {
+		--bg-color: #003e50;
+		--fg-color: #d9f8ff;
+	}
+	.fill-timer-box-shadow {
+		box-shadow: inset 0 0 26px var(--fg-color), inset 0 0 0 9px var(--fg-color);
+		transition-duration: 1s;
+	}
+}
+
+.content-box-1-5,
+.timer-box-1-5 {
+	transform: scale(1.5);
+}
+.content-box-2,
+.timer-box-2 {
+	transform: scale(2);
+}
+
+.button-box-1-5 {
+	margin-top: 60px;
+	margin-bottom: -60px;
+}
+.button-box-2 {
+	margin-top: 120px;
+	margin-bottom: -120px;
+}
+
+.cycles {
+	font-size: calc(14px + 0.5rem);
+	font-weight: 600;
+}
+.cycles-dots {
+	font-family: 'Adwaita Sans', 'Inter', 'Roboto', 'OpenSymbol', system-ui;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.cycles,
+.focus-icon,
+.break-icon {
+	opacity: 0.7;
+}
+
+.timer {
+	font-size: 48px;
+	font-weight: 800;
+}
+
+.btn-start-pause {
+	min-width: 64px;
+}
+.btn-start-pause.suggested-action {
+	--accent-bg-color: var(--fg-color);
+	--accent-fg-color: var(--bg-color);
+}
+
+.fill-timer-box-shadow .break-icon {
+	animation: pulse 1.5s infinite alternate;
+}
+@keyframes pulse {
+	0% {
+		opacity: 0.7;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.focus-icon {
+	animation: rotate 30s infinite linear;
+	animation-play-state: paused;
+}
+.fill-timer-box-shadow .focus-icon {
+	animation-play-state: running;
+}
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+preferencespage scrolledwindow viewport clamp {
+	margin-top: -22px;
+}
+
+preferencespage preferencesgroup {
+	margin-bottom: -10px;
+}
+
+toolbarview button {
+	outline-color: rgb(from var(--fg-color) r g b / calc(alpha * 0.5));
+}
+@media (prefers-contrast: more) {
+	toolbarview button {
+		outline-color: var(--fg-color);
+	}
+	.cycles,
+	.focus-icon,
+	.break-icon {
+		opacity: 1;
+	}
+}

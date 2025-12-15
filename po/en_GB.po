@@ -1,0 +1,168 @@
+# Tomatillo
+# Copyright (C) 2025 Diego Povliuk
+# This file is distributed under the same license as the io.github.diegopvlk.Tomatillo package.
+# Diego Povliuk <diegopvlk@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-15 12:00-0300\n"
+"PO-Revision-Date: 2025-12-15 12:00-0300\n"
+"Last-Translator: Diego Povliuk <diegopvlk@gmail.com>\n"
+"Language-Team: English (British) <diegopvlk@gmail.com>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/tomatillo.desktop.in:2
+msgid "Tomatillo"
+msgstr "Tomatillo"
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/tomatillo.desktop.in:9
+msgid "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
+msgstr "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
+
+#: data/tomatillo.metainfo.xml.in:23
+msgid "Focus better, work smarter"
+msgstr "Focus better, work smarter"
+
+#: data/tomatillo.metainfo.xml.in:25
+msgid ""
+"Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a "
+"set time, then take a short break. After some cycles, take a longer break."
+msgstr ""
+"Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a "
+"set time, then take a short break. After some cycles, take a longer break."
+
+#: data/tomatillo.metainfo.xml.in:36
+msgid "Focus Session"
+msgstr "Focus Session"
+
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:131
+msgid "Preferences"
+msgstr "Preferences"
+
+#: data/tomatillo.metainfo.xml.in:44
+msgid "Break Session"
+msgstr "Break Session"
+
+#: data/tomatillo.metainfo.xml.in:48
+msgid "Long Break Session"
+msgstr "Long Break Session"
+
+#: data/tomatillo.metainfo.xml.in:52
+msgid "Focus Session - Dark Mode"
+msgstr "Focus Session - Dark Mode"
+
+#. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+#: src/main.py:74
+msgid "translator-credits"
+msgstr "Diego Povliuk <diegopvlk@gmail.com>"
+
+#: src/window.py:112
+msgid "Pause"
+msgstr "Pause"
+
+#: src/window.py:120
+msgid "Resume"
+msgstr "Resume"
+
+#: src/window.py:128 src/window.blp:110
+msgid "Start"
+msgstr "Start"
+
+#: src/window.py:216 src/preferences.blp:16
+msgid "Focus"
+msgstr "Focus"
+
+#: src/window.py:217 src/preferences.blp:27
+msgid "Short Break"
+msgstr "Short Break"
+
+#: src/window.py:218 src/preferences.blp:38
+msgid "Long Break"
+msgstr "Long Break"
+
+#: src/window.py:268
+msgid "Break Time"
+msgstr "Break Time"
+
+#: src/window.py:276
+msgid "Time for a short break."
+msgstr "Time for a short break."
+
+#: src/window.py:278
+msgid "Time for a long break."
+msgstr "Time for a long break."
+
+#: src/window.py:280
+msgid "Start Break"
+msgstr "Start Break"
+
+#: src/window.py:282
+msgid "Focus Mode"
+msgstr "Focus Mode"
+
+#: src/window.py:283
+msgid "Break is over!"
+msgstr "Break is over!"
+
+#: src/window.py:285
+msgid "Start Focus"
+msgstr "Start Focus"
+
+#: src/preferences.blp:51
+msgid "Long Break Interval"
+msgstr "Long Break Interval"
+
+#: src/preferences.blp:64
+msgid "Run in Background"
+msgstr "Run in Background"
+
+#: src/preferences.blp:75
+msgid "Notification Sound"
+msgstr "Notification Sound"
+
+#: src/preferences.blp:86
+msgid "Bypass 'Do Not Disturb'"
+msgstr "Bypass 'Do Not Disturb'"
+
+#: src/preferences.blp:97
+msgid "Autostart Focus"
+msgstr "Autostart Focus"
+
+#: src/preferences.blp:108
+msgid "Autostart Break"
+msgstr "Autostart Break"
+
+#: src/window.blp:17
+msgid "Main Menu"
+msgstr "Main Menu"
+
+#: src/window.blp:96
+msgid "Reset"
+msgstr "Reset"
+
+#: src/window.blp:121
+msgid "Skip"
+msgstr "Skip"
+
+#: src/window.blp:141
+msgid "About Tomatillo"
+msgstr "About Tomatillo"
+
+#: src/window.blp:146
+msgid "Quit"
+msgstr "Quit"
+
+#: src/window.blp:155
+msgid "Reset Session"
+msgstr "Reset Session"
+
+#: src/window.blp:160
+msgid "Reset Current Timer"
+msgstr "Reset Current Timer"

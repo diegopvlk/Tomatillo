@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="tomatillo">
+	<schema id="io.github.diegopvlk.Tomatillo" path="/io/github/diegopvlk/Tomatillo/">
+		<key name="focus-time" type="i">
+			<default>25</default>
+		</key>
+		<key name="short-b-time" type="i">
+			<default>5</default>
+		</key>
+		<key name="long-b-time" type="i">
+			<default>15</default>
+		</key>
+		<key name="long-b-interval" type="i">
+			<default>4</default>
+		</key>
+		<key name="run-in-background" type="b">
+			<default>false</default>
+		</key>
+		<key name="bypass-dnd" type="b">
+			<default>false</default>
+		</key>
+		<key name="auto-focus" type="b">
+			<default>false</default>
+		</key>
+		<key name="auto-break" type="b">
+			<default>false</default>
+		</key>
+		<key name="notif-sound" type="b">
+			<default>true</default>
+		</key>
+	</schema>
+</schemalist> 

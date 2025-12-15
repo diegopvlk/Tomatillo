@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/diegopvlk/Tomatillo">
+    <file alias="style.css">style.css</file>
+    <file preprocess="xml-stripblanks">preferences.ui</file>
+    <file preprocess="xml-stripblanks">window.ui</file>
+    <file preprocess="xml-stripblanks">shortcuts-dialog.ui</file>
+    <file alias="alert.ogg">../data/sounds/alert.ogg</file>
+  </gresource>
+  <gresource prefix="/io/github/diegopvlk/Tomatillo/icons/scalable/actions">
+    <file alias="tomatillo-break-symbolic.svg">../data/icons/scalable/actions/tomatillo-break-symbolic.svg</file>
+    <file alias="tomatillo-focus-symbolic.svg">../data/icons/scalable/actions/tomatillo-focus-symbolic.svg</file>
+    <file alias="tomatillo-more-symbolic.svg">../data/icons/scalable/actions/tomatillo-more-symbolic.svg</file>
+    <file alias="tomatillo-skip-symbolic.svg">../data/icons/scalable/actions/tomatillo-skip-symbolic.svg</file>
+  </gresource>
+  <gresource prefix="/io/github/diegopvlk/Tomatillo/icons/scalable/apps">
+    <file alias="io.github.diegopvlk.Dosage.svg">../data/icons/scalable/apps/io.github.diegopvlk.Dosage.svg</file>
+  </gresource>
+</gresources>

@@ -1,0 +1,9 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/tomatillo.desktop.in
+data/tomatillo.metainfo.xml.in
+src/main.py
+src/preferences.blp
+src/preferences.py
+src/window.py
+src/window.blp

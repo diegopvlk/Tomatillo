@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.diegopvlk.Tomatillo</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <translation type="gettext">tomatillo</translation>
+  <launchable type="desktop-id">io.github.diegopvlk.Tomatillo.desktop</launchable>
+  <content_rating type="oars-1.1" />
+
+  <url type="homepage">https://github.com/diegopvlk/Tomatillo</url>
+  <url type="bugtracker">https://github.com/diegopvlk/Tomatillo/issues</url>
+  <url type="vcs-browser">https://github.com/diegopvlk/Tomatillo</url>
+  <url type="donation">https://github.com/diegopvlk/Tomatillo#donate</url>
+  <!-- <url type="translate"></url> -->
+  <update_contact>diego.pvlk@gmail.com</update_contact>
+
+  <developer id="io.github.diegopvlk">
+    <name translate="no">Diego Povliuk</name>
+  </developer>
+
+  <name translate="no">Tomatillo</name>
+  <summary>Focus better, work smarter</summary>
+  <description>
+    <p>Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a set time, then take a short break. After some cycles, take a longer break.</p>
+  </description>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#BCF6C7</color>
+    <color type="primary" scheme_preference="dark">#186841</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://image.png</image>
+      <caption>Focus Session</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://image.png</image>
+      <caption>Preferences</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://image.png</image>
+      <caption>Break Session</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://image.png</image>
+      <caption>Long Break Session</caption>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://image.png</image>
+      <caption>Focus Session - Dark Mode</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.0" date="2025-12-00">
+      <description translate="no">
+        <ul>
+          <li>Initial Release</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+</component>

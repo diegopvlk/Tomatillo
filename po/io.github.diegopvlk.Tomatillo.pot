@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.diegopvlk.Tomatillo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-15 12:00-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/tomatillo.desktop.in:2
+msgid "Tomatillo"
+msgstr ""
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/tomatillo.desktop.in:9
+msgid "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
+msgstr ""
+
+#: data/tomatillo.metainfo.xml.in:23
+msgid "Focus better, work smarter"
+msgstr ""
+
+#: data/tomatillo.metainfo.xml.in:25
+msgid ""
+"Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a "
+"set time, then take a short break. After some cycles, take a longer break."
+msgstr ""
+
+#: data/tomatillo.metainfo.xml.in:36
+msgid "Focus Session"
+msgstr ""
+
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:131
+msgid "Preferences"
+msgstr ""
+
+#: data/tomatillo.metainfo.xml.in:44
+msgid "Break Session"
+msgstr ""
+
+#: data/tomatillo.metainfo.xml.in:48
+msgid "Long Break Session"
+msgstr ""
+
+#: data/tomatillo.metainfo.xml.in:52
+msgid "Focus Session - Dark Mode"
+msgstr ""
+
+#. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+#: src/main.py:74
+msgid "translator-credits"
+msgstr ""
+
+#: src/window.py:112
+msgid "Pause"
+msgstr ""
+
+#: src/window.py:120
+msgid "Resume"
+msgstr ""
+
+#: src/window.py:128 src/window.blp:110
+msgid "Start"
+msgstr ""
+
+#: src/window.py:216 src/preferences.blp:16
+msgid "Focus"
+msgstr ""
+
+#: src/window.py:217 src/preferences.blp:27
+msgid "Short Break"
+msgstr ""
+
+#: src/window.py:218 src/preferences.blp:38
+msgid "Long Break"
+msgstr ""
+
+#: src/window.py:268
+msgid "Break Time"
+msgstr ""
+
+#: src/window.py:276
+msgid "Time for a short break."
+msgstr ""
+
+#: src/window.py:278
+msgid "Time for a long break."
+msgstr ""
+
+#: src/window.py:280
+msgid "Start Break"
+msgstr ""
+
+#: src/window.py:282
+msgid "Focus Mode"
+msgstr ""
+
+#: src/window.py:283
+msgid "Break is over!"
+msgstr ""
+
+#: src/window.py:285
+msgid "Start Focus"
+msgstr ""
+
+#: src/preferences.blp:51
+msgid "Long Break Interval"
+msgstr ""
+
+#: src/preferences.blp:64
+msgid "Run in Background"
+msgstr ""
+
+#: src/preferences.blp:75
+msgid "Notification Sound"
+msgstr ""
+
+#: src/preferences.blp:86
+msgid "Bypass 'Do Not Disturb'"
+msgstr ""
+
+#: src/preferences.blp:97
+msgid "Autostart Focus"
+msgstr ""
+
+#: src/preferences.blp:108
+msgid "Autostart Break"
+msgstr ""
+
+#: src/window.blp:17
+msgid "Main Menu"
+msgstr ""
+
+#: src/window.blp:96
+msgid "Reset"
+msgstr ""
+
+#: src/window.blp:121
+msgid "Skip"
+msgstr ""
+
+#: src/window.blp:141
+msgid "About Tomatillo"
+msgstr ""
+
+#: src/window.blp:146
+msgid "Quit"
+msgstr ""
+
+#: src/window.blp:155
+msgid "Reset Session"
+msgstr ""
+
+#: src/window.blp:160
+msgid "Reset Current Timer"
+msgstr ""

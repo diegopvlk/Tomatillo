@@ -1,0 +1,8 @@
+_build
+build
+builddir
+/subprojects/blueprint-compiler
+.flatpak
+.flatpak-builder
+.vscode
+io.github.diegopvlk.Tomatillo.flatpak

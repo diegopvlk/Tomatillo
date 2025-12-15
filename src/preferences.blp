@@ -1,0 +1,121 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.Dialog prefs_dialog {
+	title: _("Preferences");
+	content-width: 420;
+
+	Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {}
+
+		content: Adw.Clamp {
+			Adw.PreferencesPage prefs_page {
+				Adw.PreferencesGroup {
+					Adw.SpinRow focus_time {
+						title: _("Focus");
+
+						adjustment: Adjustment {
+							step-increment: 1;
+							lower: 1;
+							upper: 240;
+							value: 25;
+						};
+					}
+
+					Adw.SpinRow short_b_time {
+						title: _("Short Break");
+
+						adjustment: Adjustment {
+							step-increment: 1;
+							lower: 1;
+							upper: 90;
+							value: 5;
+						};
+					}
+
+					Adw.SpinRow long_b_time {
+						title: _("Long Break");
+
+						adjustment: Adjustment {
+							step-increment: 1;
+							lower: 1;
+							upper: 90;
+							value: 15;
+						};
+					}
+				}
+
+				Adw.PreferencesGroup {
+					Adw.SpinRow long_b_interval {
+						title: _("Long Break Interval");
+
+						adjustment: Adjustment {
+							step-increment: 1;
+							lower: 1;
+							upper: 120;
+							value: 4;
+						};
+					}
+				}
+
+				Adw.PreferencesGroup {
+					Adw.ActionRow {
+						title: _("Run in Background");
+						activatable-widget: switch_background;
+
+						[suffix]
+						Switch switch_background {
+							halign: center;
+							valign: center;
+						}
+					}
+
+					Adw.ActionRow {
+						title: _("Notification Sound");
+						activatable-widget: switch_sound;
+
+						[suffix]
+						Switch switch_sound {
+							halign: center;
+							valign: center;
+						}
+					}
+
+					Adw.ActionRow {
+						title: _("Bypass 'Do Not Disturb'");
+						activatable-widget: switch_dnd;
+
+						[suffix]
+						Switch switch_dnd {
+							halign: center;
+							valign: center;
+						}
+					}
+
+					Adw.ActionRow {
+						title: _("Autostart Focus");
+						activatable-widget: switch_auto_focus;
+
+						[suffix]
+						Switch switch_auto_focus {
+							halign: center;
+							valign: center;
+						}
+					}
+
+					Adw.ActionRow {
+						title: _("Autostart Break");
+						activatable-widget: switch_auto_break;
+
+						[suffix]
+						Switch switch_auto_break {
+							halign: center;
+							valign: center;
+						}
+					}
+				}
+			}
+		};
+	}
+}

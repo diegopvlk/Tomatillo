@@ -1,0 +1,166 @@
+# Tomatillo
+# Copyright (C) 2025 Diego Povliuk
+# This file is distributed under the same license as the io.github.diegopvlk.Tomatillo package.
+# Diego Povliuk <diegopvlk@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-15 12:00-0300\n"
+"PO-Revision-Date: 2025-12-15 12:00-0300\n"
+"Last-Translator: Diego Povliuk <diegopvlk@gmail.com>\n"
+"Language-Team: Spanish <diegopvlk@gmail.com>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/tomatillo.desktop.in:2
+msgid "Tomatillo"
+msgstr "Tomatillo"
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/tomatillo.desktop.in:9
+msgid "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
+msgstr "Pomodoro;Productividad;Temporizador;Enfoque;Tarea;Trabajo;Descansos;Tiempo;Gestión;"
+
+#: data/tomatillo.metainfo.xml.in:23
+msgid "Focus better, work smarter"
+msgstr "Enfoque mejor, trabaje de forma más inteligente."
+
+#: data/tomatillo.metainfo.xml.in:25
+msgid ""
+"Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a "
+"set time, then take a short break. After some cycles, take a longer break."
+msgstr "Tomatillo es una aplicación de temporizador Pomodoro para tus tareas de productividad. Trabaja durante un tiempo determinado, luego toma un breve descanso. Después de algunos ciclos, toma un descanso más largo."
+
+#: data/tomatillo.metainfo.xml.in:36
+msgid "Focus Session"
+msgstr "Sesión de Enfoque"
+
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:131
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: data/tomatillo.metainfo.xml.in:44
+msgid "Break Session"
+msgstr "Sesión de Descanso"
+
+#: data/tomatillo.metainfo.xml.in:48
+msgid "Long Break Session"
+msgstr "Sesión de Descanso Largo"
+
+#: data/tomatillo.metainfo.xml.in:52
+msgid "Focus Session - Dark Mode"
+msgstr "Sesión de Enfoque - Modo Oscuro"
+
+#. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+#: src/main.py:74
+msgid "translator-credits"
+msgstr "Diego Povliuk <diegopvlk@gmail.com>"
+
+#: src/window.py:112
+msgid "Pause"
+msgstr "Pausar"
+
+#: src/window.py:120
+msgid "Resume"
+msgstr "Reanudar"
+
+#: src/window.py:128 src/window.blp:110
+msgid "Start"
+msgstr "Iniciar"
+
+#: src/window.py:216 src/preferences.blp:16
+msgid "Focus"
+msgstr "Enfoque"
+
+#: src/window.py:217 src/preferences.blp:27
+msgid "Short Break"
+msgstr "Descanso Corto"
+
+#: src/window.py:218 src/preferences.blp:38
+msgid "Long Break"
+msgstr "Descanso Largo"
+
+#: src/window.py:268
+msgid "Break Time"
+msgstr "Hora del Descanso"
+
+#: src/window.py:276
+msgid "Time for a short break."
+msgstr "Hora de un corto descanso."
+
+#: src/window.py:278
+msgid "Time for a long break."
+msgstr "Hora de un largo descanso."
+
+#: src/window.py:280
+msgid "Start Break"
+msgstr "Iniciar Descanso"
+
+#: src/window.py:282
+msgid "Focus Mode"
+msgstr "Modo Enfoque"
+
+#: src/window.py:283
+msgid "Break is over!"
+msgstr "¡El descanso ha terminado!"
+
+#: src/window.py:285
+msgid "Start Focus"
+msgstr "Iniciar Enfoque"
+
+#: src/preferences.blp:51
+msgid "Long Break Interval"
+msgstr "Intervalo de Descanso Largo"
+
+#: src/preferences.blp:64
+msgid "Run in Background"
+msgstr "Ejecutar en Segundo Plano"
+
+#: src/preferences.blp:75
+msgid "Notification Sound"
+msgstr "Sonido de Notificación"
+
+#: src/preferences.blp:86
+msgid "Bypass 'Do Not Disturb'"
+msgstr "Ignorar 'No Molestar'"
+
+#: src/preferences.blp:97
+msgid "Autostart Focus"
+msgstr "Inicio Automático de Enfoque"
+
+#: src/preferences.blp:108
+msgid "Autostart Break"
+msgstr "Inicio Automático de Descanso"
+
+#: src/window.blp:17
+msgid "Main Menu"
+msgstr "Menú Principal"
+
+#: src/window.blp:96
+msgid "Reset"
+msgstr "Reiniciar"
+
+#: src/window.blp:121
+msgid "Skip"
+msgstr "Saltar"
+
+#: src/window.blp:141
+msgid "About Tomatillo"
+msgstr "Acerca de Tomatillo"
+
+#: src/window.blp:146
+msgid "Quit"
+msgstr "Salir"
+
+#: src/window.blp:155
+msgid "Reset Session"
+msgstr "Reiniciar Sesión"
+
+#: src/window.blp:160
+msgid "Reset Current Timer"
+msgstr "Reiniciar Temporizador Actual"
