@@ -72,7 +72,7 @@
   </requires>
 
   <releases>
-    <release version="1.0.0" date="2025-12-00">
+    <release version="1.0.0" date="2025-12-15">
       <description translate="no">
         <ul>
           <li>Initial Release</li>
