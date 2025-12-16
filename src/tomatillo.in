@@ -31,9 +31,17 @@ localedir = '@localedir@'
 
 sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
-locale.bindtextdomain('tomatillo', localedir)
-locale.textdomain('tomatillo')
-gettext.install('tomatillo', localedir)
+
+try:
+  locale.bindtextdomain('tomatillo', localedir)
+  locale.textdomain('tomatillo')
+except:
+  print('Cannot set locale.')
+try:
+  gettext.bindtextdomain('tomatillo', localedir)
+  gettext.textdomain('tomatillo')
+except:
+  print('Cannot load translations.')
 
 if __name__ == '__main__':
     import gi
