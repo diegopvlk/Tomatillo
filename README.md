@@ -6,7 +6,7 @@ Focus better, work smarter.
 
 <br>
 
-<!-- <a href='https://flathub.org/apps/io.github.diegopvlk.Tomatillo'><img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge?svg&locale=en'/></a> -->
+<a href='https://flathub.org/apps/io.github.diegopvlk.Tomatillo'><img width='240' alt='Get it on Flathub' src='https://flathub.org/api/badge?svg&locale=en'/></a>
 
 ### Description
 
