@@ -19,6 +19,7 @@
 
 import sys
 import gi
+from gettext import gettext as _
 
 gi.require_version("Adw", "1")
 gi.require_version("Gio", "2.0")
