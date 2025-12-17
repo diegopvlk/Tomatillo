@@ -125,6 +125,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
             if self.timeout_id:
                 GLib.source_remove(self.timeout_id)
                 self.timeout_id = None
+            self.set_background_string("")
         else:
             self.btn_start_pause.set_label(_("Start"))
 
@@ -138,14 +139,13 @@ class TomatilloWindow(Adw.ApplicationWindow):
             return GLib.SOURCE_REMOVE
 
     def handle_timer_complete(self):
-        self.pause_timer()
-
         self.btn_menu_reset.set_sensitive(True)
         self.btn_next.set_sensitive(True)
 
         notification = self.get_notification()
 
         self.advance_phase()
+        self.pause_timer()
 
         if settings.get_boolean("notif-sound"):
             self.sound_alert.play()
@@ -161,12 +161,6 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.get_application().add_action(start_cycle)
 
         self.get_application().send_notification("timer-complete", notification)
-
-        self.portal.set_background_status(
-            "",  # String
-            None,  # Gio.Cancellable
-            None,  # Gio.AsyncReadyCallback
-        )
 
     def advance_phase(self):
         if self.current_phase == "focus":
@@ -225,11 +219,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
         if not self.get_visible():
             status_label += " • " + time_label
-            self.portal.set_background_status(
-                status_label.capitalize(),  # String
-                None,  # Gio.Cancellable
-                None,  # Gio.AsyncReadyCallback
-            )
+            self.set_background_string(status_label.capitalize())
 
     def update_cycles_label_bg(self):
         self.add_css_class("teal-bg")
@@ -302,3 +292,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
     def remove_css_scaling(self, scale, *args):
         self.button_box.remove_css_class(f"button-box-{scale}")
         self.timer_box.remove_css_class(f"timer-box-{scale}")
+
+    def set_background_string(self, string):
+        self.portal.set_background_status(
+            string,  # String
+            None,  # Gio.Cancellable
+            None,  # Gio.AsyncReadyCallback
+        )
