@@ -49,7 +49,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
     time_focus = settings.get_int("focus-time") * 60
     time_short_break = settings.get_int("short-b-time") * 60
     time_long_break = settings.get_int("long-b-time") * 60
-    time_long_interval = settings.get_int("long-b-interval")
+    long_b_interval = settings.get_int("long-b-interval")
 
     ogg_uri: str = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
     ogg_file = Gio.File.new_for_uri(ogg_uri)
@@ -79,7 +79,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
     def set_start_values(self):
         self.timer_running = False
         self.timeout_id = None
-        self.cycle_count = 1
+        self.current_cycle = 1
         self.current_phase = "focus"
         self.time_left = self.time_focus
 
@@ -170,7 +170,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
     def advance_phase(self):
         if self.current_phase == "focus":
-            if self.cycle_count < self.time_long_interval:
+            if self.current_cycle < self.long_b_interval:
                 self.current_phase = "short_break"
                 self.time_left = self.time_short_break
             else:
@@ -179,9 +179,9 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
         elif self.current_phase in ["short_break", "long_break"]:
             if self.current_phase == "long_break":
-                self.cycle_count = 1
+                self.current_cycle = 1
             else:
-                self.cycle_count += 1
+                self.current_cycle += 1
 
             self.current_phase = "focus"
             self.time_left = self.time_focus
@@ -199,8 +199,8 @@ class TomatilloWindow(Adw.ApplicationWindow):
             }[self.current_phase],
         )
 
-        if self.cycle_count > self.time_long_interval:
-            self.cycle_count = self.time_long_interval
+        if self.current_cycle > self.long_b_interval:
+            self.current_cycle = self.long_b_interval
 
         self.update_ui_timer()
 
@@ -248,12 +248,12 @@ class TomatilloWindow(Adw.ApplicationWindow):
             self.remove_css_class("slate-bg")
             self.remove_css_class("teal-bg")
 
-        if self.time_long_interval > 6:
-            label_text = f"{self.cycle_count}/{self.time_long_interval}"
+        if self.long_b_interval > 6:
+            label_text = f"{self.current_cycle}/{self.long_b_interval}"
             self.label_cycles.remove_css_class("cycles-dots")
         else:
-            current = self.cycle_count
-            total = self.time_long_interval
+            current = self.current_cycle
+            total = self.long_b_interval
             filled_dots = "●" * current
             empty_dots = "○" * (total - current)
             label_text = filled_dots + empty_dots
@@ -277,7 +277,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
             notification.set_priority(Gio.NotificationPriority.URGENT)
 
         if self.current_phase == "focus":
-            if self.cycle_count != 4:
+            if self.current_cycle != 4:
                 notification.set_body(_("Time for a short break."))
             else:
                 notification.set_body(_("Time for a long break."))
