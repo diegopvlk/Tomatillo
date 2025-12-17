@@ -34,6 +34,8 @@ from .preferences import settings
 class TomatilloWindow(Adw.ApplicationWindow):
     __gtype_name__ = "TomatilloWindow"
 
+    breakpoint_1_5 = Gtk.Template.Child()
+    breakpoint_2 = Gtk.Template.Child()
     timer_box = Gtk.Template.Child()
     button_box = Gtk.Template.Child()
     focus_icon = Gtk.Template.Child()
@@ -58,6 +60,9 @@ class TomatilloWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+        self.connect_breakpoints(self.breakpoint_1_5, "1-5")
+        self.connect_breakpoints(self.breakpoint_2, "2")
+
         self.btn_start_pause.grab_focus()
         self.btn_start_pause.connect("clicked", self.on_start_pause_clicked)
         self.btn_next.connect("clicked", self.on_next_clicked)
@@ -68,10 +73,6 @@ class TomatilloWindow(Adw.ApplicationWindow):
         reset_curr_timer.connect("activate", self.on_reset_timer_activated)
         self.get_application().add_action(reset_session)
         self.get_application().add_action(reset_curr_timer)
-
-        self.connect("notify::default-width", self.set_timer_scaling)
-        self.connect("notify::default-height", self.set_timer_scaling)
-        self.connect("notify::maximized", self.set_timer_scaling)
 
         self.set_start()
 
@@ -290,23 +291,14 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
         return notification
 
-    def set_timer_scaling(self, obj, _pspec):
-        width = obj.get_property("default-width")
-        height = obj.get_property("default-height")
-        maximized = obj.get_property("maximized")
+    def connect_breakpoints(self, bp, scale):
+        bp.connect("apply", lambda *a: self.add_css_scaling(scale, *a))
+        bp.connect("unapply", lambda *a: self.remove_css_scaling(scale, *a))
 
-        scale = None
+    def add_css_scaling(self, scale, *args):
+        self.button_box.add_css_class(f"button-box-{scale}")
+        self.timer_box.add_css_class(f"timer-box-{scale}")
 
-        if (width > 610 and height > 690) or maximized:
-            scale = "2"
-        elif width > 430 and height > 514:
-            scale = "1-5"
-
-        def apply(widget, base):
-            widget.remove_css_class(f"{base}-1-5")
-            widget.remove_css_class(f"{base}-2")
-            if scale:
-                widget.add_css_class(f"{base}-{scale}")
-
-        apply(self.button_box, "button-box")
-        apply(self.timer_box, "timer-box")
+    def remove_css_scaling(self, scale, *args):
+        self.button_box.remove_css_class(f"button-box-{scale}")
+        self.timer_box.remove_css_class(f"timer-box-{scale}")

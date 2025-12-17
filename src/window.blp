@@ -7,6 +7,14 @@ template $TomatilloWindow: Adw.ApplicationWindow {
   default-width: 360;
   height-request: 370;
 
+  Adw.Breakpoint breakpoint_1_5 {
+    condition ('min-width:414px and min-height:494px')
+  }
+
+  Adw.Breakpoint breakpoint_2 {
+    condition ('min-width:570px and min-height:600px')
+  }
+
   content: Adw.ToolbarView {
     [top]
     Adw.HeaderBar {
