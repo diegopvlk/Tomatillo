@@ -28,5 +28,8 @@
 		<key name="notif-sound" type="b">
 			<default>true</default>
 		</key>
+		<key name="alert-sound" type="s">
+			<default>"alert.ogg"</default>
+		</key>
 	</schema>
 </schemalist> 

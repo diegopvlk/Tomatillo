@@ -38,13 +38,27 @@ class Preferences(Adw.Dialog):
     long_b_interval = Gtk.Template.Child()
     switch_background = Gtk.Template.Child()
     switch_sound = Gtk.Template.Child()
+    combo_sound = Gtk.Template.Child()
     switch_dnd = Gtk.Template.Child()
     switch_auto_focus = Gtk.Template.Child()
     switch_auto_break = Gtk.Template.Child()
 
+    sound_map = {
+        0: "alert.ogg",
+        1: "alert2.ogg",
+        2: "alert3.ogg",
+        3: "alert4.ogg",
+        4: "alert5.ogg",
+        5: "air-raid.ogg",
+        6: "applause.ogg",
+        7: "laughter.ogg",
+        8: "siren.ogg",
+    }
+
     def __init__(self, active_window, **kwargs):
         super().__init__(**kwargs)
         self.window = active_window
+        self._init_combo_sound()
 
     @Gtk.Template.Callback()
     def _set_spin_start_val_from_key(self, _dialog, key, spin_row):
@@ -84,6 +98,20 @@ class Preferences(Adw.Dialog):
         state = switch_row.get_active()
         settings.set_boolean(key, state)
         self.window.set_hide_on_close(state)
+
+    def _init_combo_sound(self):
+        current_sound = settings.get_string("alert-sound")
+        for index, sound_file in self.sound_map.items():
+            if sound_file == current_sound:
+                self.combo_sound.set_selected(index)
+                break
+
+    @Gtk.Template.Callback()
+    def _set_combo_sound(self, combo_row, _pspec):
+        selected = combo_row.get_selected()
+        sound_file = self.sound_map.get(selected, "alert.ogg")
+        settings.set_string("alert-sound", sound_file)
+        self.window.update_sound_alert(sound_file)
 
     def _update_ui(self):
         self.window.on_reset_timer_activated()

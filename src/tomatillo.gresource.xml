@@ -6,6 +6,14 @@
     <file preprocess="xml-stripblanks">window.ui</file>
     <file preprocess="xml-stripblanks">shortcuts-dialog.ui</file>
     <file alias="alert.ogg">../data/sounds/alert.ogg</file>
+    <file alias="air-raid.ogg">../data/sounds/air-raid.ogg</file>
+    <file alias="alert2.ogg">../data/sounds/alert2.ogg</file>
+    <file alias="alert3.ogg">../data/sounds/alert3.ogg</file>
+    <file alias="alert4.ogg">../data/sounds/alert4.ogg</file>
+    <file alias="alert5.ogg">../data/sounds/alert5.ogg</file>
+    <file alias="applause.ogg">../data/sounds/applause.ogg</file>
+    <file alias="laughter.ogg">../data/sounds/laughter.ogg</file>
+    <file alias="siren.ogg">../data/sounds/siren.ogg</file>
   </gresource>
   <gresource prefix="/io/github/diegopvlk/Tomatillo/icons/scalable/actions">
     <file alias="tomatillo-break-symbolic.svg">../data/icons/scalable/actions/tomatillo-break-symbolic.svg</file>
