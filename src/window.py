@@ -51,9 +51,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
     time_long_break = settings.get_int("long-b-time") * 60
     long_b_interval = settings.get_int("long-b-interval")
 
-    ogg_uri: str = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
-    ogg_file = Gio.File.new_for_uri(ogg_uri)
-    sound_alert = Gtk.MediaFile.new_for_file(ogg_file)
+    sound_alert = None
 
     portal = Xdp.Portal()
 
@@ -74,6 +72,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.get_application().add_action(reset_session)
         self.get_application().add_action(reset_curr_timer)
 
+        # Initialize sound alert
+        sound_file = settings.get_string("alert-sound")
+        self.update_sound_alert(sound_file)
+
         self.set_start()
 
     def set_start_values(self):
@@ -91,6 +93,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
     def on_start_pause_clicked(self, *args):
         self.get_application().withdraw_notification("timer-complete")
+        # Stop sound if it's playing
+        if self.sound_alert and self.sound_alert.get_playing():
+            self.sound_alert.pause()
+
         if self.timer_running:
             self.pause_timer()
             self.btn_menu_reset.set_sensitive(True)
@@ -292,6 +298,11 @@ class TomatilloWindow(Adw.ApplicationWindow):
     def remove_css_scaling(self, scale, *args):
         self.button_box.remove_css_class(f"button-box-{scale}")
         self.timer_box.remove_css_class(f"timer-box-{scale}")
+
+    def update_sound_alert(self, sound_file):
+        ogg_uri = f"resource:///io/github/diegopvlk/Tomatillo/{sound_file}"
+        ogg_file = Gio.File.new_for_uri(ogg_uri)
+        self.sound_alert = Gtk.MediaFile.new_for_file(ogg_file)
 
     def set_background_string(self, string):
         self.portal.set_background_status(

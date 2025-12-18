@@ -76,6 +76,25 @@ template $Preferences: Adw.Dialog {
 						notify::active => $_set_switch_settings_key();
 					}
 
+					Adw.ComboRow combo_sound {
+						title: _("Alert Sound");
+						notify::selected => $_set_combo_sound();
+
+						model: StringList {
+							strings [
+								_("Alert"),
+								_("Alert 2"),
+								_("Alert 3"),
+								_("Alert 4"),
+								_("Alert 5"),
+								_("Air Raid"),
+								_("Applause"),
+								_("Laughter"),
+								_("Siren")
+							]
+						};
+					}
+
 					Adw.SwitchRow switch_dnd {
 						title: _("Bypass 'Do Not Disturb'");
 						active: bind $_set_switch_start_state_from_key("bypass-dnd", switch_dnd) as <bool>;
