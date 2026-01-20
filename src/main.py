@@ -68,14 +68,20 @@ class TomatilloApplication(Adw.Application):
             application_icon="io.github.diegopvlk.Tomatillo",
             developer_name="Diego Povliuk",
             version=APP_VERSION,
-            developers=["Diego Povliuk"],
             copyright="© 2025 Diego Povliuk",
             issue_url="https://github.com/diegopvlk/Tomatillo/issues",
             license_type=Gtk.License.GPL_3_0,
         )
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_("translator-credits"))
-        about.add_link("Donate", "https://github.com/diegopvlk/Tomatillo#donate")
+        about.add_link(
+            "Donate (PayPal)",
+            "https://www.paypal.com/donate?hosted_button_id=DVL7H35GA66X6",
+        )
+        about.add_link(
+            "Doar (Pix): diego.pvlk@gmail.com",
+            "diego.pvlk@gmail.com",
+        )
         about.add_other_app(
             "io.github.diegopvlk.Dosage", "Dosage", "Keep track of your treatments"
         )
