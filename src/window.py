@@ -23,10 +23,11 @@ from gettext import gettext as _
 gi.require_version("Adw", "1")
 gi.require_version("Gio", "2.0")
 gi.require_version("GLib", "2.0")
+gi.require_version("GstPlay", "1.0")
 gi.require_version("Gtk", "4.0")
 gi.require_version("Xdp", "1.0")
 
-from gi.repository import Adw, Gio, GLib, Gtk, GLib, Xdp
+from gi.repository import Adw, Gio, GLib, GstPlay, Gtk, Xdp
 from .preferences import settings
 
 
@@ -51,14 +52,12 @@ class TomatilloWindow(Adw.ApplicationWindow):
     time_long_break = settings.get_int("long-b-time") * 60
     long_b_interval = settings.get_int("long-b-interval")
 
-    ogg_uri: str = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
-    ogg_file = Gio.File.new_for_uri(ogg_uri)
-    sound_alert = Gtk.MediaFile.new_for_file(ogg_file)
-
     portal = Xdp.Portal()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+        GLib.set_application_name("Tomatillo")
 
         self.connect_breakpoints(self.breakpoint_1_5, "1-5")
         self.connect_breakpoints(self.breakpoint_2, "2")
@@ -73,6 +72,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
         reset_curr_timer.connect("activate", self.on_reset_timer_activated)
         self.get_application().add_action(reset_session)
         self.get_application().add_action(reset_curr_timer)
+
+        self.sound_alert = GstPlay.Play.new(None)
+        self.ogg_uri = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
+        self.sound_alert.set_uri(self.ogg_uri)
 
         self.set_start()
 
