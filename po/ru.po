@@ -1,0 +1,171 @@
+# Russian translations for Tomatillo package.
+# Copyright (C) 2025-2026 Diego Povliuk
+# This file is distributed under the same license as the Tomatillo package.
+# Vladimir Kosolapov, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tomatillo\n"
+"Report-Msgid-Bugs-To: https://github.com/diegopvlk/Tomatillo/issues\n"
+"POT-Creation-Date: 2025-12-17 14:52-0300\n"
+"PO-Revision-Date: 2026-01-21 11:00+0300\n"
+"Last-Translator: Vladimir Kosolapov\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22
+msgid "Tomatillo"
+msgstr "Tomatillo"
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons!
+#. The list MUST also end with a semicolon!
+#: data/tomatillo.desktop.in:9
+msgid "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
+msgstr "Pomodoro;Помодоро;Продуктивность;Таймер;Работа;Задача;Перерывы;Время;Управление;"
+
+#: data/tomatillo.metainfo.xml.in:23
+msgid "Focus better, work smarter"
+msgstr "Лучше концентрируйтесь, работайте умнее"
+
+#: data/tomatillo.metainfo.xml.in:25
+msgid ""
+"Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a "
+"set time, then take a short break. After some cycles, take a longer break."
+msgstr ""
+"Tomatillo — это таймер Pomodoro для повышения продуктивности. Работайте "
+"заданное время, а затем сделайте короткий перерыв. Спустя несколько циклов "
+"последует длинный перерыв."
+
+#: data/tomatillo.metainfo.xml.in:36
+msgid "Focus Session"
+msgstr "Период работы"
+
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:139
+msgid "Preferences"
+msgstr "Настройки"
+
+#: data/tomatillo.metainfo.xml.in:44
+msgid "Break Session"
+msgstr "Перерыв"
+
+#: data/tomatillo.metainfo.xml.in:48
+msgid "Long Break Session"
+msgstr "Длинный перерыв"
+
+#: data/tomatillo.metainfo.xml.in:52
+msgid "Focus Session - Dark Mode"
+msgstr "Период работы — тёмная тема"
+
+#. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+#: src/main.py:77
+msgid "translator-credits"
+msgstr "Vladimir Kosolapov https://github.com/vmkspv"
+
+#: src/window.py:113
+msgid "Pause"
+msgstr "Пауза"
+
+#: src/window.py:121
+msgid "Resume"
+msgstr "Продолжить"
+
+#: src/window.py:130 src/window.blp:118
+msgid "Start"
+msgstr "Начать"
+
+#: src/window.py:215 src/preferences.blp:16
+msgid "Focus"
+msgstr "Период работы"
+
+#: src/window.py:216 src/preferences.blp:28
+msgid "Short Break"
+msgstr "Короткий перерыв"
+
+#: src/window.py:217 src/preferences.blp:40
+msgid "Long Break"
+msgstr "Длинный перерыв"
+
+#: src/window.py:263
+msgid "Break Time"
+msgstr "Время перерыва"
+
+#: src/window.py:271
+msgid "Time for a short break."
+msgstr "Время для короткого перерыва."
+
+#: src/window.py:273
+msgid "Time for a long break."
+msgstr "Время для длинного перерыва."
+
+#: src/window.py:275
+msgid "Start Break"
+msgstr "Начать перерыв"
+
+#: src/window.py:277
+msgid "Focus Mode"
+msgstr "Режим работы"
+
+#: src/window.py:278
+msgid "Break is over!"
+msgstr "Перерыв окончен!"
+
+#: src/window.py:280
+msgid "Start Focus"
+msgstr "Начать работу"
+
+#: src/preferences.blp:54
+msgid "Long Break Interval"
+msgstr "Интервал длинного перерыва"
+
+#: src/preferences.blp:68
+msgid "Run in Background"
+msgstr "Работать в фоновом режиме"
+
+#: src/preferences.blp:74
+msgid "Notification Sound"
+msgstr "Звук уведомлений"
+
+#: src/preferences.blp:80
+msgid "Bypass 'Do Not Disturb'"
+msgstr "Игнорировать режим «Не беспокоить»"
+
+#: src/preferences.blp:86
+msgid "Autostart Focus"
+msgstr "Автозапуск периода работы"
+
+#: src/preferences.blp:92
+msgid "Autostart Break"
+msgstr "Автозапуск перерыва"
+
+#: src/window.blp:25
+msgid "Main Menu"
+msgstr "Главное меню"
+
+#: src/window.blp:104
+msgid "Reset"
+msgstr "Сбросить"
+
+#: src/window.blp:129
+msgid "Skip"
+msgstr "Пропустить"
+
+#: src/window.blp:149
+msgid "About Tomatillo"
+msgstr "О приложении"
+
+#: src/window.blp:154
+msgid "Quit"
+msgstr "Выход"
+
+#: src/window.blp:163
+msgid "Reset Session"
+msgstr "Сбросить период"
+
+#: src/window.blp:168
+msgid "Reset Current Timer"
+msgstr "Сбросить текущий таймер"
