@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Tomatillo
+Comment=Focus better, work smarter
 Exec=tomatillo
 Icon=io.github.diegopvlk.Tomatillo
 Terminal=false
