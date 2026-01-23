@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-17 14:52-0300\n"
+"POT-Creation-Date: 2026-01-22 20:58-0300\n"
 "PO-Revision-Date: 2025-12-15 12:00-0300\n"
 "Last-Translator: Diego Povliuk <diegopvlk@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <diegopvlk@gmail.com>\n"
@@ -21,14 +21,14 @@ msgstr ""
 msgid "Tomatillo"
 msgstr "Tomatillo"
 
-#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/tomatillo.desktop.in:9
-msgid "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
-msgstr "Pomodoro;Produtividade;Timer;Foco;Tarefa;Trabalho;Pausas;Tempo;Gerenciamento"
-
-#: data/tomatillo.metainfo.xml.in:23
+#: data/tomatillo.desktop.in:3 data/tomatillo.metainfo.xml.in:23
 msgid "Focus better, work smarter"
 msgstr "Foque melhor, trabalhe de forma mais inteligente."
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/tomatillo.desktop.in:10
+msgid "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
+msgstr "Pomodoro;Produtividade;Timer;Foco;Tarefa;Trabalho;Pausas;Tempo;Gerenciamento"
 
 #: data/tomatillo.metainfo.xml.in:25
 msgid ""
@@ -60,59 +60,59 @@ msgid "Focus Session - Dark Mode"
 msgstr "Sessão de Foco - Modo Escuro"
 
 #. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-#: src/main.py:77
+#: src/main.py:76
 msgid "translator-credits"
 msgstr "Diego Povliuk <diegopvlk@gmail.com>"
 
-#: src/window.py:113
+#: src/window.py:116
 msgid "Pause"
 msgstr "Pausar"
 
-#: src/window.py:121
+#: src/window.py:124
 msgid "Resume"
 msgstr "Retomar"
 
-#: src/window.py:130 src/window.blp:118
+#: src/window.py:133 src/window.blp:118
 msgid "Start"
 msgstr "Começar"
 
-#: src/window.py:215 src/preferences.blp:16
+#: src/window.py:218 src/preferences.blp:16
 msgid "Focus"
 msgstr "Foco"
 
-#: src/window.py:216 src/preferences.blp:28
+#: src/window.py:219 src/preferences.blp:28
 msgid "Short Break"
 msgstr "Pausa Curta"
 
-#: src/window.py:217 src/preferences.blp:40
+#: src/window.py:220 src/preferences.blp:40
 msgid "Long Break"
 msgstr "Pausa Longa"
 
-#: src/window.py:263
+#: src/window.py:266
 msgid "Break Time"
 msgstr "Hora da Pausa"
 
-#: src/window.py:271
+#: src/window.py:274
 msgid "Time for a short break."
 msgstr "Hora de fazer uma pausa curta."
 
-#: src/window.py:273
+#: src/window.py:276
 msgid "Time for a long break."
 msgstr "Hora de fazer uma pausa longa."
 
-#: src/window.py:275
+#: src/window.py:278
 msgid "Start Break"
 msgstr "Começar Pausa"
 
-#: src/window.py:277
+#: src/window.py:280
 msgid "Focus Mode"
 msgstr "Modo Foco"
 
-#: src/window.py:278
+#: src/window.py:281
 msgid "Break is over!"
 msgstr "A pausa acabou!"
 
-#: src/window.py:280
+#: src/window.py:283
 msgid "Start Focus"
 msgstr "Iniciar Foco"
 

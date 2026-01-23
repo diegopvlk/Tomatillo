@@ -14,7 +14,7 @@ xgettext --files-from=/tmp/POTFILES_TOMATILLO \
          --from-code="$ENCODING" --add-comments \
          --keyword=_ --keyword=C_:1c,2
 
-# joint pot
+# join pot
 xgettext --files-from=/tmp/POTFILES_TOMATILLO.blp \
          --output="$OUTPUT" --package-name="$PACKAGE_NAME" \
          --from-code="$ENCODING" --add-comments \

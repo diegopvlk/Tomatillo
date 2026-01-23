@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tomatillo master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-17 14:52-0300\n"
+"POT-Creation-Date: 2026-01-22 20:58-0300\n"
 "PO-Revision-Date: 2025-12-16 13:05+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -23,14 +23,14 @@ msgstr ""
 msgid "Tomatillo"
 msgstr "Tomatillo"
 
-#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/tomatillo.desktop.in:9
-msgid "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
-msgstr "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;Üretkenlik;Zamanlayıcı;Odaklan;Görev;Çalışma;İş;Mola;Ara;Zaman;Süre;Saat;Yönetim;"
-
-#: data/tomatillo.metainfo.xml.in:23
+#: data/tomatillo.desktop.in:3 data/tomatillo.metainfo.xml.in:23
 msgid "Focus better, work smarter"
 msgstr "Daha iyi odaklan, daha akıllıca çalış"
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/tomatillo.desktop.in:10
+msgid "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
+msgstr "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;Üretkenlik;Zamanlayıcı;Odaklan;Görev;Çalışma;İş;Mola;Ara;Zaman;Süre;Saat;Yönetim;"
 
 #: data/tomatillo.metainfo.xml.in:25
 msgid ""
@@ -59,59 +59,59 @@ msgid "Focus Session - Dark Mode"
 msgstr "Odaklanma Oturumu - Koyu Kip"
 
 #. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-#: src/main.py:77
+#: src/main.py:76
 msgid "translator-credits"
 msgstr "Sabri Ünal <yakushabb@gmail.com>"
 
-#: src/window.py:113
+#: src/window.py:116
 msgid "Pause"
 msgstr "Duraklat"
 
-#: src/window.py:121
+#: src/window.py:124
 msgid "Resume"
 msgstr "Sürdür"
 
-#: src/window.py:130 src/window.blp:118
+#: src/window.py:133 src/window.blp:118
 msgid "Start"
 msgstr "Başlat"
 
-#: src/window.py:215 src/preferences.blp:16
+#: src/window.py:218 src/preferences.blp:16
 msgid "Focus"
 msgstr "Odaklama"
 
-#: src/window.py:216 src/preferences.blp:28
+#: src/window.py:219 src/preferences.blp:28
 msgid "Short Break"
 msgstr "Kısa Mola"
 
-#: src/window.py:217 src/preferences.blp:40
+#: src/window.py:220 src/preferences.blp:40
 msgid "Long Break"
 msgstr "Uzun Mola"
 
-#: src/window.py:263
+#: src/window.py:266
 msgid "Break Time"
 msgstr "Mola Zamanı"
 
-#: src/window.py:271
+#: src/window.py:274
 msgid "Time for a short break."
 msgstr "Kısa mola süresi."
 
-#: src/window.py:273
+#: src/window.py:276
 msgid "Time for a long break."
 msgstr "Uzun mola süresi."
 
-#: src/window.py:275
+#: src/window.py:278
 msgid "Start Break"
 msgstr "Molayı Başlat"
 
-#: src/window.py:277
+#: src/window.py:280
 msgid "Focus Mode"
 msgstr "Odak Kipi"
 
-#: src/window.py:278
+#: src/window.py:281
 msgid "Break is over!"
 msgstr "Mola bitti!"
 
-#: src/window.py:280
+#: src/window.py:283
 msgid "Start Focus"
 msgstr "Odaklanmayı Başlat"
 
