@@ -1,0 +1,24 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $CyclePresetsList: Adw.Dialog {
+    title: _("Saved Presets");
+
+    Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar {}
+
+        content: Gtk.Box {
+            orientation: vertical;
+
+            Gtk.Button add_preset_btn {
+                label: _("Add New Preset");
+                clicked => $_add_new_preset();
+            }
+
+            Gtk.ListBox presets_list {
+                row-activated => $_on_item_clicked();
+            }
+        };
+    }
+}

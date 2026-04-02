@@ -145,6 +145,12 @@ menu primary_menu {
     //   action: "app.shortcuts";
     // }
     //
+
+    item {
+      label: _("Cycle Presets");
+      action: "app.presets";
+    }
+
     item {
       label: _("About Tomatillo");
       action: "app.about";
@@ -167,6 +173,11 @@ menu reset_menu {
     item {
       label: _("Reset Current Timer");
       action: "app.reset-curr-timer";
+    }
+
+    item {
+      label: _("Choose Preset");
+      action: "app.choose-preset";
     }
   }
 }

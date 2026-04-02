@@ -5,6 +5,8 @@ gnome = import('gnome')
 blueprints = custom_target('blueprints',
   input: files(
     'preferences.blp',
+    'cycle_preset.blp',
+    'cycle_presets_list.blp',
     'shortcuts-dialog.blp',
     'window.blp',
   ),
