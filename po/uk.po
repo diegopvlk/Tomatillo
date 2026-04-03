@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-22 20:58-0300\n"
+"POT-Creation-Date: 2026-04-03 20:25+0300\n"
 "PO-Revision-Date: 2026-03-16 14:MI+0200\n"
 "Last-Translator: Dmytrii Kolomarenko https://github.com/KolomarenkoDmytrii\n"
 "Language-Team: Ukrainian https://github.com/KolomarenkoDmytrii\n"
@@ -35,15 +35,15 @@ msgid ""
 "Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a "
 "set time, then take a short break. After some cycles, take a longer break."
 msgstr ""
-"Tomatillo це таймер для Помодоро призначений для ваших завдань продуктивності. "
-"Працюйте протягом установленого часу, а потім зробіть коротку перерву. "
-"Після декількох циклів зробіть довгу перерву."
+"Tomatillo це таймер для Помодоро призначений для ваших завдань "
+"продуктивності. Працюйте протягом установленого часу, а потім зробіть "
+"коротку перерву. Після декількох циклів зробіть довгу перерву."
 
 #: data/tomatillo.metainfo.xml.in:36
 msgid "Focus Session"
 msgstr "Сесія зосередження"
 
-#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:139
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:142
 msgid "Preferences"
 msgstr "Налаштування"
 
@@ -60,65 +60,107 @@ msgid "Focus Session - Dark Mode"
 msgstr "Сесія фокусування - темний режим"
 
 #. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-#: src/main.py:76
+#: src/main.py:77
 msgid "translator-credits"
 msgstr "Dmytrii Kolomarenko https://github.com/KolomarenkoDmytrii"
 
-#: src/window.py:116
+#: src/window.py:173
 msgid "Pause"
 msgstr "Призупинити"
 
-#: src/window.py:124
+#: src/window.py:181
 msgid "Resume"
 msgstr "Продовжити"
 
-#: src/window.py:133 src/window.blp:118
+#: src/window.py:190 src/window.blp:121
 msgid "Start"
 msgstr "Почати"
 
-#: src/window.py:218 src/preferences.blp:16
+#: src/window.py:275 src/cycle_preset.blp:29 src/preferences.blp:18
 msgid "Focus"
 msgstr "Зосередження"
 
-#: src/window.py:219 src/preferences.blp:28
+#: src/window.py:276 src/cycle_preset.blp:41 src/preferences.blp:30
 msgid "Short Break"
 msgstr "Коротка перерва"
 
-#: src/window.py:220 src/preferences.blp:40
+#: src/window.py:277 src/cycle_preset.blp:53 src/preferences.blp:42
 msgid "Long Break"
 msgstr "Довга перерва"
 
-#: src/window.py:266
+#: src/window.py:323
 msgid "Break Time"
 msgstr "Час для перерви"
 
-#: src/window.py:274
+#: src/window.py:331
 msgid "Time for a short break."
 msgstr "Час для короткої перерви."
 
-#: src/window.py:276
+#: src/window.py:333
 msgid "Time for a long break."
 msgstr "Час для довгої перерви."
 
-#: src/window.py:278
+#: src/window.py:335
 msgid "Start Break"
 msgstr "Почати перерву"
 
-#: src/window.py:280
+#: src/window.py:337
 msgid "Focus Mode"
 msgstr "Режим зосередження"
 
-#: src/window.py:281
+#: src/window.py:338
 msgid "Break is over!"
 msgstr "Перерва закінчилася!"
 
-#: src/window.py:283
+#: src/window.py:340
 msgid "Start Focus"
 msgstr "Зосередитися"
 
-#: src/preferences.blp:54
+#: src/cycle_preset.blp:5
+#, fuzzy
+#| msgid "Cycle Presets"
+msgid "Cycle Preset"
+msgstr "Набори параметрів циклу"
+
+#: src/cycle_preset.blp:21
+msgid "Preset Name"
+msgstr "Назва набору параметрів"
+
+#: src/cycle_preset.blp:65 src/preferences.blp:54
 msgid "Long Break Interval"
 msgstr "Проміжок для довгої перерви"
+
+#: src/cycle_preset.blp:79 src/cycle_preset_deletion.blp:15
+msgid "Delete"
+msgstr "Видалити"
+
+#: src/cycle_preset_deletion.blp:5
+msgid "Delete Cycle Preset?"
+msgstr "Видалити набір параметрів циклу?"
+
+#: src/cycle_preset_deletion.blp:6
+msgid "Are you sure you want to delete this cycle preset?"
+msgstr "Ви впевнені що ви хочете видалити цей набір параметрів?"
+
+#: src/cycle_preset_deletion.blp:14
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: src/cycle_preset_selection.blp:5
+msgid "Choose Cycle Preset"
+msgstr "Вибрати набір параметрів"
+
+#: src/cycle_presets_list.blp:5
+msgid "Saved Presets"
+msgstr "Збережені набори параметрів"
+
+#: src/cycle_presets_list.blp:19
+msgid "Add New Preset"
+msgstr "Додати новий набір параметрів"
+
+#: src/preferences.blp:15
+msgid "Default Timer Values"
+msgstr "Значення таймера за замовчуванням"
 
 #: src/preferences.blp:68
 msgid "Run in Background"
@@ -144,26 +186,38 @@ msgstr "Автоматично починати режим перерви"
 msgid "Main Menu"
 msgstr "Головне меню"
 
-#: src/window.blp:104
+#: src/window.blp:107
 msgid "Reset"
 msgstr "Скинути"
 
-#: src/window.blp:129
+#: src/window.blp:132
 msgid "Skip"
 msgstr "Пропустити"
 
-#: src/window.blp:149
+#: src/window.blp:153
+msgid "Cycle Presets"
+msgstr "Набори параметрів циклу"
+
+#: src/window.blp:158
 msgid "About Tomatillo"
 msgstr "Про Tomatillo"
 
-#: src/window.blp:154
+#: src/window.blp:163
 msgid "Quit"
 msgstr "Вийти"
 
-#: src/window.blp:163
+#: src/window.blp:172
 msgid "Reset Session"
 msgstr "Скинути сесію"
 
-#: src/window.blp:168
+#: src/window.blp:177
 msgid "Reset Current Timer"
 msgstr "Скинути поточний таймер"
+
+#: src/window.blp:182
+msgid "Choose Preset"
+msgstr "Вибрати набір параметрів"
+
+#: src/window.blp:187
+msgid "Set Timer Values to Defaults"
+msgstr "Значення таймера за замовчуванням"

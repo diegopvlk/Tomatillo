@@ -12,8 +12,8 @@ template $Preferences: Adw.Dialog {
 		content: Adw.Clamp {
 			Adw.PreferencesPage prefs_page {
 				Adw.PreferencesGroup {
-					title: _("Default Time Values");
-					
+					title: _("Default Timer Values");
+
 					Adw.SpinRow focus_time {
 						title: _("Focus");
 						value: bind $_set_spin_start_val_from_key("focus-time", focus_time) as <int>;
@@ -49,9 +49,7 @@ template $Preferences: Adw.Dialog {
 							upper: 90;
 						};
 					}
-				}
 
-				Adw.PreferencesGroup {
 					Adw.SpinRow long_b_interval {
 						title: _("Long Break Interval");
 						value: bind $_set_spin_start_val_from_key("long-b-interval", long_b_interval) as <int>;

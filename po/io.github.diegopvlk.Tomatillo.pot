@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-22 20:58-0300\n"
+"POT-Creation-Date: 2026-04-03 20:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Focus Session"
 msgstr ""
 
-#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:139
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:142
 msgid "Preferences"
 msgstr ""
 
@@ -57,64 +57,104 @@ msgid "Focus Session - Dark Mode"
 msgstr ""
 
 #. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-#: src/main.py:76
+#: src/main.py:77
 msgid "translator-credits"
 msgstr ""
 
-#: src/window.py:116
+#: src/window.py:173
 msgid "Pause"
 msgstr ""
 
-#: src/window.py:124
+#: src/window.py:181
 msgid "Resume"
 msgstr ""
 
-#: src/window.py:133 src/window.blp:118
+#: src/window.py:190 src/window.blp:121
 msgid "Start"
 msgstr ""
 
-#: src/window.py:218 src/preferences.blp:16
+#: src/window.py:275 src/cycle_preset.blp:29 src/preferences.blp:18
 msgid "Focus"
 msgstr ""
 
-#: src/window.py:219 src/preferences.blp:28
+#: src/window.py:276 src/cycle_preset.blp:41 src/preferences.blp:30
 msgid "Short Break"
 msgstr ""
 
-#: src/window.py:220 src/preferences.blp:40
+#: src/window.py:277 src/cycle_preset.blp:53 src/preferences.blp:42
 msgid "Long Break"
 msgstr ""
 
-#: src/window.py:266
+#: src/window.py:323
 msgid "Break Time"
 msgstr ""
 
-#: src/window.py:274
+#: src/window.py:331
 msgid "Time for a short break."
 msgstr ""
 
-#: src/window.py:276
+#: src/window.py:333
 msgid "Time for a long break."
 msgstr ""
 
-#: src/window.py:278
+#: src/window.py:335
 msgid "Start Break"
 msgstr ""
 
-#: src/window.py:280
+#: src/window.py:337
 msgid "Focus Mode"
 msgstr ""
 
-#: src/window.py:281
+#: src/window.py:338
 msgid "Break is over!"
 msgstr ""
 
-#: src/window.py:283
+#: src/window.py:340
 msgid "Start Focus"
 msgstr ""
 
-#: src/preferences.blp:54
+#: src/cycle_preset.blp:5
+msgid "Cycle Preset"
+msgstr ""
+
+#: src/cycle_preset.blp:21
+msgid "Preset Name"
+msgstr ""
+
+#: src/cycle_preset.blp:65 src/preferences.blp:54
 msgid "Long Break Interval"
+msgstr ""
+
+#: src/cycle_preset.blp:79 src/cycle_preset_deletion.blp:15
+msgid "Delete"
+msgstr ""
+
+#: src/cycle_preset_deletion.blp:5
+msgid "Delete Cycle Preset?"
+msgstr ""
+
+#: src/cycle_preset_deletion.blp:6
+msgid "Are you sure you want to delete this cycle preset?"
+msgstr ""
+
+#: src/cycle_preset_deletion.blp:14
+msgid "Cancel"
+msgstr ""
+
+#: src/cycle_preset_selection.blp:5
+msgid "Choose Cycle Preset"
+msgstr ""
+
+#: src/cycle_presets_list.blp:5
+msgid "Saved Presets"
+msgstr ""
+
+#: src/cycle_presets_list.blp:19
+msgid "Add New Preset"
+msgstr ""
+
+#: src/preferences.blp:15
+msgid "Default Timer Values"
 msgstr ""
 
 #: src/preferences.blp:68
@@ -141,26 +181,38 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: src/window.blp:104
+#: src/window.blp:107
 msgid "Reset"
 msgstr ""
 
-#: src/window.blp:129
+#: src/window.blp:132
 msgid "Skip"
 msgstr ""
 
-#: src/window.blp:149
+#: src/window.blp:153
+msgid "Cycle Presets"
+msgstr ""
+
+#: src/window.blp:158
 msgid "About Tomatillo"
 msgstr ""
 
-#: src/window.blp:154
+#: src/window.blp:163
 msgid "Quit"
 msgstr ""
 
-#: src/window.blp:163
+#: src/window.blp:172
 msgid "Reset Session"
 msgstr ""
 
-#: src/window.blp:168
+#: src/window.blp:177
 msgid "Reset Current Timer"
+msgstr ""
+
+#: src/window.blp:182
+msgid "Choose Preset"
+msgstr ""
+
+#: src/window.blp:187
+msgid "Set Timer Values to Defaults"
 msgstr ""
