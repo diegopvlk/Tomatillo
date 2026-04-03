@@ -9,13 +9,24 @@ template $CyclePresetSelection: Adw.Dialog {
         [top]
         Adw.HeaderBar {}
 
-        content: Adw.Clamp {
-            Gtk.ListBox presets_list {
-                selection-mode: single;
-                styles ["boxed-list"]
-                
-                row-activated => $_on_item_clicked();
-            }
+        content: ScrolledWindow {
+            height-request: 300;
+
+            child: Adw.Clamp {
+                ListBox presets_list {
+                    margin-bottom: 12;
+                    margin-end: 24;
+                    margin-start: 24;
+                    
+                    selection-mode: single;
+
+                    styles [
+                        "boxed-list",
+                    ]
+
+                    row-activated => $_on_item_clicked();
+                }
+            };
         };
     }
 }

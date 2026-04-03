@@ -9,20 +9,32 @@ template $CyclePresetsList: Adw.Dialog {
         [top]
         Adw.HeaderBar {}
 
-        content: Gtk.Box {
+        content: Box {
             orientation: vertical;
+            spacing: 24;
+            margin-end: 24;
+            margin-start: 24;
 
-            Gtk.Button add_preset_btn {
+            Button add_preset_btn {
                 label: _("Add New Preset");
                 clicked => $_add_new_preset();
             }
 
-            Adw.Clamp {
-                Gtk.ListBox presets_list {
-                    selection-mode: single;
-                    styles ["boxed-list"]
-                    row-activated => $_on_item_clicked();
-                }
+            ScrolledWindow {
+                height-request: 250;
+
+                child: Adw.Clamp {
+                    margin-bottom: 12;
+                    ListBox presets_list {
+                        selection-mode: single;
+
+                        styles [
+                            "boxed-list",
+                        ]
+
+                        row-activated => $_on_item_clicked();
+                    }
+                };
             }
         };
     }
