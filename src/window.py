@@ -28,7 +28,9 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Xdp", "1.0")
 
 from gi.repository import Adw, Gio, GLib, GstPlay, Gtk, Xdp
+
 from .preferences import settings
+from .cycle_preset_selection import CyclePresetSelection
 
 
 @Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/window.ui")
@@ -37,6 +39,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
     breakpoint_1_5 = Gtk.Template.Child()
     breakpoint_2 = Gtk.Template.Child()
+    timer_name = Gtk.Template.Child()
     timer_box = Gtk.Template.Child()
     button_box = Gtk.Template.Child()
     focus_icon = Gtk.Template.Child()
@@ -52,10 +55,22 @@ class TomatilloWindow(Adw.ApplicationWindow):
     time_long_break = settings.get_int("long-b-time") * 60
     long_b_interval = settings.get_int("long-b-interval")
 
+    # current_preset_name = None
+    current_preset_name = settings.get_string("chosen-cycle-preset")
+    # current_preset = settings.get_value("cycle-presets").unpack()[current_preset_name]
+
+    # time_focus = current_preset["focus-time"] * 60
+    # time_short_break = current_preset["short-b-time"] * 60
+    # time_long_break = current_preset["long-b-time"] * 60
+    # long_b_interval = current_preset["long-b-interval"]
+
     portal = Xdp.Portal()
 
     def __init__(self, **kwargs):
+        self.update_preset()
         super().__init__(**kwargs)
+        if self.current_preset_name != "" and self.current_preset_name is not None:
+            self.timer_name.set_label(self.current_preset_name)
 
         GLib.set_application_name("Tomatillo")
 
@@ -68,10 +83,13 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
         reset_session = Gio.SimpleAction.new("reset-session", None)
         reset_curr_timer = Gio.SimpleAction.new("reset-curr-timer", None)
+        choose_preset = Gio.SimpleAction.new("choose-preset", None)
         reset_session.connect("activate", self.set_start)
         reset_curr_timer.connect("activate", self.on_reset_timer_activated)
+        choose_preset.connect("activate", self.on_preset_choise)
         self.get_application().add_action(reset_session)
         self.get_application().add_action(reset_curr_timer)
+        self.get_application().add_action(choose_preset)
 
         self.sound_alert = GstPlay.Play.new(None)
         self.ogg_uri = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
@@ -86,7 +104,37 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.current_phase = "focus"
         self.time_left = self.time_focus
 
+    def update_preset(self):
+        self.current_preset_name = settings.get_string("chosen-cycle-preset")
+        # if no preset exists then use default time values
+        if self.current_preset_name == "" or self.current_preset_name is None:
+            time_focus = settings.get_int("focus-time") * 60
+            time_short_break = settings.get_int("short-b-time") * 60
+            time_long_break = settings.get_int("long-b-time") * 60
+            long_b_interval = settings.get_int("long-b-interval")
+            return
+
+        current_preset = settings.get_value("cycle-presets").unpack()[
+            self.current_preset_name
+        ]
+
+        self.time_focus = current_preset["focus-time"] * 60
+        self.time_short_break = current_preset["short-b-time"] * 60
+        self.time_long_break = current_preset["long-b-time"] * 60
+        self.long_b_interval = current_preset["long-b-interval"]
+
+    def on_preset_choise(self, *args):
+        print("---on_preset_choice---")
+        presets_list = CyclePresetSelection(self)
+        print(f"self.current_preset_name (old) = {self.current_preset_name}")
+        presets_list.present(self)
+        # if self.current_preset_name != "" and self.current_preset_name is not None:
+        #     self.timer_name.set_label(self.current_preset_name)
+        print(f"self.current_preset_name (new) = {self.current_preset_name}")
+        print("--- END on_preset_choice END ---")
+
     def set_start(self, *args):
+        self.update_preset()
         self.set_start_values()
         self.update_ui_timer()
         self.update_cycles_label_bg()

@@ -9,6 +9,7 @@ blueprints = custom_target('blueprints',
     'cycle_presets_list.blp',
     'shortcuts-dialog.blp',
     'window.blp',
+    'cycle_preset_selection.blp',
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -45,6 +46,7 @@ tomatillo_sources = [
   'main.py',
   'preferences.py',
   'window.py',
+  'cycle_preset_selection.py',
 ]
 
 install_data(tomatillo_sources, install_dir: moduledir)

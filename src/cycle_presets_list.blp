@@ -3,6 +3,7 @@ using Adw 1;
 
 template $CyclePresetsList: Adw.Dialog {
     title: _("Saved Presets");
+    content-width: 420;
 
     Adw.ToolbarView {
         [top]
@@ -16,8 +17,12 @@ template $CyclePresetsList: Adw.Dialog {
                 clicked => $_add_new_preset();
             }
 
-            Gtk.ListBox presets_list {
-                row-activated => $_on_item_clicked();
+            Adw.Clamp {
+                Gtk.ListBox presets_list {
+                    selection-mode: single;
+                    styles ["boxed-list"]
+                    row-activated => $_on_item_clicked();
+                }
             }
         };
     }

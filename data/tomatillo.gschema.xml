@@ -17,7 +17,7 @@
 	    <default>{}</default>
 	  </key>
 	  <key name="chosen-cycle-preset" type="s">
-      <default>""</default>
+      	<default>""</default>
 	  </key>
 		<key name="run-in-background" type="b">
 			<default>false</default>

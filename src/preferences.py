@@ -160,7 +160,8 @@ class CyclePreset(Adw.Dialog):
         self._presets[self._preset_name] = self._current_preset
         settings.set_value("cycle-presets", GLib.Variant("a{sa{si}}", self._presets))
         
-        print(f"Preset {self._preset_name} update from CyclePreset._update_preset")
+        # after a change in the preset reset the current session
+        self.window.set_start()
 
     def _update_ui(self):
         self.window.on_reset_timer_activated()
