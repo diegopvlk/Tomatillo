@@ -84,12 +84,17 @@ class TomatilloWindow(Adw.ApplicationWindow):
         reset_session = Gio.SimpleAction.new("reset-session", None)
         reset_curr_timer = Gio.SimpleAction.new("reset-curr-timer", None)
         choose_preset = Gio.SimpleAction.new("choose-preset", None)
+        set_defaults = Gio.SimpleAction.new("set-defaults", None)
+
         reset_session.connect("activate", self.set_start)
         reset_curr_timer.connect("activate", self.on_reset_timer_activated)
         choose_preset.connect("activate", self.on_preset_choise)
+        set_defaults.connect("activate", self.on_set_defaults)
+
         self.get_application().add_action(reset_session)
         self.get_application().add_action(reset_curr_timer)
         self.get_application().add_action(choose_preset)
+        self.get_application().add_action(set_defaults)
 
         self.sound_alert = GstPlay.Play.new(None)
         self.ogg_uri = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
@@ -104,6 +109,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.current_cycle = 1
         self.current_phase = "focus"
         self.time_left = self.time_focus
+
+    def on_set_defaults(self, *args):
+        settings.set_string("chosen-cycle-preset", "")
+        self.set_start()
 
     def update_preset(self):
         self.current_preset_name = settings.get_string("chosen-cycle-preset")
