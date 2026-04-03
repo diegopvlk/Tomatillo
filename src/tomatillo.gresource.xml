@@ -4,6 +4,7 @@
     <file alias="style.css">style.css</file>
     <file preprocess="xml-stripblanks">preferences.ui</file>
     <file preprocess="xml-stripblanks">cycle_preset.ui</file>
+    <file preprocess="xml-stripblanks">cycle_preset_deletion.ui</file>
     <file preprocess="xml-stripblanks">cycle_presets_list.ui</file>
     <file preprocess="xml-stripblanks">cycle_preset_selection.ui</file>
     <file preprocess="xml-stripblanks">window.ui</file>

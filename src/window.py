@@ -67,8 +67,8 @@ class TomatilloWindow(Adw.ApplicationWindow):
     portal = Xdp.Portal()
 
     def __init__(self, **kwargs):
-        self.update_preset()
         super().__init__(**kwargs)
+        self.update_preset()
         if self.current_preset_name != "" and self.current_preset_name is not None:
             self.timer_name.set_label(self.current_preset_name)
 
@@ -95,6 +95,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.ogg_uri = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
         self.sound_alert.set_uri(self.ogg_uri)
 
+        self.set_start_values()
         self.set_start()
 
     def set_start_values(self):
@@ -108,10 +109,11 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.current_preset_name = settings.get_string("chosen-cycle-preset")
         # if no preset exists then use default time values
         if self.current_preset_name == "" or self.current_preset_name is None:
-            time_focus = settings.get_int("focus-time") * 60
-            time_short_break = settings.get_int("short-b-time") * 60
-            time_long_break = settings.get_int("long-b-time") * 60
-            long_b_interval = settings.get_int("long-b-interval")
+            self.time_focus = settings.get_int("focus-time") * 60
+            self.time_short_break = settings.get_int("short-b-time") * 60
+            self.time_long_break = settings.get_int("long-b-time") * 60
+            self.long_b_interval = settings.get_int("long-b-interval")
+            self.timer_name.set_label("")
             return
 
         current_preset = settings.get_value("cycle-presets").unpack()[
@@ -122,23 +124,21 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.time_short_break = current_preset["short-b-time"] * 60
         self.time_long_break = current_preset["long-b-time"] * 60
         self.long_b_interval = current_preset["long-b-interval"]
+        self.timer_name.set_label(self.current_preset_name)
 
     def on_preset_choise(self, *args):
-        print("---on_preset_choice---")
         presets_list = CyclePresetSelection(self)
-        print(f"self.current_preset_name (old) = {self.current_preset_name}")
         presets_list.present(self)
         # if self.current_preset_name != "" and self.current_preset_name is not None:
         #     self.timer_name.set_label(self.current_preset_name)
-        print(f"self.current_preset_name (new) = {self.current_preset_name}")
-        print("--- END on_preset_choice END ---")
 
     def set_start(self, *args):
+        # before doing reset, stop the timer because otherwise timer will be running
+        self.pause_timer()
         self.update_preset()
         self.set_start_values()
         self.update_ui_timer()
         self.update_cycles_label_bg()
-        self.pause_timer()
 
     def on_start_pause_clicked(self, *args):
         self.get_application().withdraw_notification("timer-complete")

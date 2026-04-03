@@ -33,6 +33,6 @@ class CyclePresetSelection(Adw.Dialog):
         settings.set_string("chosen-cycle-preset", preset_name)
         # after a new preset selection reset the current session
         self.window.set_start()
-        preset_name = self.window.current_preset_name
-        if preset_name != "" and preset_name is not None:
-            self.window.timer_name.set_label(preset_name)
+        # preset_name = self.window.current_preset_name
+        # if preset_name != "" and preset_name is not None:
+        #     self.window.timer_name.set_label(preset_name)

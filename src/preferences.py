@@ -92,7 +92,6 @@ class Preferences(Adw.Dialog):
         self.window.update_cycles_label_bg()
 
 
-# TODO: Add delete button
 @Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle_preset.ui")
 class CyclePreset(Adw.Dialog):
     __gtype_name__ = "CyclePreset"
@@ -102,9 +101,11 @@ class CyclePreset(Adw.Dialog):
     short_b_time = Gtk.Template.Child()
     long_b_time = Gtk.Template.Child()
     long_b_interval = Gtk.Template.Child()
+    deletion_btn = Gtk.Template.Child()
 
-    def __init__(self, preset_name, active_window, **kwargs):
+    def __init__(self, preset_name, active_window, presets_list, **kwargs):
         self.window = active_window
+        self._presets_list = presets_list
         self._preset_name = preset_name
 
         defaults = {
@@ -114,14 +115,21 @@ class CyclePreset(Adw.Dialog):
             "long-b-interval": settings.get_int("long-b-interval"),
         }
         self._presets = settings.get_value("cycle-presets").unpack()
-        
+
         if self._preset_name is None:
             self._current_preset = defaults
         else:
             existing_params = self._presets.get(self._preset_name, {})
             self._current_preset = {**defaults, **existing_params}
 
+        # call the constructor of the parent class after initializing variables
+        # because, maybe, callbacks are defined in a Blueprint file, so they are
+        # declared before the parent constructor (which is responsible for widget
+        # creation by a template) is called so they cannot access object attributes
         super().__init__(**kwargs)
+
+        if self._preset_name is None:
+            self.deletion_btn.set_sensitive(False)
 
     @Gtk.Template.Callback()
     def _set_spin_start_val_from_key(self, _dialog, key, spin_row):
@@ -146,10 +154,15 @@ class CyclePreset(Adw.Dialog):
         self._update_preset(entry.get_text())
         self._update_ui()
 
+    @Gtk.Template.Callback()
+    def _on_deletion_request(self, _btn):
+        deletion_dialog = CyclePresetDeletion(self._presets_list, self._preset_name, self.window, self)
+        deletion_dialog.present(self)
+
     def _update_preset(self, new_preset_name):
         if not new_preset_name:
             return
-        
+
         new_preset_name = new_preset_name.strip()
 
         if self._preset_name != new_preset_name and self._preset_name is not None:
@@ -159,7 +172,9 @@ class CyclePreset(Adw.Dialog):
 
         self._presets[self._preset_name] = self._current_preset
         settings.set_value("cycle-presets", GLib.Variant("a{sa{si}}", self._presets))
-        
+
+        self._presets_list.repopulate_list()
+        self.deletion_btn.set_sensitive(True)
         # after a change in the preset reset the current session
         self.window.set_start()
 
@@ -169,7 +184,34 @@ class CyclePreset(Adw.Dialog):
         self.window.update_cycles_label_bg()
 
 
-# FIXME: List not updates after adding a new preset, only when the list is closed and open again
+@Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle_preset_deletion.ui")
+class CyclePresetDeletion(Adw.AlertDialog):
+    __gtype_name__ = "CyclePresetDeletion"
+
+    def __init__(self, presets_list, preset_name, active_window, parent, **kwargs):
+        super().__init__(**kwargs)
+        self._presets_list = presets_list
+        self._preset_name = preset_name
+        self._parent = parent
+        self.window = active_window
+
+    @Gtk.Template.Callback()
+    def _on_dialog_choise(self, dialog, response):
+        if response == "delete":
+            presets = settings.get_value("cycle-presets").unpack()
+            presets.pop(self._preset_name, None)
+            settings.set_value("cycle-presets", GLib.Variant("a{sa{si}}", presets))
+            current_preset_name = settings.get_string("chosen-cycle-preset")
+            if current_preset_name == self._preset_name:
+                settings.set_string("chosen-cycle-preset", "")
+
+            self._presets_list.repopulate_list()
+            self.window.current_preset_name = None
+            self.window.pause_timer()
+            self.window.set_start()
+            self._parent.close()
+
+
 @Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle_presets_list.ui")
 class CyclePresetsList(Adw.Dialog):
     __gtype_name__ = "CyclePresetsList"
@@ -180,9 +222,9 @@ class CyclePresetsList(Adw.Dialog):
     def __init__(self, active_window, **kwargs):
         super().__init__(**kwargs)
         self.window = active_window
-        self._repopulate_list()
+        self.repopulate_list()
 
-    def _repopulate_list(self):
+    def repopulate_list(self):
         self.presets_list.remove_all()
         preset_names = settings.get_value("cycle-presets").unpack().keys()
 
@@ -194,11 +236,11 @@ class CyclePresetsList(Adw.Dialog):
     @Gtk.Template.Callback()
     def _on_item_clicked(self, list, item):
         preset_name = item.get_title()
-        preset_dialog = CyclePreset(preset_name, self.window)
+        preset_dialog = CyclePreset(preset_name, self.window, self)
         preset_dialog.present(self)
 
     @Gtk.Template.Callback()
     def _add_new_preset(self, _btn):
-        preset_dialog = CyclePreset(None, self.window)
+        preset_dialog = CyclePreset(None, self.window, self)
         preset_dialog.present(self)
-        self._repopulate_list()
+        self.repopulate_list()
