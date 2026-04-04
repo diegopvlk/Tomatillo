@@ -6,7 +6,6 @@
     <file preprocess="xml-stripblanks">cycle_preset.ui</file>
     <file preprocess="xml-stripblanks">cycle_preset_deletion.ui</file>
     <file preprocess="xml-stripblanks">cycle_presets_list.ui</file>
-    <file preprocess="xml-stripblanks">cycle_preset_selection.ui</file>
     <file preprocess="xml-stripblanks">window.ui</file>
     <file preprocess="xml-stripblanks">shortcuts-dialog.ui</file>
     <file alias="alert.ogg">../data/sounds/alert.ogg</file>

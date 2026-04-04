@@ -4,23 +4,19 @@ using Adw 1;
 template $CyclePreset: Adw.Dialog {
 	title: _("Cycle Preset");
 	content-width: 420;
-	// height-request: 300;
+
 	Adw.ToolbarView {
 		[top]
 		Adw.HeaderBar {}
 
 		content: Adw.Clamp {
-			// orientation: vertical;
-			// // spacing: 24;
-			// margin-top: 24;
-			// margin-bottom: 24;
 			Adw.PreferencesPage {
-				// vexpand: false;
 				Adw.PreferencesGroup {
 					Adw.EntryRow preset_name {
 						title: _("Preset Name");
 						text: bind $_set_preset_name_start_value() as <string>;
-						notify::text => $_set_preset_name();
+						apply => $_on_preset_name_confirmed();
+						show-apply-button: true;
 					}
 				}
 
@@ -80,7 +76,7 @@ template $CyclePreset: Adw.Dialog {
 						clicked => $_on_deletion_request();
 						halign: center;
 						width-request: 180;
-						// margin-bottom: 24;
+
 						styles [
 							"destructive-action",
 						]

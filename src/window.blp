@@ -18,6 +18,12 @@ template $TomatilloWindow: Adw.ApplicationWindow {
   content: Adw.ToolbarView {
     [top]
     Adw.HeaderBar {
+      [start]
+      MenuButton {
+        label: _("Presets");
+        menu-model: presets_menu;
+      }
+
       [end]
       MenuButton {
         primary: true;
@@ -31,9 +37,6 @@ template $TomatilloWindow: Adw.ApplicationWindow {
       valign: center;
       orientation: vertical;
       spacing: 18;
-
-      Label timer_name {
-      }
 
       Box timer_box {
         height-request: 234;
@@ -148,12 +151,10 @@ menu primary_menu {
     //   action: "app.shortcuts";
     // }
     //
-
-    item {
-      label: _("Cycle Presets");
-      action: "app.presets";
-    }
-
+    // item {
+    //   label: _("Cycle Presets");
+    //   action: "app.presets";
+    // }
     item {
       label: _("About Tomatillo");
       action: "app.about";
@@ -178,14 +179,38 @@ menu reset_menu {
       action: "app.reset-curr-timer";
     }
 
-    item {
-      label: _("Choose Preset");
-      action: "app.choose-preset";
-    }
+    // item {
+    //   label: _("Choose Preset");
+    //   action: "app.choose-preset";
+    // }
+    // item {
+    //   label: _("Set Timer Values to Defaults");
+    //   action: "app.set-defaults";
+    // }
+  }
+}
 
+menu presets_menu {
+  section {
     item {
-      label: _("Set Timer Values to Defaults");
-      action: "app.set-defaults";
+      label: _("Edit...");
+      action: "app.presets";
     }
+  }
+
+  // make defaults in a separate section to distinguish it from other preset
+  section {
+    item {
+      label: _("Default");
+      action: "app.set-defaults";
+      icon: "view-refresh-symbolic";
+    }
+  }
+
+  submenu {
+    label: _("Presets");
+
+    // items in presets_section must use "app.choose-preset" action
+    section presets_section {}
   }
 }

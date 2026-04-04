@@ -150,13 +150,15 @@ class CyclePreset(Adw.Dialog):
         self._update_ui()
 
     @Gtk.Template.Callback()
-    def _set_preset_name(self, entry, _pspec):
-        self._update_preset(entry.get_text())
+    def _on_preset_name_confirmed(self, _obj):
+        self._update_preset(self.preset_name.get_text())
         self._update_ui()
 
     @Gtk.Template.Callback()
     def _on_deletion_request(self, _btn):
-        deletion_dialog = CyclePresetDeletion(self._presets_list, self._preset_name, self.window, self)
+        deletion_dialog = CyclePresetDeletion(
+            self._presets_list, self._preset_name, self.window, self
+        )
         deletion_dialog.present(self)
 
     def _update_preset(self, new_preset_name):
@@ -177,6 +179,7 @@ class CyclePreset(Adw.Dialog):
         self.deletion_btn.set_sensitive(True)
         # after a change in the preset reset the current session
         self.window.set_start()
+        self.window.repopulate_presets_section()
 
     def _update_ui(self):
         self.window.on_reset_timer_activated()
@@ -207,7 +210,7 @@ class CyclePresetDeletion(Adw.AlertDialog):
 
             self._presets_list.repopulate_list()
             self.window.current_preset_name = None
-            self.window.pause_timer()
+            self.window.repopulate_presets_section()
             self.window.set_start()
             self._parent.close()
 

@@ -12,8 +12,6 @@ template $Preferences: Adw.Dialog {
 		content: Adw.Clamp {
 			Adw.PreferencesPage prefs_page {
 				Adw.PreferencesGroup {
-					title: _("Default Timer Values");
-
 					Adw.SpinRow focus_time {
 						title: _("Focus");
 						value: bind $_set_spin_start_val_from_key("focus-time", focus_time) as <int>;

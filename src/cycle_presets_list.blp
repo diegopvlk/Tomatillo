@@ -4,40 +4,37 @@ using Adw 1;
 template $CyclePresetsList: Adw.Dialog {
     title: _("Saved Presets");
     content-width: 420;
+    height-request: 300;
 
     Adw.ToolbarView {
         [top]
-        Adw.HeaderBar {}
-
-        content: Box {
-            orientation: vertical;
-            spacing: 24;
-            margin-end: 24;
-            margin-start: 24;
-
+        Adw.HeaderBar {
+            [start]
             Button add_preset_btn {
-                label: _("Add New Preset");
+                icon-name: "list-add-symbolic";
+                tooltip-text: _("Add New Preset");
                 clicked => $_add_new_preset();
             }
+        }
 
-            ScrolledWindow {
-                height-request: 250;
+        content: ScrolledWindow {
+            child: Adw.Clamp {
+                margin-top: 18;
+                margin-bottom: 18;
+                margin-start: 12;
+                margin-end: 12;
+                valign: start;
 
-                child: Adw.Clamp {
-                    margin-bottom: 12;
-                    valign: start;
-                    
-                    ListBox presets_list {
-                        selection-mode: none;
+                ListBox presets_list {
+                    selection-mode: none;
 
-                        styles [
-                            "boxed-list",
-                        ]
+                    styles [
+                        "boxed-list",
+                    ]
 
-                        row-activated => $_on_item_clicked();
-                    }
-                };
-            }
+                    row-activated => $_on_item_clicked();
+                }
+            };
         };
     }
 }
