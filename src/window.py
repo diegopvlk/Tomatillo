@@ -54,14 +54,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
     time_long_break = settings.get_int("long-b-time") * 60
     long_b_interval = settings.get_int("long-b-interval")
 
-    # current_preset_name = None
     current_preset_name = settings.get_string("chosen-cycle-preset")
-    # current_preset = settings.get_value("cycle-presets").unpack()[current_preset_name]
-
-    # time_focus = current_preset["focus-time"] * 60
-    # time_short_break = current_preset["short-b-time"] * 60
-    # time_long_break = current_preset["long-b-time"] * 60
-    # long_b_interval = current_preset["long-b-interval"]
 
     portal = Xdp.Portal()
 
