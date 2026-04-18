@@ -11,13 +11,7 @@ template $CyclePreset: Adw.Dialog {
 
 		content: Adw.Clamp {
 			Adw.PreferencesPage {
-				// 'title' property maybe needed for accessibility;
-				// otherwise if not present, Blueprint LSP gives 'missing_user_facing_text'
-				// linting error
-				title: _("Preset Settings");
 				Adw.PreferencesGroup {
-					title: _("Preset Name");
-
 					Adw.EntryRow preset_name {
 						title: _("Preset Name");
 						text: bind $_set_preset_name_start_value() as <string>;
@@ -37,8 +31,6 @@ template $CyclePreset: Adw.Dialog {
 				}
 
 				Adw.PreferencesGroup {
-					title: _("Timer Values");
-
 					Adw.SpinRow focus_time {
 						title: _("Focus");
 						value: bind $_set_spin_start_val_from_key("focus-time", focus_time) as <int>;
@@ -89,8 +81,6 @@ template $CyclePreset: Adw.Dialog {
 				}
 
 				Adw.PreferencesGroup {
-					title: _("Preset deletion");
-
 					Button deletion_btn {
 						label: _("Delete");
 						clicked => $_on_deletion_request();
