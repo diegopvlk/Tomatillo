@@ -22,7 +22,6 @@ template $CyclePreset: Adw.Dialog {
 						title: _("Preset Name");
 						text: bind $_set_preset_name_start_value() as <string>;
 						apply => $_on_preset_name_confirmed();
-						changed => $_on_preset_name_changed();
 						show-apply-button: true;
 					}
 

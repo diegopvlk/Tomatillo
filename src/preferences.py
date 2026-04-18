@@ -152,12 +152,13 @@ class CyclePreset(Adw.Dialog):
 
     @Gtk.Template.Callback()
     def _on_preset_name_confirmed(self, _obj):
-        self._update_preset(self.preset_name.get_text())
-        self._update_ui()
-
-    @Gtk.Template.Callback()
-    def _on_preset_name_changed(self, _obj):
-        self.preset_name_error.set_visible(False)
+        current_text = self.preset_name.get_text()
+        if current_text.strip() in self._presets.keys():
+            self.preset_name_error.set_visible(True)
+        else:
+            self.preset_name_error.set_visible(False)
+            self._update_preset(current_text)
+            self._update_ui()
 
     @Gtk.Template.Callback()
     def _on_deletion_request(self, _btn):
@@ -171,9 +172,6 @@ class CyclePreset(Adw.Dialog):
             return
 
         new_preset_name = new_preset_name.strip()
-        if new_preset_name in self._presets.keys():
-            self.preset_name_error.set_visible(True)
-            return
 
         if self._preset_name != new_preset_name and self._preset_name is not None:
             self._presets.pop(self._preset_name, None)
