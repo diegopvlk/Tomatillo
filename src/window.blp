@@ -79,6 +79,10 @@ template $TomatilloWindow: Adw.ApplicationWindow {
           icon-size: large;
           icon-name: "tomatillo-focus-symbolic";
           visible: bind break_icon.visible inverted;
+
+          accessibility {
+            label: _("Focus Mode Icon");
+          }
         }
 
         Image break_icon {
@@ -91,6 +95,10 @@ template $TomatilloWindow: Adw.ApplicationWindow {
           halign: center;
           icon-size: large;
           icon-name: "tomatillo-break-symbolic";
+
+          accessibility {
+            label: _("Break Icon");
+          }
         }
       }
 

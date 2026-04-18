@@ -11,7 +11,14 @@ template $Preferences: Adw.Dialog {
 
 		content: Adw.Clamp {
 			Adw.PreferencesPage prefs_page {
+				// 'title' property maybe needed for accessibility;
+				// otherwise if not present, Blueprint LSP gives 'missing_user_facing_text'
+				// linting error
+				title: _("App Settings");
+
 				Adw.PreferencesGroup {
+					title: _("Timer Values");
+
 					Adw.SpinRow focus_time {
 						title: _("Focus");
 						value: bind $_set_spin_start_val_from_key("focus-time", focus_time) as <int>;
@@ -62,6 +69,8 @@ template $Preferences: Adw.Dialog {
 				}
 
 				Adw.PreferencesGroup {
+					title: _("App Behaviour Settings");
+					
 					Adw.SwitchRow switch_background {
 						title: _("Run in Background");
 						active: bind $_set_switch_start_state_from_key("run-in-background", switch_background) as <bool>;
