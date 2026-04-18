@@ -97,6 +97,7 @@ class CyclePreset(Adw.Dialog):
     __gtype_name__ = "CyclePreset"
 
     preset_name = Gtk.Template.Child()
+    preset_name_error = Gtk.Template.Child()
     focus_time = Gtk.Template.Child()
     short_b_time = Gtk.Template.Child()
     long_b_time = Gtk.Template.Child()
@@ -155,6 +156,10 @@ class CyclePreset(Adw.Dialog):
         self._update_ui()
 
     @Gtk.Template.Callback()
+    def _on_preset_name_changed(self, _obj):
+        self.preset_name_error.set_visible(False)
+
+    @Gtk.Template.Callback()
     def _on_deletion_request(self, _btn):
         deletion_dialog = CyclePresetDeletion(
             self._presets_list, self._preset_name, self.window, self
@@ -166,6 +171,9 @@ class CyclePreset(Adw.Dialog):
             return
 
         new_preset_name = new_preset_name.strip()
+        if new_preset_name in self._presets.keys():
+            self.preset_name_error.set_visible(True)
+            return
 
         if self._preset_name != new_preset_name and self._preset_name is not None:
             self._presets.pop(self._preset_name, None)

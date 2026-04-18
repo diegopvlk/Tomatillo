@@ -16,7 +16,18 @@ template $CyclePreset: Adw.Dialog {
 						title: _("Preset Name");
 						text: bind $_set_preset_name_start_value() as <string>;
 						apply => $_on_preset_name_confirmed();
+						changed => $_on_preset_name_changed();
 						show-apply-button: true;
+					}
+
+					Label preset_name_error {
+						label: _("A preset with this name already exists");
+						halign: start;
+						visible: false;
+
+						styles [
+							"error",
+						]
 					}
 				}
 
