@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tomatillo master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-10 10:46+0300\n"
+"POT-Creation-Date: 2026-04-18 15:33+0300\n"
 "PO-Revision-Date: 2025-12-16 13:05+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Focus Session"
 msgstr "Odaklanma Oturumu"
 
-#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:145
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:153
 msgid "Preferences"
 msgstr "Tercihler"
 
@@ -63,55 +63,55 @@ msgstr "Odaklanma Oturumu - Koyu Kip"
 msgid "translator-credits"
 msgstr "Sabri Ünal <yakushabb@gmail.com>"
 
-#: src/window.py:181
+#: src/window.py:187
 msgid "Pause"
 msgstr "Duraklat"
 
-#: src/window.py:189
+#: src/window.py:195
 msgid "Resume"
 msgstr "Sürdür"
 
-#: src/window.py:198 src/window.blp:124
+#: src/window.py:204 src/window.blp:132
 msgid "Start"
 msgstr "Başlat"
 
-#: src/window.py:283 src/cycle_preset.blp:25 src/preferences.blp:16
+#: src/window.py:289 src/cycle_preset.blp:35 src/preferences.blp:16
 msgid "Focus"
 msgstr "Odaklama"
 
-#: src/window.py:284 src/cycle_preset.blp:37 src/preferences.blp:28
+#: src/window.py:290 src/cycle_preset.blp:47 src/preferences.blp:28
 msgid "Short Break"
 msgstr "Kısa Mola"
 
-#: src/window.py:285 src/cycle_preset.blp:49 src/preferences.blp:40
+#: src/window.py:291 src/cycle_preset.blp:59 src/preferences.blp:40
 msgid "Long Break"
 msgstr "Uzun Mola"
 
-#: src/window.py:331
+#: src/window.py:337
 msgid "Break Time"
 msgstr "Mola Zamanı"
 
-#: src/window.py:339
+#: src/window.py:345
 msgid "Time for a short break."
 msgstr "Kısa mola süresi."
 
-#: src/window.py:341
+#: src/window.py:347
 msgid "Time for a long break."
 msgstr "Uzun mola süresi."
 
-#: src/window.py:343
+#: src/window.py:349
 msgid "Start Break"
 msgstr "Molayı Başlat"
 
-#: src/window.py:345
+#: src/window.py:351
 msgid "Focus Mode"
 msgstr "Odak Kipi"
 
-#: src/window.py:346
+#: src/window.py:352
 msgid "Break is over!"
 msgstr "Mola bitti!"
 
-#: src/window.py:348
+#: src/window.py:354
 msgid "Start Focus"
 msgstr "Odaklanmayı Başlat"
 
@@ -123,11 +123,15 @@ msgstr ""
 msgid "Preset Name"
 msgstr ""
 
-#: src/cycle_preset.blp:61 src/preferences.blp:52
+#: src/cycle_preset.blp:23
+msgid "A preset with this name already exists"
+msgstr ""
+
+#: src/cycle_preset.blp:71 src/preferences.blp:52
 msgid "Long Break Interval"
 msgstr "Uzun Mola Aralığı"
 
-#: src/cycle_preset.blp:75 src/cycle_preset_deletion.blp:15
+#: src/cycle_preset.blp:85 src/cycle_preset_deletion.blp:15
 msgid "Delete"
 msgstr ""
 
@@ -181,40 +185,51 @@ msgstr "Sıfırla"
 msgid "Main Menu"
 msgstr "Ana Menü"
 
-#: src/window.blp:110
+#: src/window.blp:84
+#, fuzzy
+#| msgid "Focus Mode"
+msgid "Focus Mode Icon"
+msgstr "Odak Kipi"
+
+#: src/window.blp:100
+#, fuzzy
+#| msgid "Break Session"
+msgid "Break Icon"
+msgstr "Mola Oturumu"
+
+#: src/window.blp:118
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: src/window.blp:135
+#: src/window.blp:143
 msgid "Skip"
 msgstr "Atla"
 
-#: src/window.blp:159
+#: src/window.blp:158
 msgid "About Tomatillo"
 msgstr "Tomatillo Hakkında"
 
-#: src/window.blp:164
+#: src/window.blp:163
 msgid "Quit"
 msgstr "Çık"
 
-#: src/window.blp:173
+#: src/window.blp:172
 msgid "Reset Session"
 msgstr "Oturumu Başlat"
 
-#: src/window.blp:178
+#: src/window.blp:177
 msgid "Reset Current Timer"
 msgstr "Geçerli Zamanlayıcıyı Sıfırla"
 
-#: src/window.blp:187
+#: src/window.blp:186
 msgid "Edit..."
 msgstr ""
 
-#: src/window.blp:195
+#: src/window.blp:193
 msgid "Default"
 msgstr ""
 
-#: src/window.blp:202
 #, fuzzy
-#| msgid "Reset"
-msgid "Other Presets"
-msgstr "Sıfırla"
+#~| msgid "Reset"
+#~ msgid "Other Presets"
+#~ msgstr "Sıfırla"

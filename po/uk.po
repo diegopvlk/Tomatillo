@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-10 10:46+0300\n"
+"POT-Creation-Date: 2026-04-18 15:33+0300\n"
 "PO-Revision-Date: 2026-03-16 14:MI+0200\n"
 "Last-Translator: Dmytrii Kolomarenko https://github.com/KolomarenkoDmytrii\n"
 "Language-Team: Ukrainian https://github.com/KolomarenkoDmytrii\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Focus Session"
 msgstr "Сесія зосередження"
 
-#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:145
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:153
 msgid "Preferences"
 msgstr "Налаштування"
 
@@ -64,55 +64,55 @@ msgstr "Сесія фокусування - темний режим"
 msgid "translator-credits"
 msgstr "Dmytrii Kolomarenko https://github.com/KolomarenkoDmytrii"
 
-#: src/window.py:181
+#: src/window.py:187
 msgid "Pause"
 msgstr "Призупинити"
 
-#: src/window.py:189
+#: src/window.py:195
 msgid "Resume"
 msgstr "Продовжити"
 
-#: src/window.py:198 src/window.blp:124
+#: src/window.py:204 src/window.blp:132
 msgid "Start"
 msgstr "Почати"
 
-#: src/window.py:283 src/cycle_preset.blp:25 src/preferences.blp:16
+#: src/window.py:289 src/cycle_preset.blp:35 src/preferences.blp:16
 msgid "Focus"
 msgstr "Зосередження"
 
-#: src/window.py:284 src/cycle_preset.blp:37 src/preferences.blp:28
+#: src/window.py:290 src/cycle_preset.blp:47 src/preferences.blp:28
 msgid "Short Break"
 msgstr "Коротка перерва"
 
-#: src/window.py:285 src/cycle_preset.blp:49 src/preferences.blp:40
+#: src/window.py:291 src/cycle_preset.blp:59 src/preferences.blp:40
 msgid "Long Break"
 msgstr "Довга перерва"
 
-#: src/window.py:331
+#: src/window.py:337
 msgid "Break Time"
 msgstr "Час для перерви"
 
-#: src/window.py:339
+#: src/window.py:345
 msgid "Time for a short break."
 msgstr "Час для короткої перерви."
 
-#: src/window.py:341
+#: src/window.py:347
 msgid "Time for a long break."
 msgstr "Час для довгої перерви."
 
-#: src/window.py:343
+#: src/window.py:349
 msgid "Start Break"
 msgstr "Почати перерву"
 
-#: src/window.py:345
+#: src/window.py:351
 msgid "Focus Mode"
 msgstr "Режим зосередження"
 
-#: src/window.py:346
+#: src/window.py:352
 msgid "Break is over!"
 msgstr "Перерва закінчилася!"
 
-#: src/window.py:348
+#: src/window.py:354
 msgid "Start Focus"
 msgstr "Зосередитися"
 
@@ -124,11 +124,15 @@ msgstr "Набори параметрів циклу"
 msgid "Preset Name"
 msgstr "Назва набору параметрів"
 
-#: src/cycle_preset.blp:61 src/preferences.blp:52
+#: src/cycle_preset.blp:23
+msgid "A preset with this name already exists"
+msgstr "Набір з таким ім’ям уже існує"
+
+#: src/cycle_preset.blp:71 src/preferences.blp:52
 msgid "Long Break Interval"
 msgstr "Проміжок для довгої перерви"
 
-#: src/cycle_preset.blp:75 src/cycle_preset_deletion.blp:15
+#: src/cycle_preset.blp:85 src/cycle_preset_deletion.blp:15
 msgid "Delete"
 msgstr "Видалити"
 
@@ -180,38 +184,43 @@ msgstr "Набори"
 msgid "Main Menu"
 msgstr "Головне меню"
 
-#: src/window.blp:110
+#: src/window.blp:84
+msgid "Focus Mode Icon"
+msgstr "Іконка режиму зосередження"
+
+#: src/window.blp:100
+msgid "Break Icon"
+msgstr "Іконка перерви"
+
+#: src/window.blp:118
 msgid "Reset"
 msgstr "Скинути"
 
-#: src/window.blp:135
+#: src/window.blp:143
 msgid "Skip"
 msgstr "Пропустити"
 
-#: src/window.blp:159
+#: src/window.blp:158
 msgid "About Tomatillo"
 msgstr "Про Tomatillo"
 
-#: src/window.blp:164
+#: src/window.blp:163
 msgid "Quit"
 msgstr "Вийти"
 
-#: src/window.blp:173
+#: src/window.blp:172
 msgid "Reset Session"
 msgstr "Скинути сесію"
 
-#: src/window.blp:178
+#: src/window.blp:177
 msgid "Reset Current Timer"
 msgstr "Скинути поточний таймер"
 
-#: src/window.blp:187
+#: src/window.blp:186
 msgid "Edit..."
 msgstr "Змінити…"
 
-#: src/window.blp:195
+#: src/window.blp:193
 msgid "Default"
 msgstr "За замовчуванням"
 
-#: src/window.blp:202
-msgid "Other Presets"
-msgstr "Інші набори"
