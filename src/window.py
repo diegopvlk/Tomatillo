@@ -76,7 +76,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
         reset_session = Gio.SimpleAction.new("reset-session", None)
         reset_curr_timer = Gio.SimpleAction.new("reset-curr-timer", None)
-        set_defaults = Gio.SimpleAction.new("set-defaults", None)
+        # set_defaults = Gio.SimpleAction.new("set-defaults", None)
+        set_defaults = Gio.SimpleAction.new_stateful(
+            "set-defaults", GLib.VariantType.new("s"), GLib.Variant("s", "")
+        )
         self.choose_preset = Gio.SimpleAction.new_stateful(
             "choose-preset", GLib.VariantType.new("s"), GLib.Variant("s", "")
         )
@@ -99,7 +102,13 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.set_start()
 
     def repopulate_presets_section(self):
+        default_item = Gio.MenuItem.new_from_model(self.presets_section, 0)
         self.presets_section.remove_all()
+        default_item.set_action_and_target_value(
+            "app.choose-preset", GLib.Variant("s", "")
+        )
+        self.presets_section.append_item(default_item)
+
         presets = settings.get_value("cycle-presets").unpack()
 
         for name in presets.keys():
@@ -116,7 +125,8 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.current_phase = "focus"
         self.time_left = self.time_focus
 
-    def on_set_defaults(self, *args):
+    # def on_set_defaults(self, *args):
+    def on_set_defaults(self, action, parameter):
         settings.set_string("chosen-cycle-preset", "")
         self.choose_preset.change_state(GLib.Variant("s", ""))
         self.set_start()

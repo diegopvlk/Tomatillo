@@ -154,15 +154,6 @@ menu primary_menu {
       action: "app.preferences";
     }
 
-    // item {
-    //   label: _("Keyboard Shortcuts");
-    //   action: "app.shortcuts";
-    // }
-    //
-    // item {
-    //   label: _("Cycle Presets");
-    //   action: "app.presets";
-    // }
     item {
       label: _("About Tomatillo");
       action: "app.about";
@@ -197,19 +188,10 @@ menu presets_menu {
     }
   }
 
-  // make defaults in a separate section to distinguish it from other preset
-  section {
+  section presets_section {
     item {
       label: _("Default");
-      action: "app.set-defaults";
-      icon: "view-refresh-symbolic";
     }
-  }
-
-  submenu {
-    label: _("Other Presets");
-
     // items in presets_section must use "app.choose-preset" action
-    section presets_section {}
   }
 }
