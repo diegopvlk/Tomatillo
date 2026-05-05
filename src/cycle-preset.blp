@@ -81,11 +81,10 @@ template $CyclePreset: Adw.Dialog {
 				}
 
 				Adw.PreferencesGroup {
-					Button deletion_btn {
-						label: _("Delete");
-						clicked => $_on_deletion_request();
-						halign: center;
-						width-request: 180;
+					Adw.ButtonRow deletion_btn {
+						title: _("Delete");
+						activated => $_on_deletion_request();
+						start-icon-name: "user-trash-symbolic";
 
 						styles [
 							"destructive-action",
