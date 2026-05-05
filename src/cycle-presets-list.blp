@@ -3,6 +3,7 @@ using Adw 1;
 
 template $CyclePresetsList: Adw.Dialog {
     title: _("Presets");
+    name: "presets-list";
     content-width: 420;
 
     Adw.ToolbarView {
@@ -32,8 +33,6 @@ template $CyclePresetsList: Adw.Dialog {
                     styles [
                         "boxed-list",
                     ]
-
-                    row-activated => $_on_item_clicked();
                 }
             };
         };

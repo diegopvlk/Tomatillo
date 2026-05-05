@@ -18,13 +18,13 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import gi
+from gettext import gettext as _
 
 gi.require_version("Adw", "1")
-gi.require_version("Gio", "2.0")
 gi.require_version("Gtk", "4.0")
 gi.require_version("GLib", "2.0")
 
-from gi.repository import Adw, Gio, Gtk, GLib
+from gi.repository import Adw, Gtk, GLib
 from .preferences import settings
 
 
@@ -32,13 +32,14 @@ from .preferences import settings
 class CyclePreset(Adw.Dialog):
     __gtype_name__ = "CyclePreset"
 
+    preset_toast_overlay = Gtk.Template.Child()
     preset_name = Gtk.Template.Child()
-    preset_name_error = Gtk.Template.Child()
     focus_time = Gtk.Template.Child()
     short_b_time = Gtk.Template.Child()
     long_b_time = Gtk.Template.Child()
     long_b_interval = Gtk.Template.Child()
-    deletion_btn = Gtk.Template.Child()
+    save_btn = Gtk.Template.Child()
+    deletion_btn_group = Gtk.Template.Child()
 
     def __init__(self, preset_name, active_window, presets_list, **kwargs):
         self.window = active_window
@@ -66,7 +67,18 @@ class CyclePreset(Adw.Dialog):
         super().__init__(**kwargs)
 
         if self._preset_name is None:
-            self.deletion_btn.set_sensitive(False)
+            self.set_title(_("New Preset"))
+            self.save_btn.set_label(_("Add"))
+            self.deletion_btn_group.set_visible(False)
+        elif self._preset_name is False:
+            # default preset
+            self.preset_name.set_sensitive(False)
+            self.preset_name.set_text(_("Default"))
+            self.deletion_btn_group.set_visible(False)
+
+    @Gtk.Template.Callback()
+    def _on_cancel_clicked(self, _obj):
+        self.close()
 
     @Gtk.Template.Callback()
     def _set_spin_start_val_from_key(self, _dialog, key, spin_row):
@@ -78,23 +90,16 @@ class CyclePreset(Adw.Dialog):
         return "" if self._preset_name is None else self._preset_name
 
     @Gtk.Template.Callback()
-    def _set_spin_value_and_key(self, spin_row, _pspec):
-        key = spin_row.preset_key
-        value = int(spin_row.get_value())
-        self._current_preset[key] = value
-
-        self._update_preset(self._preset_name)
-        self._update_ui()
-
-    @Gtk.Template.Callback()
-    def _on_preset_name_confirmed(self, _obj):
+    def _on_save_preset(self, _obj):
         current_text = self.preset_name.get_text()
         if current_text.strip() in self._presets.keys():
-            self.preset_name_error.set_visible(True)
+            toast = Adw.Toast(title=_("A preset with this name already exists"))
+            self.preset_toast_overlay.dismiss_all()
+            self.preset_toast_overlay.add_toast(toast)
         else:
-            self.preset_name_error.set_visible(False)
             self._update_preset(current_text)
             self._update_ui()
+            self.close()
 
     @Gtk.Template.Callback()
     def _on_deletion_request(self, _btn):
@@ -109,16 +114,22 @@ class CyclePreset(Adw.Dialog):
 
         new_preset_name = new_preset_name.strip()
 
+        preset_times = {
+            "focus-time": self.focus_time.props.value,
+            "short-b-time": self.short_b_time.props.value,
+            "long-b-time": self.long_b_time.props.value,
+            "long-b-interval": self.long_b_interval.props.value,
+        }
+
         if self._preset_name != new_preset_name and self._preset_name is not None:
             self._presets.pop(self._preset_name, None)
 
         self._preset_name = new_preset_name
 
-        self._presets[self._preset_name] = self._current_preset
+        self._presets[self._preset_name] = preset_times
         settings.set_value("cycle-presets", GLib.Variant("a{sa{si}}", self._presets))
 
         self._presets_list.repopulate_list()
-        self.deletion_btn.set_sensitive(True)
         # after a change in the preset reset the current session
         self.window.set_start()
         self.window.repopulate_presets_section()
@@ -141,7 +152,7 @@ class CyclePresetDeletion(Adw.AlertDialog):
         self.window = active_window
 
     @Gtk.Template.Callback()
-    def _on_dialog_choise(self, dialog, response):
+    def _on_dialog_choise(self, _dialog, response):
         if response == "delete":
             presets = settings.get_value("cycle-presets").unpack()
             presets.pop(self._preset_name, None)
@@ -171,16 +182,37 @@ class CyclePresetsList(Adw.Dialog):
 
     def repopulate_list(self):
         self.presets_list.remove_all()
+
+        preset_default_row = Adw.ActionRow(title=_("Default"), activatable=True)
+        end_icon = Gtk.Image(icon_name="pan-end-symbolic", margin_end=2)
+        preset_default_row.add_suffix(end_icon)
+        self.presets_list.append(preset_default_row)
+
+        preset_default_row.connect("activated", self._on_default_preset_activated)
+
         preset_names = settings.get_value("cycle-presets").unpack().keys()
 
         for name in preset_names:
-            preset_item = Adw.ActionRow(title=name)
-            preset_item.set_activatable(True)
-            self.presets_list.append(preset_item)
+            preset_row = Adw.ActionRow(title=name, activatable=True, use_markup=False)
+            preset_del_btn = Gtk.Button(
+                valign=Gtk.Align.CENTER,
+                icon_name="user-trash-symbolic",
+                css_classes=["circular", "destructive-action", "flat"],
+                tooltip_text=_("Delete"),
+                margin_end=3,
+            )
+            end_icon = Gtk.Image(icon_name="pan-end-symbolic", margin_end=2)
+            preset_row.add_suffix(preset_del_btn)
+            preset_row.add_suffix(end_icon)
+            preset_row.connect("activated", self._on_preset_activated)
+            self.presets_list.append(preset_row)
 
-    @Gtk.Template.Callback()
-    def _on_item_clicked(self, list, item):
-        preset_name = item.get_title()
+    def _on_default_preset_activated(self, row):
+        preset_dialog = CyclePreset(False, self.window, self)
+        preset_dialog.present(self)
+
+    def _on_preset_activated(self, row):
+        preset_name = row.get_title()
         preset_dialog = CyclePreset(preset_name, self.window, self)
         preset_dialog.present(self)
 

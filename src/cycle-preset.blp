@@ -2,93 +2,99 @@ using Gtk 4.0;
 using Adw 1;
 
 template $CyclePreset: Adw.Dialog {
-	title: _("Cycle Preset");
+	title: _("Edit Preset");
+	name: "preset";
 	content-width: 420;
 
 	Adw.ToolbarView {
 		[top]
-		Adw.HeaderBar {}
+		Adw.HeaderBar {
+			show-start-title-buttons: false;
+			show-end-title-buttons: false;
 
-		content: Adw.Clamp {
-			Adw.PreferencesPage {
-				Adw.PreferencesGroup {
-					Adw.EntryRow preset_name {
-						title: _("Preset Name");
-						text: bind $_set_preset_name_start_value() as <string>;
-						apply => $_on_preset_name_confirmed();
-						show-apply-button: true;
+			[start]
+			Button {
+				label: _("Cancel");
+				clicked => $_on_cancel_clicked();
+			}
+
+			[end]
+			Button save_btn {
+				label: _("Save");
+				clicked => $_on_save_preset();
+
+				styles [
+					"suggested-action",
+				]
+			}
+		}
+
+		content: Adw.ToastOverlay preset_toast_overlay {
+			Adw.Clamp {
+				Adw.PreferencesPage {
+					Adw.PreferencesGroup {
+						Adw.EntryRow preset_name {
+							title: _("Name");
+							text: bind $_set_preset_name_start_value() as <string>;
+						}
 					}
 
-					Label preset_name_error {
-						label: _("A preset with this name already exists");
-						halign: start;
-						visible: false;
+					Adw.PreferencesGroup {
+						Adw.SpinRow focus_time {
+							title: _("Focus");
+							value: bind $_set_spin_start_val_from_key("focus-time", focus_time) as <int>;
 
-						styles [
-							"error",
-						]
-					}
-				}
+							adjustment: Adjustment {
+								step-increment: 1;
+								lower: 1;
+								upper: 240;
+							};
+						}
 
-				Adw.PreferencesGroup {
-					Adw.SpinRow focus_time {
-						title: _("Focus");
-						value: bind $_set_spin_start_val_from_key("focus-time", focus_time) as <int>;
-						notify::value => $_set_spin_value_and_key();
+						Adw.SpinRow short_b_time {
+							title: _("Short Break");
+							value: bind $_set_spin_start_val_from_key("short-b-time", short_b_time) as <int>;
 
-						adjustment: Adjustment {
-							step-increment: 1;
-							lower: 1;
-							upper: 240;
-						};
-					}
+							adjustment: Adjustment {
+								lower: 1;
+								upper: 90;
+								step-increment: 1;
+							};
+						}
 
-					Adw.SpinRow short_b_time {
-						title: _("Short Break");
-						value: bind $_set_spin_start_val_from_key("short-b-time", short_b_time) as <int>;
-						notify::value => $_set_spin_value_and_key();
+						Adw.SpinRow long_b_time {
+							title: _("Long Break");
+							value: bind $_set_spin_start_val_from_key("long-b-time", long_b_time) as <int>;
 
-						adjustment: Adjustment {
-							lower: 1;
-							upper: 90;
-							step-increment: 1;
-						};
-					}
+							adjustment: Adjustment {
+								step-increment: 1;
+								lower: 1;
+								upper: 90;
+							};
+						}
 
-					Adw.SpinRow long_b_time {
-						title: _("Long Break");
-						value: bind $_set_spin_start_val_from_key("long-b-time", long_b_time) as <int>;
-						notify::value => $_set_spin_value_and_key();
+						Adw.SpinRow long_b_interval {
+							title: _("Long Break Interval");
+							value: bind $_set_spin_start_val_from_key("long-b-interval", long_b_interval) as <int>;
 
-						adjustment: Adjustment {
-							step-increment: 1;
-							lower: 1;
-							upper: 90;
-						};
+							adjustment: Adjustment {
+								step-increment: 1;
+								lower: 1;
+								upper: 120;
+							};
+						}
 					}
 
-					Adw.SpinRow long_b_interval {
-						title: _("Long Break Interval");
-						value: bind $_set_spin_start_val_from_key("long-b-interval", long_b_interval) as <int>;
-						notify::value => $_set_spin_value_and_key();
+					Adw.PreferencesGroup deletion_btn_group {
+						Adw.ButtonRow {
+							title: _("Delete");
+							activated => $_on_deletion_request();
+							start-icon-name: "user-trash-symbolic";
 
-						adjustment: Adjustment {
-							step-increment: 1;
-							lower: 1;
-							upper: 120;
-						};
-					}
-				}
-
-				Adw.PreferencesGroup {
-					Adw.ButtonRow deletion_btn {
-						title: _("Delete");
-						activated => $_on_deletion_request();
-						start-icon-name: "user-trash-symbolic";
-
-						styles [
-							"destructive-action",
-						]
+							styles [
+								"destructive-action",
+							]
+						}
 					}
 				}
 			}

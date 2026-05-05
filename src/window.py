@@ -122,16 +122,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.current_phase = "focus"
         self.time_left = self.time_focus
 
-    # def on_set_defaults(self, *args):
-    def on_set_defaults(self, action, parameter):
-        settings.set_string("chosen-cycle-preset", "")
-        self.choose_preset.change_state(GLib.Variant("s", ""))
-        self.set_start()
-
     def update_preset(self):
         self.current_preset_name = settings.get_string("chosen-cycle-preset")
         # if no preset exists then use default time values
-        if self.current_preset_name == "" or self.current_preset_name is None:
+        if not self.current_preset_name:
             self.time_focus = settings.get_int("focus-time") * 60
             self.time_short_break = settings.get_int("short-b-time") * 60
             self.time_long_break = settings.get_int("long-b-time") * 60
@@ -142,7 +136,6 @@ class TomatilloWindow(Adw.ApplicationWindow):
         current_preset = settings.get_value("cycle-presets").unpack()[
             self.current_preset_name
         ]
-
         self.time_focus = current_preset["focus-time"] * 60
         self.time_short_break = current_preset["short-b-time"] * 60
         self.time_long_break = current_preset["long-b-time"] * 60

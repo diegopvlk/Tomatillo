@@ -168,8 +168,13 @@
   }
 }
 
-preferencespage scrolledwindow viewport clamp {
+#preferences preferencespage scrolledwindow viewport clamp {
   margin-top: -22px;
+}
+
+#presets-list toolbarview scrolledwindow viewport clamp,
+#preset toolbarview preferencespage scrolledwindow viewport clamp {
+  margin-top: -16px;
 }
 
 preferencespage preferencesgroup {
