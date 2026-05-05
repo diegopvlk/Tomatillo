@@ -158,7 +158,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
     def set_start(self, *args):
         # before doing reset, stop the timer because otherwise timer will be running
-        self.pause_timer()
+        self.on_reset_timer_activated()
         self.update_preset()
         self.set_start_values()
         self.update_ui_timer()
@@ -178,6 +178,9 @@ class TomatilloWindow(Adw.ApplicationWindow):
     def on_reset_timer_activated(self, *args):
         self.pause_timer()
         self.reset_current_phase()
+        self.btn_start_pause.set_label(_("Start"))
+        self.btn_menu_reset.set_sensitive(True)
+        self.btn_next.set_sensitive(True)
 
     def on_next_clicked(self, _btn):
         self.pause_timer()
