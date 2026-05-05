@@ -92,7 +92,7 @@ class Preferences(Adw.Dialog):
         self.window.update_cycles_label_bg()
 
 
-@Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle_preset.ui")
+@Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle-preset.ui")
 class CyclePreset(Adw.Dialog):
     __gtype_name__ = "CyclePreset"
 
@@ -193,7 +193,7 @@ class CyclePreset(Adw.Dialog):
         self.window.update_cycles_label_bg()
 
 
-@Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle_preset_deletion.ui")
+@Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle-preset-deletion.ui")
 class CyclePresetDeletion(Adw.AlertDialog):
     __gtype_name__ = "CyclePresetDeletion"
 
@@ -221,7 +221,7 @@ class CyclePresetDeletion(Adw.AlertDialog):
             self._parent.close()
 
 
-@Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle_presets_list.ui")
+@Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle-presets-list.ui")
 class CyclePresetsList(Adw.Dialog):
     __gtype_name__ = "CyclePresetsList"
 
