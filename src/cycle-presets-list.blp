@@ -4,7 +4,6 @@ using Adw 1;
 template $CyclePresetsList: Adw.Dialog {
     title: _("Saved Presets");
     content-width: 420;
-    height-request: 300;
 
     Adw.ToolbarView {
         [top]
@@ -18,6 +17,8 @@ template $CyclePresetsList: Adw.Dialog {
         }
 
         content: ScrolledWindow {
+            propagate-natural-height: true;
+
             child: Adw.Clamp {
                 margin-top: 18;
                 margin-bottom: 18;
