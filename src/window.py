@@ -47,6 +47,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
     btn_start_pause = Gtk.Template.Child()
     btn_next = Gtk.Template.Child()
     btn_menu_reset = Gtk.Template.Child()
+    presets_menu_label = Gtk.Template.Child()
     presets_section = Gtk.Template.Child()
 
     time_focus = settings.get_int("focus-time") * 60
@@ -62,7 +63,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
         super().__init__(**kwargs)
         self.update_preset()
         if self.current_preset_name != "" and self.current_preset_name is not None:
-            self.set_title(f"Tomatillo ⦁ {self.current_preset_name}")
+            self.presets_menu_label.set_label(self.current_preset_name)
         self.repopulate_presets_section()
 
         GLib.set_application_name("Tomatillo")
@@ -135,7 +136,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
             self.time_short_break = settings.get_int("short-b-time") * 60
             self.time_long_break = settings.get_int("long-b-time") * 60
             self.long_b_interval = settings.get_int("long-b-interval")
-            self.set_title("Tomatillo")
+            self.presets_menu_label.set_label(_("Default"))
             return
 
         current_preset = settings.get_value("cycle-presets").unpack()[
@@ -146,7 +147,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.time_short_break = current_preset["short-b-time"] * 60
         self.time_long_break = current_preset["long-b-time"] * 60
         self.long_b_interval = current_preset["long-b-interval"]
-        self.set_title(f"Tomatillo ⦁ {self.current_preset_name}")
+        self.presets_menu_label.set_label(self.current_preset_name)
 
     def on_preset_choise(self, action, parameter):
         preset_name = parameter.get_string()

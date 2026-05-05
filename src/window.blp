@@ -20,8 +20,23 @@ template $TomatilloWindow: Adw.ApplicationWindow {
     Adw.HeaderBar {
       [start]
       MenuButton {
-        label: _("Presets");
+        child: Box {
+          spacing: 6;
+
+          Label presets_menu_label {
+            ellipsize: end;
+          }
+
+          Image {
+            icon-name: "pan-down-symbolic";
+          }
+        };
+
         menu-model: presets_menu;
+
+        styles [
+          "flat",
+        ]
       }
 
       [end]
@@ -192,6 +207,7 @@ menu presets_menu {
     item {
       label: _("Default");
     }
+
     // items in presets_section must use "app.choose-preset" action
   }
 }
