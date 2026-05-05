@@ -27,7 +27,8 @@ gi.require_version("Gtk", "4.0")
 
 from gi.repository import Adw, Gio, Gtk
 from .window import TomatilloWindow
-from .preferences import Preferences, CyclePresetsList, settings
+from .preferences import Preferences, settings
+from .presets import CyclePresetsList
 
 
 class TomatilloApplication(Adw.Application):

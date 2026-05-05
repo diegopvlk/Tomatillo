@@ -45,6 +45,7 @@ tomatillo_sources = [
   '__init__.py',
   'main.py',
   'preferences.py',
+  'presets.py',
   'window.py',
 ]
 
