@@ -35,6 +35,7 @@ template $TomatilloWindow: Adw.ApplicationWindow {
         menu-model: presets_menu;
 
         styles [
+          "presets-button",
           "flat",
         ]
       }
@@ -198,7 +199,7 @@ menu reset_menu {
 menu presets_menu {
   section {
     item {
-      label: _("Edit...");
+      label: _("Edit Presets…");
       action: "app.presets";
     }
   }
