@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-18 15:33+0300\n"
+"POT-Creation-Date: 2026-05-06 15:01+0300\n"
 "PO-Revision-Date: 2025-12-15 12:00-0300\n"
 "Last-Translator: Diego Povliuk <diegopvlk@gmail.com>\n"
 "Language-Team: English (British) <diegopvlk@gmail.com>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Focus Session"
 msgstr "Focus Session"
 
-#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:153
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:169
 msgid "Preferences"
 msgstr "Preferences"
 
@@ -59,166 +59,174 @@ msgid "Focus Session - Dark Mode"
 msgstr "Focus Session - Dark Mode"
 
 #. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-#: src/main.py:77
+#: src/main.py:78
 msgid "translator-credits"
 msgstr "Diego Povliuk <diegopvlk@gmail.com>"
 
-#: src/window.py:187
-msgid "Pause"
-msgstr "Pause"
+#: src/presets.py:84
+msgid "New Preset"
+msgstr "New Preset"
 
-#: src/window.py:195
-msgid "Resume"
-msgstr "Resume"
+#: src/presets.py:85
+msgid "Add"
+msgstr "Add"
 
-#: src/window.py:204 src/window.blp:132
-msgid "Start"
-msgstr "Start"
+#: src/presets.py:90 src/presets.py:205 src/window.py:141 src/window.blp:209
+msgid "Default"
+msgstr "Default"
 
-#: src/window.py:289 src/cycle_preset.blp:35 src/preferences.blp:16
-msgid "Focus"
-msgstr "Focus"
-
-#: src/window.py:290 src/cycle_preset.blp:47 src/preferences.blp:28
-msgid "Short Break"
-msgstr "Short Break"
-
-#: src/window.py:291 src/cycle_preset.blp:59 src/preferences.blp:40
-msgid "Long Break"
-msgstr "Long Break"
-
-#: src/window.py:337
-msgid "Break Time"
-msgstr "Break Time"
-
-#: src/window.py:345
-msgid "Time for a short break."
-msgstr "Time for a short break."
-
-#: src/window.py:347
-msgid "Time for a long break."
-msgstr "Time for a long break."
-
-#: src/window.py:349
-msgid "Start Break"
-msgstr "Start Break"
-
-#: src/window.py:351
-msgid "Focus Mode"
-msgstr "Focus Mode"
-
-#: src/window.py:352
-msgid "Break is over!"
-msgstr "Break is over!"
-
-#: src/window.py:354
-msgid "Start Focus"
-msgstr "Start Focus"
-
-#: src/cycle_preset.blp:5
-msgid "Cycle Preset"
-msgstr "Cycle Preset"
-
-#: src/cycle_preset.blp:16
-msgid "Preset Name"
-msgstr "Preset Name"
-
-#: src/cycle_preset.blp:23
+#: src/presets.py:110
 msgid "A preset with this name already exists"
 msgstr "A preset with this name already exists"
 
-#: src/cycle_preset.blp:71 src/preferences.blp:52
-msgid "Long Break Interval"
-msgstr "Long Break Interval"
-
-#: src/cycle_preset.blp:85 src/cycle_preset_deletion.blp:15
+#: src/presets.py:224 src/cycle-preset.blp:90 src/cycle-preset-deletion.blp:15
 msgid "Delete"
 msgstr "Delete"
 
-#: src/cycle_preset_deletion.blp:5
-msgid "Delete Cycle Preset?"
-msgstr "Delete Cycle Preset?"
+#: src/window.py:188 src/window.py:215 src/window.blp:148
+msgid "Start"
+msgstr "Start"
 
-#: src/cycle_preset_deletion.blp:6
-msgid "Are you sure you want to delete this cycle preset?"
-msgstr "Are you sure you want to delete this cycle preset?"
+#: src/window.py:198
+msgid "Pause"
+msgstr "Pause"
 
-#: src/cycle_preset_deletion.blp:14
+#: src/window.py:206
+msgid "Resume"
+msgstr "Resume"
+
+#: src/window.py:300 src/cycle-preset.blp:44
+msgid "Focus"
+msgstr "Focus"
+
+#: src/window.py:301 src/cycle-preset.blp:55
+msgid "Short Break"
+msgstr "Short Break"
+
+#: src/window.py:302 src/cycle-preset.blp:66
+msgid "Long Break"
+msgstr "Long Break"
+
+#: src/window.py:348
+msgid "Break Time"
+msgstr "Break Time"
+
+#: src/window.py:356
+msgid "Time for a short break."
+msgstr "Time for a short break."
+
+#: src/window.py:358
+msgid "Time for a long break."
+msgstr "Time for a long break."
+
+#: src/window.py:360
+msgid "Start Break"
+msgstr "Start Break"
+
+#: src/window.py:362
+msgid "Focus Mode"
+msgstr "Focus Mode"
+
+#: src/window.py:363
+msgid "Break is over!"
+msgstr "Break is over!"
+
+#: src/window.py:365
+msgid "Start Focus"
+msgstr "Start Focus"
+
+#: src/cycle-preset.blp:5
+msgid "Edit Preset"
+msgstr "Edit Preset"
+
+#: src/cycle-preset.blp:17 src/cycle-preset-deletion.blp:14
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/cycle_presets_list.blp:5
-msgid "Saved Presets"
-msgstr "Saved Presets"
+#: src/cycle-preset.blp:23
+msgid "Save"
+msgstr "Save"
 
-#: src/cycle_presets_list.blp:15
-msgid "Add New Preset"
-msgstr "Add New Preset"
+#: src/cycle-preset.blp:37
+msgid "Name"
+msgstr "Name"
 
-#: src/preferences.blp:66
-msgid "Run in Background"
-msgstr "Run in Background"
+#: src/cycle-preset.blp:77
+msgid "Long Break Interval"
+msgstr "Long Break Interval"
 
-#: src/preferences.blp:72
-msgid "Notification Sound"
-msgstr "Notification Sound"
+#: src/cycle-preset-deletion.blp:5
+msgid "Delete Cycle Preset?"
+msgstr "Delete Cycle Preset?"
 
-#: src/preferences.blp:78
-msgid "Bypass 'Do Not Disturb'"
-msgstr "Bypass 'Do Not Disturb'"
+#: src/cycle-preset-deletion.blp:6
+msgid "Are you sure you want to delete this cycle preset?"
+msgstr "Are you sure you want to delete this cycle preset?"
 
-#: src/preferences.blp:84
-msgid "Autostart Focus"
-msgstr "Autostart Focus"
-
-#: src/preferences.blp:90
-msgid "Autostart Break"
-msgstr "Autostart Break"
-
-#: src/window.blp:23
+#: src/cycle-presets-list.blp:5
 msgid "Presets"
 msgstr "Presets"
 
-#: src/window.blp:31
+#: src/cycle-presets-list.blp:15
+msgid "Add New Preset"
+msgstr "Add New Preset"
+
+#: src/preferences.blp:59
+msgid "Run in Background"
+msgstr "Run in Background"
+
+#: src/preferences.blp:65
+msgid "Notification Sound"
+msgstr "Notification Sound"
+
+#: src/preferences.blp:71
+msgid "Bypass 'Do Not Disturb'"
+msgstr "Bypass 'Do Not Disturb'"
+
+#: src/preferences.blp:77
+msgid "Autostart Focus"
+msgstr "Autostart Focus"
+
+#: src/preferences.blp:83
+msgid "Autostart Break"
+msgstr "Autostart Break"
+
+#: src/window.blp:47
 msgid "Main Menu"
 msgstr "Main Menu"
 
-#: src/window.blp:84
+#: src/window.blp:100
 msgid "Focus Mode Icon"
 msgstr "Focus Mode Icon"
 
-#: src/window.blp:100
+#: src/window.blp:116
 msgid "Break Icon"
 msgstr "Break Icon"
 
-#: src/window.blp:118
+#: src/window.blp:134
 msgid "Reset"
 msgstr "Reset"
 
-#: src/window.blp:143
+#: src/window.blp:159
 msgid "Skip"
 msgstr "Skip"
 
-#: src/window.blp:158
+#: src/window.blp:174
 msgid "About Tomatillo"
 msgstr "About Tomatillo"
 
-#: src/window.blp:163
+#: src/window.blp:179
 msgid "Quit"
 msgstr "Quit"
 
-#: src/window.blp:172
+#: src/window.blp:188
 msgid "Reset Session"
 msgstr "Reset Session"
 
-#: src/window.blp:177
+#: src/window.blp:193
 msgid "Reset Current Timer"
 msgstr "Reset Current Timer"
 
-#: src/window.blp:186
-msgid "Edit..."
-msgstr "Edit…"
-
-#: src/window.blp:193
-msgid "Default"
-msgstr "Default"
+#: src/window.blp:202
+msgid "Edit Presets…"
+msgstr "Edit Presets…"

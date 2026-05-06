@@ -8,5 +8,6 @@ src/cycle-presets-list.blp
 src/main.py
 src/preferences.blp
 src/preferences.py
+src/presets.py
 src/window.py
 src/window.blp
