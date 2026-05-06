@@ -13,7 +13,8 @@
 		<key name="long-b-interval" type="i">
 			<default>4</default>
 		</key>
-	  <key name="cycle-presets" type="a{sa{si}}">
+	  <!-- <key name="cycle-presets" type="a{sa{si}}"> -->
+	  <key name="cycle-presets" type="a{sa{sv}}">
 	    <default>{}</default>
 	  </key>
 	  <key name="chosen-cycle-preset" type="s">

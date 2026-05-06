@@ -55,16 +55,12 @@ class TomatilloWindow(Adw.ApplicationWindow):
     time_long_break = settings.get_int("long-b-time") * 60
     long_b_interval = settings.get_int("long-b-interval")
 
-    current_preset_name = settings.get_string("chosen-cycle-preset")
+    current_preset_id = settings.get_string("chosen-cycle-preset")
 
     portal = Xdp.Portal()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.update_preset()
-        if self.current_preset_name != "" and self.current_preset_name is not None:
-            self.presets_menu_label.set_label(self.current_preset_name)
-        self.repopulate_presets_section()
 
         GLib.set_application_name("Tomatillo")
 
@@ -91,6 +87,12 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.get_application().add_action(reset_curr_timer)
         self.get_application().add_action(self.choose_preset)
 
+        self.update_preset()
+        presets = settings.get_value("cycle-presets").unpack()
+        if self.current_preset_id != "" and self.current_preset_id is not None:
+            self.presets_menu_label.set_label(presets[self.current_preset_id]["name"])
+        self.repopulate_presets_section()
+
         self.sound_alert = GstPlay.Play.new(None)
         self.ogg_uri = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
         self.sound_alert.set_uri(self.ogg_uri)
@@ -107,13 +109,18 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.presets_section.append_item(default_item)
 
         presets = settings.get_value("cycle-presets").unpack()
-
-        for name in presets.keys():
-            menu_item = Gio.MenuItem.new(name, "app.choose-preset")
+        for preset_id in presets.keys():
+            menu_item = Gio.MenuItem.new(
+                presets[preset_id]["name"], "app.choose-preset"
+            )
             menu_item.set_action_and_target_value(
-                "app.choose-preset", GLib.Variant("s", name)
+                "app.choose-preset", GLib.Variant("s", preset_id)
             )
             self.presets_section.append_item(menu_item)
+
+        self.choose_preset.change_state(
+            GLib.Variant("s", settings.get_string("chosen-cycle-preset"))
+        )
 
     def set_start_values(self):
         self.timer_running = False
@@ -123,9 +130,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.time_left = self.time_focus
 
     def update_preset(self):
-        self.current_preset_name = settings.get_string("chosen-cycle-preset")
+        self.current_preset_id = settings.get_string("chosen-cycle-preset")
+
         # if no preset exists then use default time values
-        if not self.current_preset_name:
+        if not self.current_preset_id:
             self.time_focus = settings.get_int("focus-time") * 60
             self.time_short_break = settings.get_int("short-b-time") * 60
             self.time_long_break = settings.get_int("long-b-time") * 60
@@ -133,20 +141,26 @@ class TomatilloWindow(Adw.ApplicationWindow):
             self.presets_menu_label.set_label(_("Default"))
             return
 
-        current_preset = settings.get_value("cycle-presets").unpack()[
-            self.current_preset_name
-        ]
+        presets = settings.get_value("cycle-presets").unpack()
+        current_preset = presets[self.current_preset_id]
         self.time_focus = current_preset["focus-time"] * 60
         self.time_short_break = current_preset["short-b-time"] * 60
         self.time_long_break = current_preset["long-b-time"] * 60
         self.long_b_interval = current_preset["long-b-interval"]
-        self.presets_menu_label.set_label(self.current_preset_name)
+        # print("other choosen")
+        self.presets_menu_label.set_label(current_preset["name"])
 
     def on_preset_choise(self, action, parameter):
-        preset_name = parameter.get_string()
+        self.current_preset_id = parameter.get_string()
         action.set_state(parameter)
-        settings.set_string("chosen-cycle-preset", preset_name)
-        self.current_preset_name = preset_name
+        settings.set_string("chosen-cycle-preset", self.current_preset_id)
+
+        presets = settings.get_value("cycle-presets").unpack()
+        if not self.current_preset_id:
+            self.current_preset_name = None
+        else:
+            self.current_preset_name = presets[self.current_preset_id]["name"]
+
         self.set_start()
 
     def set_start(self, *args):

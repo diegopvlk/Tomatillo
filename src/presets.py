@@ -17,6 +17,8 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+import uuid
+
 import gi
 from gettext import gettext as _
 
@@ -41,24 +43,36 @@ class CyclePreset(Adw.Dialog):
     save_btn = Gtk.Template.Child()
     deletion_btn_group = Gtk.Template.Child()
 
-    def __init__(self, preset_name, active_window, presets_list, **kwargs):
+    def __init__(self, preset_id, active_window, presets_list, **kwargs):
         self.window = active_window
         self._presets_list = presets_list
-        self._preset_name = preset_name
+        self._preset_id = preset_id
 
         defaults = {
-            "focus-time": settings.get_int("focus-time"),
-            "short-b-time": settings.get_int("short-b-time"),
-            "long-b-time": settings.get_int("long-b-time"),
-            "long-b-interval": settings.get_int("long-b-interval"),
+            "name": GLib.Variant("s", ""),
+            "focus-time": GLib.Variant("i", settings.get_int("focus-time")),
+            "short-b-time": GLib.Variant("i", settings.get_int("short-b-time")),
+            "long-b-time": GLib.Variant("i", settings.get_int("long-b-time")),
+            "long-b-interval": GLib.Variant("i", settings.get_int("long-b-interval")),
         }
-        self._presets = settings.get_value("cycle-presets").unpack()
 
-        if self._preset_name is None:
-            self._current_preset = defaults
+        self._presets = settings.get_value("cycle-presets").unpack()
+        for preset_id in self._presets.keys():
+            preset = self._presets[preset_id]
+            self._presets[preset_id] = {
+                "name": GLib.Variant("s", preset["name"]),
+                "focus-time": GLib.Variant("i", preset["focus-time"]),
+                "short-b-time": GLib.Variant("i", preset["short-b-time"]),
+                "long-b-time": GLib.Variant("i", preset["long-b-time"]),
+                "long-b-interval": GLib.Variant("i", preset["long-b-interval"]),
+            }
+
+        if self._preset_id is None:
+            self._preset_id = str(uuid.uuid4())
+            self._presets[self._preset_id] = defaults
         else:
-            existing_params = self._presets.get(self._preset_name, {})
-            self._current_preset = {**defaults, **existing_params}
+            existing_params = self._presets.get(self._preset_id, {})
+            self._presets[self._preset_id] = {**defaults, **existing_params}
 
         # call the constructor of the parent class after initializing variables
         # because, maybe, callbacks are defined in a Blueprint file, so they are
@@ -66,11 +80,11 @@ class CyclePreset(Adw.Dialog):
         # creation by a template) is called so they cannot access object attributes
         super().__init__(**kwargs)
 
-        if self._preset_name is None:
+        if self._preset_id is None:
             self.set_title(_("New Preset"))
             self.save_btn.set_label(_("Add"))
             self.deletion_btn_group.set_visible(False)
-        elif self._preset_name is False:
+        elif self._preset_id is False:
             # default preset
             self.preset_name.set_sensitive(False)
             self.preset_name.set_text(_("Default"))
@@ -83,16 +97,16 @@ class CyclePreset(Adw.Dialog):
     @Gtk.Template.Callback()
     def _set_spin_start_val_from_key(self, _dialog, key, spin_row):
         spin_row.preset_key = key
-        return self._current_preset.get(key, settings.get_int(key))
+        return self._presets[self._preset_id][key].unpack()
 
     @Gtk.Template.Callback()
     def _set_preset_name_start_value(self, _dialog):
-        return "" if self._preset_name is None else self._preset_name
+        return self._presets[self._preset_id]["name"].unpack()
 
     @Gtk.Template.Callback()
     def _on_save_preset(self, _obj):
         current_text = self.preset_name.get_text()
-        if current_text.strip() in self._presets.keys():
+        if current_text.strip() in [p["name"].unpack() for p in self._presets.values()]:
             toast = Adw.Toast(title=_("A preset with this name already exists"))
             self.preset_toast_overlay.dismiss_all()
             self.preset_toast_overlay.add_toast(toast)
@@ -104,7 +118,7 @@ class CyclePreset(Adw.Dialog):
     @Gtk.Template.Callback()
     def _on_deletion_request(self, _btn):
         deletion_dialog = CyclePresetDeletion(
-            self._presets_list, self._preset_name, self.window, self
+            self._presets_list, self._preset_id, self.window, self
         )
         deletion_dialog.present(self)
 
@@ -112,22 +126,16 @@ class CyclePreset(Adw.Dialog):
         if not new_preset_name:
             return
 
-        new_preset_name = new_preset_name.strip()
-
-        preset_times = {
-            "focus-time": self.focus_time.props.value,
-            "short-b-time": self.short_b_time.props.value,
-            "long-b-time": self.long_b_time.props.value,
-            "long-b-interval": self.long_b_interval.props.value,
+        preset_values = {
+            "name": GLib.Variant("s", new_preset_name.strip()),
+            "focus-time": GLib.Variant("i", self.focus_time.props.value),
+            "short-b-time": GLib.Variant("i", self.short_b_time.props.value),
+            "long-b-time": GLib.Variant("i", self.long_b_time.props.value),
+            "long-b-interval": GLib.Variant("i", self.long_b_interval.props.value),
         }
 
-        if self._preset_name != new_preset_name and self._preset_name is not None:
-            self._presets.pop(self._preset_name, None)
-
-        self._preset_name = new_preset_name
-
-        self._presets[self._preset_name] = preset_times
-        settings.set_value("cycle-presets", GLib.Variant("a{sa{si}}", self._presets))
+        self._presets[self._preset_id] = preset_values
+        settings.set_value("cycle-presets", GLib.Variant("a{sa{sv}}", self._presets))
 
         self._presets_list.repopulate_list()
         # after a change in the preset reset the current session
@@ -144,10 +152,10 @@ class CyclePreset(Adw.Dialog):
 class CyclePresetDeletion(Adw.AlertDialog):
     __gtype_name__ = "CyclePresetDeletion"
 
-    def __init__(self, presets_list, preset_name, active_window, parent, **kwargs):
+    def __init__(self, presets_list, preset_id, active_window, parent, **kwargs):
         super().__init__(**kwargs)
         self._presets_list = presets_list
-        self._preset_name = preset_name
+        self._preset_id = preset_id
         self._parent = parent
         self.window = active_window
 
@@ -155,10 +163,20 @@ class CyclePresetDeletion(Adw.AlertDialog):
     def _on_dialog_choise(self, _dialog, response):
         if response == "delete":
             presets = settings.get_value("cycle-presets").unpack()
-            presets.pop(self._preset_name, None)
-            settings.set_value("cycle-presets", GLib.Variant("a{sa{si}}", presets))
-            current_preset_name = settings.get_string("chosen-cycle-preset")
-            if current_preset_name == self._preset_name:
+            presets.pop(self._preset_id, None)
+            for preset_id in presets.keys():
+                preset = presets[preset_id]
+                presets[preset_id] = {
+                    "name": GLib.Variant("s", preset["name"]),
+                    "focus-time": GLib.Variant("i", preset["focus-time"]),
+                    "short-b-time": GLib.Variant("i", preset["short-b-time"]),
+                    "long-b-time": GLib.Variant("i", preset["long-b-time"]),
+                    "long-b-interval": GLib.Variant("i", preset["long-b-interval"]),
+                }
+
+            settings.set_value("cycle-presets", GLib.Variant("a{sa{sv}}", presets))
+            current_preset_id = settings.get_string("chosen-cycle-preset")
+            if current_preset_id == self._preset_id:
                 settings.set_string("chosen-cycle-preset", "")
 
             self._presets_list.repopulate_list()
@@ -178,6 +196,7 @@ class CyclePresetsList(Adw.Dialog):
     def __init__(self, active_window, **kwargs):
         super().__init__(**kwargs)
         self.window = active_window
+        self._names_to_ids = {}
         self.repopulate_list()
 
     def repopulate_list(self):
@@ -190,10 +209,14 @@ class CyclePresetsList(Adw.Dialog):
 
         preset_default_row.connect("activated", self._on_default_preset_activated)
 
-        preset_names = settings.get_value("cycle-presets").unpack().keys()
-
-        for name in preset_names:
-            preset_row = Adw.ActionRow(title=name, activatable=True, use_markup=False)
+        presets = settings.get_value("cycle-presets").unpack()
+        self._names_to_ids = {
+            presets[preset_id]["name"]: preset_id for preset_id in presets.keys()
+        }
+        for preset_id in presets.keys():
+            preset_row = Adw.ActionRow(
+                title=presets[preset_id]["name"], activatable=True, use_markup=False
+            )
             preset_del_btn = Gtk.Button(
                 valign=Gtk.Align.CENTER,
                 icon_name="user-trash-symbolic",
@@ -212,8 +235,8 @@ class CyclePresetsList(Adw.Dialog):
         preset_dialog.present(self)
 
     def _on_preset_activated(self, row):
-        preset_name = row.get_title()
-        preset_dialog = CyclePreset(preset_name, self.window, self)
+        preset_id = self._names_to_ids[row.get_title()]
+        preset_dialog = CyclePreset(preset_id, self.window, self)
         preset_dialog.present(self)
 
     @Gtk.Template.Callback()
