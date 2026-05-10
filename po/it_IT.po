@@ -1,0 +1,170 @@
+# Italian translation for Tomatillo.
+# Copyright (C) 2025 Diego Povliuk
+# This file is distributed under the same license as the io.github.diegopvlk.Tomatillo package.
+#
+# Cristian Nicolae Lupascu <cristian.lupascu.nicolae@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-22 20:58-0300\n"
+"PO-Revision-Date: 2026-05-10 15:53+0300\n"
+"Last-Translator: Cristian Nicolae Lupascu <cristian.lupascu.nicolae@gmail.com>\n"
+"Language-Team: Italian <cristian.lupascu.nicolae@gmail.com>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22
+msgid "Tomatillo"
+msgstr "Tomatillo"
+
+#: data/tomatillo.desktop.in:3 data/tomatillo.metainfo.xml.in:23
+msgid "Focus better, work smarter"
+msgstr "Migliore concentrazione, maggiore produttività"
+
+#. TRANSLATORS: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/tomatillo.desktop.in:10
+msgid "Pomodoro;Productivity;Timer;Focus;Task;Work;Breaks;Time;Management;"
+msgstr "Pomodoro;Produttività;Timer;Concentrazione;Attività;Lavoro;Pause;Tempo;Gestione;"
+
+#: data/tomatillo.metainfo.xml.in:25
+msgid ""
+"Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a set time, then take a short break. After some "
+"cycles, take a longer break."
+msgstr ""
+"Tomatillo è un'applicazione che utilizza la tecnica pomodoro per la gestione della propria produttività. Lavora per un "
+"determinato intervallo di tempo, dopodiché prenditi una breve pausa. Ripetuti diversi cicli, prenditi una pausa più lunga."
+
+#: data/tomatillo.metainfo.xml.in:36
+msgid "Focus Session"
+msgstr "Intervallo di concentrazione"
+
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:139
+msgid "Preferences"
+msgstr "Impostazioni"
+
+#: data/tomatillo.metainfo.xml.in:44
+msgid "Break Session"
+msgstr "Pausa"
+
+#: data/tomatillo.metainfo.xml.in:48
+msgid "Long Break Session"
+msgstr "Pausa lunga"
+
+#: data/tomatillo.metainfo.xml.in:52
+msgid "Focus Session - Dark Mode"
+msgstr "Intervallo di concentrazione - Modalità scura"
+
+#. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
+#: src/main.py:76
+msgid "translator-credits"
+msgstr "Cristian Nicolae Lupascu <cristian.lupascu.nicolae@gmail.com>"
+
+#: src/window.py:116
+msgid "Pause"
+msgstr "Ferma"
+
+#: src/window.py:124
+msgid "Resume"
+msgstr "Riprendi"
+
+#: src/window.py:133 src/window.blp:118
+msgid "Start"
+msgstr "Comincia"
+
+#: src/window.py:218 src/preferences.blp:16
+msgid "Focus"
+msgstr "Intervalli di concentrazione"
+
+#: src/window.py:219 src/preferences.blp:28
+msgid "Short Break"
+msgstr "Pause brevi"
+
+#: src/window.py:220 src/preferences.blp:40
+msgid "Long Break"
+msgstr "Pause lunghe"
+
+#: src/window.py:266
+msgid "Break Time"
+msgstr "Intervallo di pausa"
+
+#: src/window.py:274
+msgid "Time for a short break."
+msgstr "È ora di una pausa breve."
+
+#: src/window.py:276
+msgid "Time for a long break."
+msgstr "È ora di una pausa lunga."
+
+#: src/window.py:278
+msgid "Start Break"
+msgstr "Comincia pausa"
+
+#: src/window.py:280
+msgid "Focus Mode"
+msgstr "Intervallo di concentrazione"
+
+#: src/window.py:281
+msgid "Break is over!"
+msgstr "La pausa è finita!"
+
+#: src/window.py:283
+msgid "Start Focus"
+msgstr "Concentrati"
+
+#: src/preferences.blp:54
+msgid "Long Break Interval"
+msgstr "Intervalli fino alla pausa lunga"
+
+#: src/preferences.blp:68
+msgid "Run in Background"
+msgstr "Esegui in sottofondo"
+
+#: src/preferences.blp:74
+msgid "Notification Sound"
+msgstr "Notifica con suono"
+
+#: src/preferences.blp:80
+msgid "Bypass 'Do Not Disturb'"
+msgstr "Ignora 'Non disturbare'"
+
+#: src/preferences.blp:86
+msgid "Autostart Focus"
+msgstr "Comincia intervallo di concentrazione automaticamente"
+
+#: src/preferences.blp:92
+msgid "Autostart Break"
+msgstr "Comincia pausa automaticamente"
+
+#: src/window.blp:25
+msgid "Main Menu"
+msgstr "Menù principale"
+
+#: src/window.blp:104
+msgid "Reset"
+msgstr "Ricomincia"
+
+#: src/window.blp:129
+msgid "Skip"
+msgstr "Salta"
+
+#: src/window.blp:149
+msgid "About Tomatillo"
+msgstr "Informazioni su Tomatillo"
+
+#: src/window.blp:154
+msgid "Quit"
+msgstr "Esci"
+
+#: src/window.blp:163
+msgid "Reset Session"
+msgstr "Ricomincia sessione"
+
+#: src/window.blp:168
+msgid "Reset Current Timer"
+msgstr "Ricomincia intervallo corrente"
