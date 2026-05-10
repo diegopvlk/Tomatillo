@@ -79,15 +79,15 @@ msgstr "Comincia"
 
 #: src/window.py:218 src/preferences.blp:16
 msgid "Focus"
-msgstr "Intervalli di concentrazione"
+msgstr "Durata intervallo di concentrazione"
 
 #: src/window.py:219 src/preferences.blp:28
 msgid "Short Break"
-msgstr "Pause brevi"
+msgstr "Durata pausa breve"
 
 #: src/window.py:220 src/preferences.blp:40
 msgid "Long Break"
-msgstr "Pause lunghe"
+msgstr "Durata pausa lunga"
 
 #: src/window.py:266
 msgid "Break Time"
