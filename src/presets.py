@@ -80,12 +80,11 @@ class CyclePreset(Adw.Dialog):
         # creation by a template) is called so they cannot access object attributes
         super().__init__(**kwargs)
 
-        if self._preset_id is None:
+        if self._preset_id is None: # new preset
             self.set_title(_("New Preset"))
             self.save_btn.set_label(_("Add"))
             self.deletion_btn_group.set_visible(False)
-        elif self._preset_id is False:
-            # default preset
+        elif self._preset_id is False: # default preset
             self.preset_name.set_sensitive(False)
             self.preset_name.set_text(_("Default"))
             self.deletion_btn_group.set_visible(False)
@@ -134,12 +133,11 @@ class CyclePreset(Adw.Dialog):
             "long-b-interval": GLib.Variant("i", self.long_b_interval.props.value),
         }
 
-        if self._preset_id is None:  # if the current preset is the default preset
+        if self._preset_id is False:  # if the current preset is the default preset
             settings.set_value("focus-time", preset_values["focus-time"])
             settings.set_value("short-b-time", preset_values["short-b-time"])
             settings.set_value("long-b-time", preset_values["long-b-time"])
             settings.set_value("long-b-interval", preset_values["long-b-interval"])
-            return
         else:
             self._presets[self._preset_id] = preset_values
             settings.set_value(
