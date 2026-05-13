@@ -134,11 +134,20 @@ class CyclePreset(Adw.Dialog):
             "long-b-interval": GLib.Variant("i", self.long_b_interval.props.value),
         }
 
-        self._presets[self._preset_id] = preset_values
-        settings.set_value("cycle-presets", GLib.Variant("a{sa{sv}}", self._presets))
+        if self._preset_id is None:  # if the current preset is the default preset
+            settings.set_value("focus-time", preset_values["focus-time"])
+            settings.set_value("short-b-time", preset_values["short-b-time"])
+            settings.set_value("long-b-time", preset_values["long-b-time"])
+            settings.set_value("long-b-interval", preset_values["long-b-interval"])
+            return
+        else:
+            self._presets[self._preset_id] = preset_values
+            settings.set_value(
+                "cycle-presets", GLib.Variant("a{sa{sv}}", self._presets)
+            )
 
         self._presets_list.repopulate_list()
-        # after a change in the preset reset the current session
+        # reset the current session after a change in the preset
         self.window.set_start()
         self.window.repopulate_presets_section()
 
@@ -152,11 +161,15 @@ class CyclePreset(Adw.Dialog):
 class CyclePresetDeletion(Adw.AlertDialog):
     __gtype_name__ = "CyclePresetDeletion"
 
-    def __init__(self, presets_list, preset_id, active_window, parent, **kwargs):
+    def __init__(
+        self, presets_list, preset_id, active_window, closable_parent, **kwargs
+    ):
         super().__init__(**kwargs)
         self._presets_list = presets_list
         self._preset_id = preset_id
-        self._parent = parent
+        # a Gtk.Widget object provided if it necessary to close the parent windows,
+        # otherwise this field is `None`
+        self._closable_parent = closable_parent
         self.window = active_window
 
     @Gtk.Template.Callback()
@@ -180,10 +193,10 @@ class CyclePresetDeletion(Adw.AlertDialog):
                 settings.set_string("chosen-cycle-preset", "")
 
             self._presets_list.repopulate_list()
-            self.window.current_preset_name = None
             self.window.repopulate_presets_section()
             self.window.set_start()
-            self._parent.close()
+            if self._closable_parent is not None:
+                self._closable_parent.close()
 
 
 @Gtk.Template(resource_path="/io/github/diegopvlk/Tomatillo/cycle-presets-list.ui")
@@ -228,6 +241,9 @@ class CyclePresetsList(Adw.Dialog):
             preset_row.add_suffix(preset_del_btn)
             preset_row.add_suffix(end_icon)
             preset_row.connect("activated", self._on_preset_activated)
+            preset_del_btn.connect(
+                "clicked", lambda _btn: self._on_deletion_request(preset_id)
+            )
             self.presets_list.append(preset_row)
 
     def _on_default_preset_activated(self, row):
@@ -238,6 +254,10 @@ class CyclePresetsList(Adw.Dialog):
         preset_id = self._names_to_ids[row.get_title()]
         preset_dialog = CyclePreset(preset_id, self.window, self)
         preset_dialog.present(self)
+
+    def _on_deletion_request(self, preset_id):
+        deletion_dialog = CyclePresetDeletion(self, preset_id, self.window, None)
+        deletion_dialog.present(self)
 
     @Gtk.Template.Callback()
     def _add_new_preset(self, _btn):

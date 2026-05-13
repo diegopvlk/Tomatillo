@@ -141,25 +141,19 @@ class TomatilloWindow(Adw.ApplicationWindow):
             self.presets_menu_label.set_label(_("Default"))
             return
 
+        # otherwise set the timer to a currently selected preset
         presets = settings.get_value("cycle-presets").unpack()
         current_preset = presets[self.current_preset_id]
         self.time_focus = current_preset["focus-time"] * 60
         self.time_short_break = current_preset["short-b-time"] * 60
         self.time_long_break = current_preset["long-b-time"] * 60
         self.long_b_interval = current_preset["long-b-interval"]
-        # print("other choosen")
         self.presets_menu_label.set_label(current_preset["name"])
 
     def on_preset_choise(self, action, parameter):
         self.current_preset_id = parameter.get_string()
         action.set_state(parameter)
         settings.set_string("chosen-cycle-preset", self.current_preset_id)
-
-        presets = settings.get_value("cycle-presets").unpack()
-        if not self.current_preset_id:
-            self.current_preset_name = None
-        else:
-            self.current_preset_name = presets[self.current_preset_id]["name"]
 
         self.set_start()
 
