@@ -1,0 +1,40 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $CyclePresetsList: Adw.Dialog {
+    title: _("Presets");
+    name: "presets-list";
+    content-width: 420;
+
+    Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar {
+            [start]
+            Button add_preset_btn {
+                icon-name: "list-add-symbolic";
+                tooltip-text: _("Add New Preset");
+                clicked => $_add_new_preset();
+            }
+        }
+
+        content: ScrolledWindow {
+            propagate-natural-height: true;
+
+            child: Adw.Clamp {
+                margin-top: 18;
+                margin-bottom: 18;
+                margin-start: 12;
+                margin-end: 12;
+                valign: start;
+
+                ListBox presets_list {
+                    selection-mode: none;
+
+                    styles [
+                        "boxed-list",
+                    ]
+                }
+            };
+        };
+    }
+}

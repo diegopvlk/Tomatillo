@@ -5,6 +5,9 @@ gnome = import('gnome')
 blueprints = custom_target('blueprints',
   input: files(
     'preferences.blp',
+    'cycle-preset.blp',
+    'cycle-preset-deletion.blp',
+    'cycle-presets-list.blp',
     'shortcuts-dialog.blp',
     'window.blp',
   ),
@@ -42,6 +45,7 @@ tomatillo_sources = [
   '__init__.py',
   'main.py',
   'preferences.py',
+  'presets.py',
   'window.py',
 ]
 

@@ -3,6 +3,7 @@ using Adw 1;
 
 template $Preferences: Adw.Dialog {
 	title: _("Preferences");
+	name: "preferences";
 	content-width: 420;
 
 	Adw.ToolbarView {
@@ -11,58 +12,48 @@ template $Preferences: Adw.Dialog {
 
 		content: Adw.Clamp {
 			Adw.PreferencesPage prefs_page {
-				Adw.PreferencesGroup {
-					Adw.SpinRow focus_time {
-						title: _("Focus");
-						value: bind $_set_spin_start_val_from_key("focus-time", focus_time) as <int>;
-						notify::value => $_set_spin_value_and_key();
-
-						adjustment: Adjustment {
-							step-increment: 1;
-							lower: 1;
-							upper: 240;
-						};
-					}
-
-					Adw.SpinRow short_b_time {
-						title: _("Short Break");
-						value: bind $_set_spin_start_val_from_key("short-b-time", short_b_time) as <int>;
-						notify::value => $_set_spin_value_and_key();
-
-						adjustment: Adjustment {
-							step-increment: 1;
-							lower: 1;
-							upper: 90;
-						};
-					}
-
-					Adw.SpinRow long_b_time {
-						title: _("Long Break");
-						value: bind $_set_spin_start_val_from_key("long-b-time", long_b_time) as <int>;
-						notify::value => $_set_spin_value_and_key();
-
-						adjustment: Adjustment {
-							step-increment: 1;
-							lower: 1;
-							upper: 90;
-						};
-					}
-				}
-
-				Adw.PreferencesGroup {
-					Adw.SpinRow long_b_interval {
-						title: _("Long Break Interval");
-						value: bind $_set_spin_start_val_from_key("long-b-interval", long_b_interval) as <int>;
-						notify::value => $_set_spin_value_and_key();
-
-						adjustment: Adjustment {
-							step-increment: 1;
-							lower: 1;
-							upper: 120;
-						};
-					}
-				}
-
+				// Adw.PreferencesGroup {
+				// 	Adw.SpinRow focus_time {
+				// 		title: _("Focus");
+				// 		value: bind $_set_spin_start_val_from_key("focus-time", focus_time) as <int>;
+				// 		notify::value => $_set_spin_value_and_key();
+				// 		adjustment: Adjustment {
+				// 			step-increment: 1;
+				// 			lower: 1;
+				// 			upper: 240;
+				// 		};
+				// 	}
+				// 	Adw.SpinRow short_b_time {
+				// 		title: _("Short Break");
+				// 		value: bind $_set_spin_start_val_from_key("short-b-time", short_b_time) as <int>;
+				// 		notify::value => $_set_spin_value_and_key();
+				// 		adjustment: Adjustment {
+				// 			step-increment: 1;
+				// 			lower: 1;
+				// 			upper: 90;
+				// 		};
+				// 	}
+				// 	Adw.SpinRow long_b_time {
+				// 		title: _("Long Break");
+				// 		value: bind $_set_spin_start_val_from_key("long-b-time", long_b_time) as <int>;
+				// 		notify::value => $_set_spin_value_and_key();
+				// 		adjustment: Adjustment {
+				// 			step-increment: 1;
+				// 			lower: 1;
+				// 			upper: 90;
+				// 		};
+				// 	}
+				// 	Adw.SpinRow long_b_interval {
+				// 		title: _("Long Break Interval");
+				// 		value: bind $_set_spin_start_val_from_key("long-b-interval", long_b_interval) as <int>;
+				// 		notify::value => $_set_spin_value_and_key();
+				// 		adjustment: Adjustment {
+				// 			step-increment: 1;
+				// 			lower: 1;
+				// 			upper: 120;
+				// 		};
+				// 	}
+				// }
 				Adw.PreferencesGroup {
 					Adw.SwitchRow switch_background {
 						title: _("Run in Background");

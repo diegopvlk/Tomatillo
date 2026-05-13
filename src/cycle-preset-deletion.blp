@@ -1,0 +1,17 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $CyclePresetDeletion: Adw.AlertDialog {
+    heading: _("Delete Cycle Preset?");
+    body: _("Are you sure you want to delete this cycle preset?");
+    
+    default-response: "cancel";
+    close-response: "cancel";
+
+    response => $_on_dialog_choise();
+
+    responses [
+        cancel: _("Cancel"),
+        delete: _("Delete") destructive,
+    ]
+}

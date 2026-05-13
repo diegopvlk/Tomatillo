@@ -18,6 +18,28 @@ template $TomatilloWindow: Adw.ApplicationWindow {
   content: Adw.ToolbarView {
     [top]
     Adw.HeaderBar {
+      [start]
+      MenuButton {
+        child: Box {
+          spacing: 6;
+
+          Label presets_menu_label {
+            ellipsize: end;
+          }
+
+          Image {
+            icon-name: "pan-down-symbolic";
+          }
+        };
+
+        menu-model: presets_menu;
+
+        styles [
+          "presets-button",
+          "flat",
+        ]
+      }
+
       [end]
       MenuButton {
         primary: true;
@@ -73,6 +95,10 @@ template $TomatilloWindow: Adw.ApplicationWindow {
           icon-size: large;
           icon-name: "tomatillo-focus-symbolic";
           visible: bind break_icon.visible inverted;
+
+          accessibility {
+            label: _("Focus Mode Icon");
+          }
         }
 
         Image break_icon {
@@ -85,6 +111,10 @@ template $TomatilloWindow: Adw.ApplicationWindow {
           halign: center;
           icon-size: large;
           icon-name: "tomatillo-break-symbolic";
+
+          accessibility {
+            label: _("Break Icon");
+          }
         }
       }
 
@@ -140,11 +170,6 @@ menu primary_menu {
       action: "app.preferences";
     }
 
-    // item {
-    //   label: _("Keyboard Shortcuts");
-    //   action: "app.shortcuts";
-    // }
-    //
     item {
       label: _("About Tomatillo");
       action: "app.about";
@@ -168,5 +193,22 @@ menu reset_menu {
       label: _("Reset Current Timer");
       action: "app.reset-curr-timer";
     }
+  }
+}
+
+menu presets_menu {
+  section {
+    item {
+      label: _("Edit Presets…");
+      action: "app.presets";
+    }
+  }
+
+  section presets_section {
+    item {
+      label: _("Default");
+    }
+
+    // items in presets_section must use "app.choose-preset" action
   }
 }
