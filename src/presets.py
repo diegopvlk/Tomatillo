@@ -88,6 +88,7 @@ class CyclePreset(Adw.Dialog):
             self.set_title(_("New Preset"))
             self.save_btn.set_label(_("Add"))
             self.deletion_btn_group.set_visible(False)
+            self.save_btn.set_sensitive(False)
         elif self._preset_id is False:  # default preset
             self.preset_name.set_sensitive(False)
             self.preset_name.set_text(_("Default"))
