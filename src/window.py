@@ -50,10 +50,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
     presets_menu_label = Gtk.Template.Child()
     presets_section = Gtk.Template.Child()
 
-    time_focus = settings.get_int("focus-time") * 60
-    time_short_break = settings.get_int("short-b-time") * 60
-    time_long_break = settings.get_int("long-b-time") * 60
-    long_b_interval = settings.get_int("long-b-interval")
+    time_focus: int
+    time_short_break: int
+    time_long_break: int
+    long_b_interval: int
 
     current_preset_id = settings.get_string("chosen-cycle-preset")
 
@@ -63,6 +63,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
         super().__init__(**kwargs)
 
         GLib.set_application_name(_("Tomatillo"))
+        self.app = self.get_application()
 
         self.connect_breakpoints(self.breakpoint_1_5, "1-5")
         self.connect_breakpoints(self.breakpoint_2, "2")
@@ -71,6 +72,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.btn_start_pause.connect("clicked", self.on_start_pause_clicked)
         self.btn_next.connect("clicked", self.on_next_clicked)
 
+        start_cycle = Gio.SimpleAction.new("start-cycle", None)
         reset_session = Gio.SimpleAction.new("reset-session", None)
         reset_curr_timer = Gio.SimpleAction.new("reset-curr-timer", None)
         self.choose_preset = Gio.SimpleAction.new_stateful(
@@ -79,13 +81,18 @@ class TomatilloWindow(Adw.ApplicationWindow):
             GLib.Variant("s", settings.get_string("chosen-cycle-preset")),
         )
 
+        start_cycle.connect("activate", self.on_start_pause_clicked)
         reset_session.connect("activate", self.set_start)
         reset_curr_timer.connect("activate", self.on_reset_timer_activated)
         self.choose_preset.connect("activate", self.on_preset_choise)
 
-        self.get_application().add_action(reset_session)
-        self.get_application().add_action(reset_curr_timer)
-        self.get_application().add_action(self.choose_preset)
+        if self.app:
+            self.app.add_action(start_cycle)
+            self.app.add_action(reset_session)
+            self.app.add_action(reset_curr_timer)
+            self.app.add_action(self.choose_preset)
+        else:
+            print("Error: Application is None")
 
         self.update_preset()
         presets = settings.get_value("cycle-presets").unpack()
@@ -166,7 +173,8 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.update_cycles_label_bg()
 
     def on_start_pause_clicked(self, *args):
-        self.get_application().withdraw_notification("timer-complete")
+        if self.app:
+            self.app.withdraw_notification("timer-complete")
         if self.timer_running:
             self.pause_timer()
             self.btn_menu_reset.set_sensitive(True)
@@ -235,11 +243,8 @@ class TomatilloWindow(Adw.ApplicationWindow):
         if settings.get_boolean("auto-break") and self.current_phase != "focus":
             self.on_start_pause_clicked()
 
-        start_cycle = Gio.SimpleAction.new("start-cycle", None)
-        start_cycle.connect("activate", self.on_start_pause_clicked)
-        self.get_application().add_action(start_cycle)
-
-        self.get_application().send_notification("timer-complete", notification)
+        if self.app:
+            self.app.send_notification("timer-complete", notification)
 
     def advance_phase(self):
         if self.current_phase == "focus":
