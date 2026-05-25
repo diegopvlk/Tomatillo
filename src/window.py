@@ -203,9 +203,9 @@ class TomatilloWindow(Adw.ApplicationWindow):
             self.timer_running = True
             self.timeout_id = GLib.timeout_add(1000, self.on_tick)
 
-    def pause_timer(self):
+    def pause_timer(self, complete=False):
         if self.timer_running:
-            self.btn_start_pause.set_label(_("Resume"))
+            self.btn_start_pause.props.label = _("Start") if complete else _("Resume")
             self.btn_start_pause.add_css_class("suggested-action")
             self.timer_box.remove_css_class("fill-timer-box-shadow")
             self.timer_running = False
@@ -232,7 +232,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
         notification = self.get_notification()
 
         self.advance_phase()
-        self.pause_timer()
+        self.pause_timer(complete=True)
 
         if settings.get_boolean("notif-sound"):
             self.sound_alert.play()
