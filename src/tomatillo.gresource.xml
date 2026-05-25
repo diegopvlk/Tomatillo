@@ -3,6 +3,9 @@
   <gresource prefix="/io/github/diegopvlk/Tomatillo">
     <file alias="style.css">style.css</file>
     <file preprocess="xml-stripblanks">preferences.ui</file>
+    <file preprocess="xml-stripblanks">cycle-preset.ui</file>
+    <file preprocess="xml-stripblanks">cycle-preset-deletion.ui</file>
+    <file preprocess="xml-stripblanks">cycle-presets-list.ui</file>
     <file preprocess="xml-stripblanks">window.ui</file>
     <file preprocess="xml-stripblanks">shortcuts-dialog.ui</file>
     <file alias="alert.ogg">../data/sounds/alert.ogg</file>

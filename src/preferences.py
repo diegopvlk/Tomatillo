@@ -32,10 +32,10 @@ settings = Gio.Settings.new("io.github.diegopvlk.Tomatillo")
 class Preferences(Adw.Dialog):
     __gtype_name__ = "Preferences"
 
-    focus_time = Gtk.Template.Child()
-    short_b_time = Gtk.Template.Child()
-    long_b_time = Gtk.Template.Child()
-    long_b_interval = Gtk.Template.Child()
+    # focus_time = Gtk.Template.Child()
+    # short_b_time = Gtk.Template.Child()
+    # long_b_time = Gtk.Template.Child()
+    # long_b_interval = Gtk.Template.Child()
     switch_background = Gtk.Template.Child()
     switch_sound = Gtk.Template.Child()
     switch_dnd = Gtk.Template.Child()
@@ -46,28 +46,28 @@ class Preferences(Adw.Dialog):
         super().__init__(**kwargs)
         self.window = active_window
 
-    @Gtk.Template.Callback()
-    def _set_spin_start_val_from_key(self, _dialog, key, spin_row):
-        spin_row.sett_key = key
-        return settings.get_int(key)
+    # @Gtk.Template.Callback()
+    # def _set_spin_start_val_from_key(self, _dialog, key, spin_row):
+    #     spin_row.sett_key = key
+    #     return settings.get_int(key)
 
-    @Gtk.Template.Callback()
-    def _set_spin_value_and_key(self, spin_row, _pspec):
-        key = spin_row.sett_key
-        value = int(spin_row.get_value())
-        minutes = value * 60
+    # @Gtk.Template.Callback()
+    # def _set_spin_value_and_key(self, spin_row, _pspec):
+    #     key = spin_row.sett_key
+    #     value = int(spin_row.get_value())
+    #     minutes = value * 60
 
-        if key == "focus-time":
-            self.window.time_focus = minutes
-        elif key == "short-b-time":
-            self.window.time_short_break = minutes
-        elif key == "long-b-time":
-            self.window.time_long_break = minutes
-        elif key == "long-b-interval":
-            self.window.long_b_interval = value
+    #     if key == "focus-time":
+    #         self.window.time_focus = minutes
+    #     elif key == "short-b-time":
+    #         self.window.time_short_break = minutes
+    #     elif key == "long-b-time":
+    #         self.window.time_long_break = minutes
+    #     elif key == "long-b-interval":
+    #         self.window.long_b_interval = value
 
-        settings.set_int(key, value)
-        self._update_ui()
+    #     settings.set_int(key, value)
+    #     self._update_ui()
 
     @Gtk.Template.Callback()
     def _set_switch_start_state_from_key(self, _dialog, key, switch_row):
@@ -85,7 +85,7 @@ class Preferences(Adw.Dialog):
         settings.set_boolean(key, state)
         self.window.set_hide_on_close(state)
 
-    def _update_ui(self):
-        self.window.on_reset_timer_activated()
-        self.window.update_ui_timer()
-        self.window.update_cycles_label_bg()
+    # def _update_ui(self):
+    #     self.window.on_reset_timer_activated()
+    #     self.window.update_ui_timer()
+    #     self.window.update_cycles_label_bg()

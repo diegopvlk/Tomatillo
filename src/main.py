@@ -28,6 +28,7 @@ gi.require_version("Gtk", "4.0")
 from gi.repository import Adw, Gio, Gtk
 from .window import TomatilloWindow
 from .preferences import Preferences, settings
+from .presets import CyclePresetsList
 
 
 class TomatilloApplication(Adw.Application):
@@ -44,6 +45,7 @@ class TomatilloApplication(Adw.Application):
         self.create_action(
             "preferences", self.on_preferences_action, ["<primary>comma"]
         )
+        self.create_action("presets", self.on_presets_action)
 
     def do_activate(self):
         """Called when the application is activated.
@@ -69,11 +71,13 @@ class TomatilloApplication(Adw.Application):
             developer_name="Diego Povliuk",
             version=APP_VERSION,
             copyright="© 2025 Diego Povliuk",
+            developers=["Diego Povliuk"],
             issue_url="https://github.com/diegopvlk/Tomatillo/issues",
             license_type=Gtk.License.GPL_3_0,
         )
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_("translator-credits"))
+        about.set_developers(["Diego Povliuk", "Dmytrii Kolomarenko"])
         about.add_link(
             "Donate (PayPal)",
             "https://www.paypal.com/donate?hosted_button_id=DVL7H35GA66X6",
@@ -91,6 +95,11 @@ class TomatilloApplication(Adw.Application):
         """Callback for the app.preferences action."""
         preferences = Preferences(self.props.active_window)
         preferences.present(self.props.active_window)
+
+    def on_presets_action(self, *args):
+        """Callback for the app.presets action."""
+        presets_list = CyclePresetsList(self.props.active_window)
+        presets_list.present(self.props.active_window)
 
     def create_action(self, name, callback, shortcuts=None):
         """Add an application action.

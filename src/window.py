@@ -28,6 +28,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Xdp", "1.0")
 
 from gi.repository import Adw, Gio, GLib, GstPlay, Gtk, Xdp
+
 from .preferences import settings
 
 
@@ -46,11 +47,15 @@ class TomatilloWindow(Adw.ApplicationWindow):
     btn_start_pause = Gtk.Template.Child()
     btn_next = Gtk.Template.Child()
     btn_menu_reset = Gtk.Template.Child()
+    presets_menu_label = Gtk.Template.Child()
+    presets_section = Gtk.Template.Child()
 
     time_focus = settings.get_int("focus-time") * 60
     time_short_break = settings.get_int("short-b-time") * 60
     time_long_break = settings.get_int("long-b-time") * 60
     long_b_interval = settings.get_int("long-b-interval")
+
+    current_preset_id = settings.get_string("chosen-cycle-preset")
 
     portal = Xdp.Portal()
 
@@ -68,16 +73,54 @@ class TomatilloWindow(Adw.ApplicationWindow):
 
         reset_session = Gio.SimpleAction.new("reset-session", None)
         reset_curr_timer = Gio.SimpleAction.new("reset-curr-timer", None)
+        self.choose_preset = Gio.SimpleAction.new_stateful(
+            "choose-preset",
+            GLib.VariantType.new("s"),
+            GLib.Variant("s", settings.get_string("chosen-cycle-preset")),
+        )
+
         reset_session.connect("activate", self.set_start)
         reset_curr_timer.connect("activate", self.on_reset_timer_activated)
+        self.choose_preset.connect("activate", self.on_preset_choise)
+
         self.get_application().add_action(reset_session)
         self.get_application().add_action(reset_curr_timer)
+        self.get_application().add_action(self.choose_preset)
+
+        self.update_preset()
+        presets = settings.get_value("cycle-presets").unpack()
+        if self.current_preset_id != "" and self.current_preset_id is not None:
+            self.presets_menu_label.set_label(presets[self.current_preset_id]["name"])
+        self.repopulate_presets_section()
 
         self.sound_alert = GstPlay.Play.new(None)
         self.ogg_uri = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
         self.sound_alert.set_uri(self.ogg_uri)
 
+        self.set_start_values()
         self.set_start()
+
+    def repopulate_presets_section(self):
+        default_item = Gio.MenuItem.new_from_model(self.presets_section, 0)
+        self.presets_section.remove_all()
+        default_item.set_action_and_target_value(
+            "app.choose-preset", GLib.Variant("s", "")
+        )
+        self.presets_section.append_item(default_item)
+
+        presets = settings.get_value("cycle-presets").unpack()
+        for preset_id in presets.keys():
+            menu_item = Gio.MenuItem.new(
+                presets[preset_id]["name"], "app.choose-preset"
+            )
+            menu_item.set_action_and_target_value(
+                "app.choose-preset", GLib.Variant("s", preset_id)
+            )
+            self.presets_section.append_item(menu_item)
+
+        self.choose_preset.change_state(
+            GLib.Variant("s", settings.get_string("chosen-cycle-preset"))
+        )
 
     def set_start_values(self):
         self.timer_running = False
@@ -86,11 +129,41 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.current_phase = "focus"
         self.time_left = self.time_focus
 
+    def update_preset(self):
+        self.current_preset_id = settings.get_string("chosen-cycle-preset")
+
+        # if no preset exists then use default time values
+        if not self.current_preset_id:
+            self.time_focus = settings.get_int("focus-time") * 60
+            self.time_short_break = settings.get_int("short-b-time") * 60
+            self.time_long_break = settings.get_int("long-b-time") * 60
+            self.long_b_interval = settings.get_int("long-b-interval")
+            self.presets_menu_label.set_label(_("Default"))
+            return
+
+        # otherwise set the timer to a currently selected preset
+        presets = settings.get_value("cycle-presets").unpack()
+        current_preset = presets[self.current_preset_id]
+        self.time_focus = current_preset["focus-time"] * 60
+        self.time_short_break = current_preset["short-b-time"] * 60
+        self.time_long_break = current_preset["long-b-time"] * 60
+        self.long_b_interval = current_preset["long-b-interval"]
+        self.presets_menu_label.set_label(current_preset["name"])
+
+    def on_preset_choise(self, action, parameter):
+        self.current_preset_id = parameter.get_string()
+        action.set_state(parameter)
+        settings.set_string("chosen-cycle-preset", self.current_preset_id)
+
+        self.set_start()
+
     def set_start(self, *args):
+        # before doing reset, stop the timer because otherwise timer will be running
+        self.on_reset_timer_activated()
+        self.update_preset()
         self.set_start_values()
         self.update_ui_timer()
         self.update_cycles_label_bg()
-        self.pause_timer()
 
     def on_start_pause_clicked(self, *args):
         self.get_application().withdraw_notification("timer-complete")
@@ -106,6 +179,9 @@ class TomatilloWindow(Adw.ApplicationWindow):
     def on_reset_timer_activated(self, *args):
         self.pause_timer()
         self.reset_current_phase()
+        self.btn_start_pause.set_label(_("Start"))
+        self.btn_menu_reset.set_sensitive(True)
+        self.btn_next.set_sensitive(True)
 
     def on_next_clicked(self, _btn):
         self.pause_timer()
