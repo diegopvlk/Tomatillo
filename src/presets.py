@@ -103,6 +103,10 @@ class CyclePreset(Adw.Dialog):
         return self._presets[self._preset_id][key].unpack()
 
     @Gtk.Template.Callback()
+    def _on_preset_name_change(self, entry_row, _gparam):
+        self.save_btn.set_sensitive(bool(entry_row.props.text))
+
+    @Gtk.Template.Callback()
     def _set_preset_name_start_value(self, _dialog):
         return self._presets[self._preset_id]["name"].unpack()
 

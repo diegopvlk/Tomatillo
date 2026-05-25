@@ -22,6 +22,7 @@ template $CyclePreset: Adw.Dialog {
 			Button save_btn {
 				label: _("Save");
 				clicked => $_on_save_preset();
+				sensitive: false;
 
 				styles [
 					"suggested-action",
@@ -36,6 +37,7 @@ template $CyclePreset: Adw.Dialog {
 						Adw.EntryRow preset_name {
 							title: _("Name");
 							text: bind $_set_preset_name_start_value() as <string>;
+							notify::text => $_on_preset_name_change();
 						}
 					}
 
