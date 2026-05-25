@@ -85,7 +85,6 @@ class CyclePreset(Adw.Dialog):
         super().__init__(**kwargs)
 
         if is_new_preset:  # new preset
-            print("new preset")
             self.set_title(_("New Preset"))
             self.save_btn.set_label(_("Add"))
             self.deletion_btn_group.set_visible(False)
