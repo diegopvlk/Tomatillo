@@ -71,6 +71,7 @@ class TomatilloApplication(Adw.Application):
             developer_name="Diego Povliuk",
             version=APP_VERSION,
             copyright="© 2025 Diego Povliuk",
+            developers=["Diego Povliuk"],
             issue_url="https://github.com/diegopvlk/Tomatillo/issues",
             license_type=Gtk.License.GPL_3_0,
         )
