@@ -66,18 +66,17 @@ class TomatilloApplication(Adw.Application):
 
         """Callback for the app.about action."""
         about = Adw.AboutDialog(
-            application_name="Tomatillo",
+            application_name=_("Tomatillo"),
             application_icon="io.github.diegopvlk.Tomatillo",
             developer_name="Diego Povliuk",
             version=APP_VERSION,
             copyright="© 2025 Diego Povliuk",
-            developers=["Diego Povliuk"],
+            developers=["Diego Povliuk", "Dmytrii Kolomarenko"],
             issue_url="https://github.com/diegopvlk/Tomatillo/issues",
             license_type=Gtk.License.GPL_3_0,
         )
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_("translator-credits"))
-        about.set_developers(["Diego Povliuk", "Dmytrii Kolomarenko"])
         about.add_link(
             "Donate (PayPal)",
             "https://www.paypal.com/donate?hosted_button_id=DVL7H35GA66X6",
@@ -86,6 +85,7 @@ class TomatilloApplication(Adw.Application):
             "Doar (Pix): diego.pvlk@gmail.com",
             "diego.pvlk@gmail.com",
         )
+        about.add_other_app("io.github.diegopvlk.Cine", "Cine", "Play your videos")
         about.add_other_app(
             "io.github.diegopvlk.Dosage", "Dosage", "Keep track of your treatments"
         )

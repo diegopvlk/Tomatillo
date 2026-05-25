@@ -17,6 +17,9 @@
     <file alias="tomatillo-skip-symbolic.svg">../data/icons/scalable/actions/tomatillo-skip-symbolic.svg</file>
   </gresource>
   <gresource prefix="/io/github/diegopvlk/Tomatillo/icons/scalable/apps">
+    <file alias="io.github.diegopvlk.Cine.svg">../data/icons/scalable/apps/io.github.diegopvlk.Cine.svg</file>
+  </gresource>
+  <gresource prefix="/io/github/diegopvlk/Tomatillo/icons/scalable/apps">
     <file alias="io.github.diegopvlk.Dosage.svg">../data/icons/scalable/apps/io.github.diegopvlk.Dosage.svg</file>
   </gresource>
 </gresources>
