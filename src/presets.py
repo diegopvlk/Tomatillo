@@ -84,12 +84,12 @@ class CyclePreset(Adw.Dialog):
         # creation by a template) is called so they cannot access object attributes
         super().__init__(**kwargs)
 
-        if is_new_preset: # new preset
+        if is_new_preset:  # new preset
             print("new preset")
             self.set_title(_("New Preset"))
             self.save_btn.set_label(_("Add"))
             self.deletion_btn_group.set_visible(False)
-        elif self._preset_id is False: # default preset
+        elif self._preset_id is False:  # default preset
             self.preset_name.set_sensitive(False)
             self.preset_name.set_text(_("Default"))
             self.deletion_btn_group.set_visible(False)
@@ -114,7 +114,8 @@ class CyclePreset(Adw.Dialog):
         if (
             # check for the name existance only if the current text is different from a previous one
             self._previous_preset_name != current_text
-            and self._preset_id is not False # ...and if the current preset is not the default one
+            and self._preset_id
+            is not False  # ...and if the current preset is not the default one
             and current_text.strip() in existing_names
         ):
             toast = Adw.Toast(title=_("A preset with this name already exists"))
