@@ -77,6 +77,7 @@ class TomatilloApplication(Adw.Application):
         )
         # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
         about.set_translator_credits(_("translator-credits"))
+        about.set_developers(["Diego Povliuk", "Dmytrii Kolomarenko"])
         about.add_link(
             "Donate (PayPal)",
             "https://www.paypal.com/donate?hosted_button_id=DVL7H35GA66X6",
