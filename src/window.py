@@ -62,7 +62,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        GLib.set_application_name("Tomatillo")
+        GLib.set_application_name(_("Tomatillo"))
 
         self.connect_breakpoints(self.breakpoint_1_5, "1-5")
         self.connect_breakpoints(self.breakpoint_2, "2")

@@ -8,9 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-22 20:58-0300\n"
+"POT-Creation-Date: 2026-05-25 10:35-0300\n"
 "PO-Revision-Date: 2026-05-10 15:53+0300\n"
-"Last-Translator: Cristian Nicolae Lupascu <cristian.lupascu.nicolae@gmail.com>\n"
+"Last-Translator: Cristian Nicolae Lupascu "
+"<cristian.lupascu.nicolae@gmail.com>\n"
 "Language-Team: Italian <cristian.lupascu.nicolae@gmail.com>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +20,8 @@ msgstr ""
 "X-Generator: Poedit 3.9\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22
+#: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22 src/main.py:69
+#: src/window.py:65 src/window.blp:6
 msgid "Tomatillo"
 msgstr "Tomatillo"
 
@@ -34,17 +36,19 @@ msgstr "Pomodoro;Produttività;Timer;Concentrazione;Attività;Lavoro;Pause;Tempo
 
 #: data/tomatillo.metainfo.xml.in:25
 msgid ""
-"Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a set time, then take a short break. After some "
-"cycles, take a longer break."
+"Tomatillo is a Pomodoro Timer app for your productivity tasks. Work for a "
+"set time, then take a short break. After some cycles, take a longer break."
 msgstr ""
-"Tomatillo è un'applicazione che utilizza la tecnica pomodoro per la gestione della propria produttività. Lavora per un "
-"determinato intervallo di tempo, dopodiché prenditi una breve pausa. Ripetuti diversi cicli, prenditi una pausa più lunga."
+"Tomatillo è un'applicazione che utilizza la tecnica pomodoro per la gestione "
+"della propria produttività. Lavora per un determinato intervallo di tempo, "
+"dopodiché prenditi una breve pausa. Ripetuti diversi cicli, prenditi una "
+"pausa più lunga."
 
 #: data/tomatillo.metainfo.xml.in:36
 msgid "Focus Session"
 msgstr "Intervallo di concentrazione"
 
-#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:139
+#: data/tomatillo.metainfo.xml.in:40 src/preferences.blp:5 src/window.blp:169
 msgid "Preferences"
 msgstr "Impostazioni"
 
@@ -61,110 +65,181 @@ msgid "Focus Session - Dark Mode"
 msgstr "Intervallo di concentrazione - Modalità scura"
 
 #. Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
-#: src/main.py:76
+#: src/main.py:79
 msgid "translator-credits"
 msgstr "Cristian Nicolae Lupascu <cristian.lupascu.nicolae@gmail.com>"
 
-#: src/window.py:116
-msgid "Pause"
-msgstr "Ferma"
+#. new preset
+#: src/presets.py:88
+msgid "New Preset"
+msgstr ""
 
-#: src/window.py:124
-msgid "Resume"
-msgstr "Riprendi"
+#: src/presets.py:89
+msgid "Add"
+msgstr ""
 
-#: src/window.py:133 src/window.blp:118
+#: src/presets.py:93 src/presets.py:228 src/window.py:141 src/window.blp:209
+msgid "Default"
+msgstr ""
+
+#: src/presets.py:120
+msgid "A preset with this name already exists"
+msgstr ""
+
+#: src/presets.py:247 src/cycle-preset.blp:90 src/cycle-preset-deletion.blp:13
+msgid "Delete"
+msgstr ""
+
+#: src/window.py:182 src/window.py:209 src/window.blp:148
 msgid "Start"
 msgstr "Comincia"
 
-#: src/window.py:218 src/preferences.blp:16
+#: src/window.py:192
+msgid "Pause"
+msgstr "Ferma"
+
+#: src/window.py:200
+msgid "Resume"
+msgstr "Riprendi"
+
+#: src/window.py:294 src/cycle-preset.blp:44
 msgid "Focus"
 msgstr "Durata intervallo di concentrazione"
 
-#: src/window.py:219 src/preferences.blp:28
+#: src/window.py:295 src/cycle-preset.blp:55
 msgid "Short Break"
 msgstr "Durata pausa breve"
 
-#: src/window.py:220 src/preferences.blp:40
+#: src/window.py:296 src/cycle-preset.blp:66
 msgid "Long Break"
 msgstr "Durata pausa lunga"
 
-#: src/window.py:266
+#: src/window.py:342
 msgid "Break Time"
 msgstr "Intervallo di pausa"
 
-#: src/window.py:274
+#: src/window.py:350
 msgid "Time for a short break."
 msgstr "È ora di una pausa breve."
 
-#: src/window.py:276
+#: src/window.py:352
 msgid "Time for a long break."
 msgstr "È ora di una pausa lunga."
 
-#: src/window.py:278
+#: src/window.py:354
 msgid "Start Break"
 msgstr "Comincia pausa"
 
-#: src/window.py:280
+#: src/window.py:356
 msgid "Focus Mode"
 msgstr "Intervallo di concentrazione"
 
-#: src/window.py:281
+#: src/window.py:357
 msgid "Break is over!"
 msgstr "La pausa è finita!"
 
-#: src/window.py:283
+#: src/window.py:359
 msgid "Start Focus"
 msgstr "Concentrati"
 
-#: src/preferences.blp:54
+#: src/cycle-preset.blp:5
+msgid "Edit Preset"
+msgstr ""
+
+#: src/cycle-preset.blp:17 src/cycle-preset-deletion.blp:12
+msgid "Cancel"
+msgstr ""
+
+#: src/cycle-preset.blp:23
+msgid "Save"
+msgstr ""
+
+#: src/cycle-preset.blp:37
+msgid "Name"
+msgstr ""
+
+#: src/cycle-preset.blp:77
 msgid "Long Break Interval"
 msgstr "Intervalli fino alla pausa lunga"
 
-#: src/preferences.blp:68
+#: src/cycle-preset-deletion.blp:5
+msgid "Delete Preset?"
+msgstr ""
+
+#: src/cycle-preset-deletion.blp:6
+msgid "Are you sure you want to delete this preset?"
+msgstr ""
+
+#: src/cycle-presets-list.blp:5
+#, fuzzy
+#| msgid "Reset"
+msgid "Presets"
+msgstr "Ricomincia"
+
+#: src/cycle-presets-list.blp:16
+msgid "Add New Preset"
+msgstr ""
+
+#: src/preferences.blp:59
 msgid "Run in Background"
 msgstr "Esegui in sottofondo"
 
-#: src/preferences.blp:74
+#: src/preferences.blp:65
 msgid "Notification Sound"
 msgstr "Notifica con suono"
 
-#: src/preferences.blp:80
+#: src/preferences.blp:71
 msgid "Bypass 'Do Not Disturb'"
 msgstr "Ignora 'Non disturbare'"
 
-#: src/preferences.blp:86
+#: src/preferences.blp:77
 msgid "Autostart Focus"
 msgstr "Comincia intervallo di concentrazione automaticamente"
 
-#: src/preferences.blp:92
+#: src/preferences.blp:83
 msgid "Autostart Break"
 msgstr "Comincia pausa automaticamente"
 
-#: src/window.blp:25
+#: src/window.blp:47
 msgid "Main Menu"
 msgstr "Menù principale"
 
-#: src/window.blp:104
+#: src/window.blp:100
+#, fuzzy
+#| msgid "Focus Mode"
+msgid "Focus Mode Icon"
+msgstr "Intervallo di concentrazione"
+
+#: src/window.blp:116
+#, fuzzy
+#| msgid "Break Session"
+msgid "Break Icon"
+msgstr "Pausa"
+
+#: src/window.blp:134
 msgid "Reset"
 msgstr "Ricomincia"
 
-#: src/window.blp:129
+#: src/window.blp:159
 msgid "Skip"
 msgstr "Salta"
 
-#: src/window.blp:149
+#: src/window.blp:174
 msgid "About Tomatillo"
 msgstr "Informazioni su Tomatillo"
 
-#: src/window.blp:154
+#: src/window.blp:179
 msgid "Quit"
 msgstr "Esci"
 
-#: src/window.blp:163
+#: src/window.blp:188
 msgid "Reset Session"
 msgstr "Ricomincia sessione"
 
-#: src/window.blp:168
+#: src/window.blp:193
 msgid "Reset Current Timer"
 msgstr "Ricomincia intervallo corrente"
+
+#: src/window.blp:202
+msgid "Edit Presets…"
+msgstr ""
