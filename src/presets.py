@@ -67,12 +67,16 @@ class CyclePreset(Adw.Dialog):
                 "long-b-interval": GLib.Variant("i", preset["long-b-interval"]),
             }
 
+        is_new_preset = False
         if self._preset_id is None:
             self._preset_id = str(uuid.uuid4())
             self._presets[self._preset_id] = defaults
+            is_new_preset = True
         else:
             existing_params = self._presets.get(self._preset_id, {})
             self._presets[self._preset_id] = {**defaults, **existing_params}
+
+        self._previous_preset_name = self._presets[self._preset_id]["name"].unpack()
 
         # call the constructor of the parent class after initializing variables
         # because, maybe, callbacks are defined in a Blueprint file, so they are
@@ -80,7 +84,8 @@ class CyclePreset(Adw.Dialog):
         # creation by a template) is called so they cannot access object attributes
         super().__init__(**kwargs)
 
-        if self._preset_id is None: # new preset
+        if is_new_preset: # new preset
+            print("new preset")
             self.set_title(_("New Preset"))
             self.save_btn.set_label(_("Add"))
             self.deletion_btn_group.set_visible(False)
@@ -105,11 +110,18 @@ class CyclePreset(Adw.Dialog):
     @Gtk.Template.Callback()
     def _on_save_preset(self, _obj):
         current_text = self.preset_name.get_text()
-        if current_text.strip() in [p["name"].unpack() for p in self._presets.values()]:
+        existing_names = [p["name"].unpack() for p in self._presets.values()]
+        if (
+            # check for the name existance only if the current text is different from a previous one
+            self._previous_preset_name != current_text
+            and self._preset_id is not False # ...and if the current preset is not the default one
+            and current_text.strip() in existing_names
+        ):
             toast = Adw.Toast(title=_("A preset with this name already exists"))
             self.preset_toast_overlay.dismiss_all()
             self.preset_toast_overlay.add_toast(toast)
         else:
+            self._previous_preset_name = current_text
             self._update_preset(current_text)
             self._update_ui()
             self.close()
