@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-26 11:39-0300\n"
+"POT-Creation-Date: 2026-05-26 11:51-0300\n"
 "PO-Revision-Date: 2026-05-10 17:01+0300\n"
 "Last-Translator: Cristian Nicolae Lupascu "
 "<cristian.lupascu.nicolae@gmail.com>\n"
@@ -51,15 +51,23 @@ msgstr "Interval de concentrare"
 msgid "Preferences"
 msgstr "Setări"
 
-#: data/tomatillo.metainfo.xml.in:44
+#: data/tomatillo.metainfo.xml.in:44 src/cycle-presets-list.blp:5
+msgid "Presets"
+msgstr "Presetări"
+
+#: data/tomatillo.metainfo.xml.in:48 src/cycle-preset.blp:5
+msgid "Edit Preset"
+msgstr "Editează presetarea"
+
+#: data/tomatillo.metainfo.xml.in:52
 msgid "Break Session"
 msgstr "Pauză"
 
-#: data/tomatillo.metainfo.xml.in:48
+#: data/tomatillo.metainfo.xml.in:56
 msgid "Long Break Session"
 msgstr "Pauză lungă"
 
-#: data/tomatillo.metainfo.xml.in:52
+#: data/tomatillo.metainfo.xml.in:60
 msgid "Focus Session - Dark Mode"
 msgstr "Interval de concentrare - Dark Mode"
 
@@ -140,10 +148,6 @@ msgstr "S-a terminat pauza!"
 msgid "Start Focus"
 msgstr "Concentrați-vă"
 
-#: src/cycle-preset.blp:5
-msgid "Edit Preset"
-msgstr "Editează presetarea"
-
 #: src/cycle-preset.blp:17 src/cycle-preset-deletion.blp:12
 msgid "Cancel"
 msgstr "Anulează"
@@ -167,10 +171,6 @@ msgstr "Ștergeți presetarea?"
 #: src/cycle-preset-deletion.blp:6
 msgid "Are you sure you want to delete this preset?"
 msgstr "Sigur doriți să ștergeți această presetare?"
-
-#: src/cycle-presets-list.blp:5
-msgid "Presets"
-msgstr "Presetări"
 
 #: src/cycle-presets-list.blp:16
 msgid "Add New Preset"

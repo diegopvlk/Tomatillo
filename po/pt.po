@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-26 11:39-0300\n"
+"POT-Creation-Date: 2026-05-26 11:51-0300\n"
 "PO-Revision-Date: 2025-12-15 12:00-0300\n"
 "Last-Translator: Diego Povliuk <diegopvlk@gmail.com>\n"
 "Language-Team: Portuguese <diegopvlk@gmail.com>\n"
@@ -48,15 +48,23 @@ msgstr "Sessão de Foco"
 msgid "Preferences"
 msgstr "Preferências"
 
-#: data/tomatillo.metainfo.xml.in:44
+#: data/tomatillo.metainfo.xml.in:44 src/cycle-presets-list.blp:5
+msgid "Presets"
+msgstr "Predefinições"
+
+#: data/tomatillo.metainfo.xml.in:48 src/cycle-preset.blp:5
+msgid "Edit Preset"
+msgstr "Editar Predefinição"
+
+#: data/tomatillo.metainfo.xml.in:52
 msgid "Break Session"
 msgstr "Sessão de Pausa"
 
-#: data/tomatillo.metainfo.xml.in:48
+#: data/tomatillo.metainfo.xml.in:56
 msgid "Long Break Session"
 msgstr "Sessão de Pausa Longa"
 
-#: data/tomatillo.metainfo.xml.in:52
+#: data/tomatillo.metainfo.xml.in:60
 msgid "Focus Session - Dark Mode"
 msgstr "Sessão de Foco - Modo Escuro"
 
@@ -138,10 +146,6 @@ msgstr "A pausa terminou!"
 msgid "Start Focus"
 msgstr "Começar Foco"
 
-#: src/cycle-preset.blp:5
-msgid "Edit Preset"
-msgstr "Editar Predefinição"
-
 #: src/cycle-preset.blp:17 src/cycle-preset-deletion.blp:12
 msgid "Cancel"
 msgstr "Cancelar"
@@ -165,10 +169,6 @@ msgstr "Eliminar Predefinição?"
 #: src/cycle-preset-deletion.blp:6
 msgid "Are you sure you want to delete this preset?"
 msgstr "Tem a certeza de que deseja eliminar esta predefinição?"
-
-#: src/cycle-presets-list.blp:5
-msgid "Presets"
-msgstr "Predefinições"
 
 #: src/cycle-presets-list.blp:16
 msgid "Add New Preset"
