@@ -177,6 +177,10 @@
   margin-top: -16px;
 }
 
+#preset bottom-sheet {
+  margin-top: -15px;
+}
+
 preferencespage preferencesgroup {
   margin-bottom: -10px;
 }
