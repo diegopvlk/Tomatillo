@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 10:35-0300\n"
+"POT-Creation-Date: 2026-05-26 11:39-0300\n"
 "PO-Revision-Date: 2026-01-21 11:00+0300\n"
 "Last-Translator: Vladimir Kosolapov\n"
 "Language-Team: \n"
@@ -66,122 +66,113 @@ msgstr "Период работы — тёмная тема"
 msgid "translator-credits"
 msgstr "Vladimir Kosolapov https://github.com/vmkspv"
 
-#. new preset
 #: src/presets.py:88
-#, fuzzy
-#| msgid "Reset"
 msgid "New Preset"
-msgstr "Сбросить"
+msgstr "Новый пресет"
 
 #: src/presets.py:89
 msgid "Add"
-msgstr ""
+msgstr "Добавить"
 
-#: src/presets.py:93 src/presets.py:228 src/window.py:141 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:148 src/window.blp:209
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
-#: src/presets.py:120
+#: src/presets.py:125
 msgid "A preset with this name already exists"
-msgstr ""
+msgstr "Пресет с таким названием уже существует"
 
-#: src/presets.py:247 src/cycle-preset.blp:90 src/cycle-preset-deletion.blp:13
+#: src/presets.py:252 src/cycle-preset.blp:91 src/cycle-preset-deletion.blp:13
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
-#: src/window.py:182 src/window.py:209 src/window.blp:148
+#: src/window.py:190 src/window.py:208 src/window.py:217 src/window.blp:148
 msgid "Start"
 msgstr "Начать"
 
-#: src/window.py:192
+#: src/window.py:200
 msgid "Pause"
 msgstr "Пауза"
 
-#: src/window.py:200
+#: src/window.py:208
 msgid "Resume"
 msgstr "Продолжить"
 
-#: src/window.py:294 src/cycle-preset.blp:44
+#: src/window.py:299 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Период работы"
 
-#: src/window.py:295 src/cycle-preset.blp:55
+#: src/window.py:300 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Короткий перерыв"
 
-#: src/window.py:296 src/cycle-preset.blp:66
+#: src/window.py:301 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Длинный перерыв"
 
-#: src/window.py:342
+#: src/window.py:347
 msgid "Break Time"
 msgstr "Время перерыва"
 
-#: src/window.py:350
+#: src/window.py:355
 msgid "Time for a short break."
 msgstr "Время для короткого перерыва."
 
-#: src/window.py:352
+#: src/window.py:357
 msgid "Time for a long break."
 msgstr "Время для длинного перерыва."
 
-#: src/window.py:354
+#: src/window.py:359
 msgid "Start Break"
 msgstr "Начать перерыв"
 
-#: src/window.py:356
+#: src/window.py:361
 msgid "Focus Mode"
 msgstr "Режим работы"
 
-#: src/window.py:357
+#: src/window.py:362
 msgid "Break is over!"
 msgstr "Перерыв окончен!"
 
-#: src/window.py:359
+#: src/window.py:364
 msgid "Start Focus"
 msgstr "Начать работу"
 
 #: src/cycle-preset.blp:5
-#, fuzzy
-#| msgid "Reset"
 msgid "Edit Preset"
-msgstr "Сбросить"
+msgstr "Изменить пресет"
 
 #: src/cycle-preset.blp:17 src/cycle-preset-deletion.blp:12
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: src/cycle-preset.blp:23
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: src/cycle-preset.blp:37
 msgid "Name"
-msgstr ""
+msgstr "Название"
 
-#: src/cycle-preset.blp:77
+#: src/cycle-preset.blp:78
 msgid "Long Break Interval"
 msgstr "Интервал длинного перерыва"
 
 #: src/cycle-preset-deletion.blp:5
-#, fuzzy
-#| msgid "Reset"
 msgid "Delete Preset?"
-msgstr "Сбросить"
+msgstr "Удалить пресет?"
 
 #: src/cycle-preset-deletion.blp:6
 msgid "Are you sure you want to delete this preset?"
-msgstr ""
+msgstr "Вы уверены, что хотите удалить этот пресет?"
 
 #: src/cycle-presets-list.blp:5
-#, fuzzy
-#| msgid "Reset"
 msgid "Presets"
-msgstr "Сбросить"
+msgstr "Пресеты"
 
 #: src/cycle-presets-list.blp:16
 msgid "Add New Preset"
-msgstr ""
+msgstr "Добавить новый пресет"
 
 #: src/preferences.blp:59
 msgid "Run in Background"
@@ -206,18 +197,6 @@ msgstr "Автозапуск перерыва"
 #: src/window.blp:47
 msgid "Main Menu"
 msgstr "Главное меню"
-
-#: src/window.blp:100
-#, fuzzy
-#| msgid "Focus Mode"
-msgid "Focus Mode Icon"
-msgstr "Режим работы"
-
-#: src/window.blp:116
-#, fuzzy
-#| msgid "Break Session"
-msgid "Break Icon"
-msgstr "Перерыв"
 
 #: src/window.blp:134
 msgid "Reset"
@@ -244,7 +223,5 @@ msgid "Reset Current Timer"
 msgstr "Сбросить текущий таймер"
 
 #: src/window.blp:202
-#, fuzzy
-#| msgid "Reset"
 msgid "Edit Presets…"
-msgstr "Сбросить"
+msgstr "Изменить пресеты…"

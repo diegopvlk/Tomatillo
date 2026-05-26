@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 10:35-0300\n"
+"POT-Creation-Date: 2026-05-26 11:39-0300\n"
 "PO-Revision-Date: 2026-03-16 14:MI+0200\n"
 "Last-Translator: Dmytrii Kolomarenko https://github.com/KolomarenkoDmytrii\n"
 "Language-Team: Ukrainian https://github.com/KolomarenkoDmytrii\n"
@@ -65,7 +65,6 @@ msgstr "Сесія фокусування - темний режим"
 msgid "translator-credits"
 msgstr "Dmytrii Kolomarenko https://github.com/KolomarenkoDmytrii"
 
-#. new preset
 #: src/presets.py:88
 msgid "New Preset"
 msgstr "Новий набір"
@@ -74,67 +73,67 @@ msgstr "Новий набір"
 msgid "Add"
 msgstr "Додати"
 
-#: src/presets.py:93 src/presets.py:228 src/window.py:141 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:148 src/window.blp:209
 msgid "Default"
 msgstr "Типово"
 
-#: src/presets.py:120
+#: src/presets.py:125
 msgid "A preset with this name already exists"
 msgstr "Набір з таким ім’ям уже існує"
 
-#: src/presets.py:247 src/cycle-preset.blp:90 src/cycle-preset-deletion.blp:13
+#: src/presets.py:252 src/cycle-preset.blp:91 src/cycle-preset-deletion.blp:13
 msgid "Delete"
 msgstr "Видалити"
 
-#: src/window.py:182 src/window.py:209 src/window.blp:148
+#: src/window.py:190 src/window.py:208 src/window.py:217 src/window.blp:148
 msgid "Start"
 msgstr "Почати"
 
-#: src/window.py:192
+#: src/window.py:200
 msgid "Pause"
 msgstr "Призупинити"
 
-#: src/window.py:200
+#: src/window.py:208
 msgid "Resume"
 msgstr "Продовжити"
 
-#: src/window.py:294 src/cycle-preset.blp:44
+#: src/window.py:299 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Зосередження"
 
-#: src/window.py:295 src/cycle-preset.blp:55
+#: src/window.py:300 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Коротка перерва"
 
-#: src/window.py:296 src/cycle-preset.blp:66
+#: src/window.py:301 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Довга перерва"
 
-#: src/window.py:342
+#: src/window.py:347
 msgid "Break Time"
 msgstr "Час для перерви"
 
-#: src/window.py:350
+#: src/window.py:355
 msgid "Time for a short break."
 msgstr "Час для короткої перерви."
 
-#: src/window.py:352
+#: src/window.py:357
 msgid "Time for a long break."
 msgstr "Час для довгої перерви."
 
-#: src/window.py:354
+#: src/window.py:359
 msgid "Start Break"
 msgstr "Почати перерву"
 
-#: src/window.py:356
+#: src/window.py:361
 msgid "Focus Mode"
 msgstr "Режим зосередження"
 
-#: src/window.py:357
+#: src/window.py:362
 msgid "Break is over!"
 msgstr "Перерва закінчилася!"
 
-#: src/window.py:359
+#: src/window.py:364
 msgid "Start Focus"
 msgstr "Зосередитися"
 
@@ -154,21 +153,17 @@ msgstr "Зберегти"
 msgid "Name"
 msgstr "Назва"
 
-#: src/cycle-preset.blp:77
+#: src/cycle-preset.blp:78
 msgid "Long Break Interval"
 msgstr "Проміжок для довгої перерви"
 
 #: src/cycle-preset-deletion.blp:5
-#, fuzzy
-#| msgid "Delete Cycle Preset?"
 msgid "Delete Preset?"
-msgstr "Видалити набір параметрів циклу?"
+msgstr "Видалити набір параметрів?"
 
 #: src/cycle-preset-deletion.blp:6
-#, fuzzy
-#| msgid "Are you sure you want to delete this cycle preset?"
 msgid "Are you sure you want to delete this preset?"
-msgstr "Ви впевнені що ви хочете видалити цей набір параметрів?"
+msgstr "Ви впевнені, що хочете видалити цей набір параметрів?"
 
 #: src/cycle-presets-list.blp:5
 msgid "Presets"
@@ -201,14 +196,6 @@ msgstr "Автоматично починати режим перерви"
 #: src/window.blp:47
 msgid "Main Menu"
 msgstr "Головне меню"
-
-#: src/window.blp:100
-msgid "Focus Mode Icon"
-msgstr "Іконка режиму зосередження"
-
-#: src/window.blp:116
-msgid "Break Icon"
-msgstr "Іконка перерви"
 
 #: src/window.blp:134
 msgid "Reset"

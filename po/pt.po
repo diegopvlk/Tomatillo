@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 10:35-0300\n"
+"POT-Creation-Date: 2026-05-26 11:39-0300\n"
 "PO-Revision-Date: 2025-12-15 12:00-0300\n"
 "Last-Translator: Diego Povliuk <diegopvlk@gmail.com>\n"
 "Language-Team: Portuguese <diegopvlk@gmail.com>\n"
@@ -65,122 +65,114 @@ msgstr "Sessão de Foco - Modo Escuro"
 msgid "translator-credits"
 msgstr "Diego Povliuk <diegopvlk@gmail.com>"
 
-#. new preset
 #: src/presets.py:88
 #, fuzzy
-#| msgid "Reset"
 msgid "New Preset"
-msgstr "Reiniciar"
+msgstr "Nova Predefinição"
 
 #: src/presets.py:89
 msgid "Add"
-msgstr ""
+msgstr "Adicionar"
 
-#: src/presets.py:93 src/presets.py:228 src/window.py:141 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:148 src/window.blp:209
 msgid "Default"
-msgstr ""
+msgstr "Predefinido"
 
-#: src/presets.py:120
+#: src/presets.py:125
 msgid "A preset with this name already exists"
-msgstr ""
+msgstr "Já existe uma predefinição com este nome"
 
-#: src/presets.py:247 src/cycle-preset.blp:90 src/cycle-preset-deletion.blp:13
+#: src/presets.py:252 src/cycle-preset.blp:91 src/cycle-preset-deletion.blp:13
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
-#: src/window.py:182 src/window.py:209 src/window.blp:148
+#: src/window.py:190 src/window.py:208 src/window.py:217 src/window.blp:148
 msgid "Start"
 msgstr "Começar"
 
-#: src/window.py:192
+#: src/window.py:200
 msgid "Pause"
 msgstr "Pausar"
 
-#: src/window.py:200
+#: src/window.py:208
 msgid "Resume"
 msgstr "Continuar"
 
-#: src/window.py:294 src/cycle-preset.blp:44
+#: src/window.py:299 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Foco"
 
-#: src/window.py:295 src/cycle-preset.blp:55
+#: src/window.py:300 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Pausa Curta"
 
-#: src/window.py:296 src/cycle-preset.blp:66
+#: src/window.py:301 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Pausa Longa"
 
-#: src/window.py:342
+#: src/window.py:347
 msgid "Break Time"
 msgstr "Hora da Pausa"
 
-#: src/window.py:350
+#: src/window.py:355
 msgid "Time for a short break."
 msgstr "Hora de fazer uma pausa curta."
 
-#: src/window.py:352
+#: src/window.py:357
 msgid "Time for a long break."
 msgstr "Hora de fazer uma pausa longa."
 
-#: src/window.py:354
+#: src/window.py:359
 msgid "Start Break"
 msgstr "Começar Pausa"
 
-#: src/window.py:356
+#: src/window.py:361
 msgid "Focus Mode"
 msgstr "Modo Foco"
 
-#: src/window.py:357
+#: src/window.py:362
 msgid "Break is over!"
 msgstr "A pausa terminou!"
 
-#: src/window.py:359
+#: src/window.py:364
 msgid "Start Focus"
 msgstr "Começar Foco"
 
 #: src/cycle-preset.blp:5
-#, fuzzy
-#| msgid "Reset"
 msgid "Edit Preset"
-msgstr "Reiniciar"
+msgstr "Editar Predefinição"
 
 #: src/cycle-preset.blp:17 src/cycle-preset-deletion.blp:12
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: src/cycle-preset.blp:23
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 #: src/cycle-preset.blp:37
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
-#: src/cycle-preset.blp:77
+#: src/cycle-preset.blp:78
 msgid "Long Break Interval"
 msgstr "Intervalo para Pausa Longa"
 
 #: src/cycle-preset-deletion.blp:5
-#, fuzzy
-#| msgid "Reset"
 msgid "Delete Preset?"
-msgstr "Reiniciar"
+msgstr "Eliminar Predefinição?"
 
 #: src/cycle-preset-deletion.blp:6
 msgid "Are you sure you want to delete this preset?"
-msgstr ""
+msgstr "Tem a certeza de que deseja eliminar esta predefinição?"
 
 #: src/cycle-presets-list.blp:5
-#, fuzzy
-#| msgid "Reset"
 msgid "Presets"
-msgstr "Reiniciar"
+msgstr "Predefinições"
 
 #: src/cycle-presets-list.blp:16
 msgid "Add New Preset"
-msgstr ""
+msgstr "Adicionar Nova Predefinição"
 
 #: src/preferences.blp:59
 msgid "Run in Background"
@@ -205,18 +197,6 @@ msgstr "Início Automático de Pausa"
 #: src/window.blp:47
 msgid "Main Menu"
 msgstr "Menu Principal"
-
-#: src/window.blp:100
-#, fuzzy
-#| msgid "Focus Mode"
-msgid "Focus Mode Icon"
-msgstr "Modo Foco"
-
-#: src/window.blp:116
-#, fuzzy
-#| msgid "Break Session"
-msgid "Break Icon"
-msgstr "Sessão de Pausa"
 
 #: src/window.blp:134
 msgid "Reset"
@@ -243,7 +223,5 @@ msgid "Reset Current Timer"
 msgstr "Reiniciar Timer Atual"
 
 #: src/window.blp:202
-#, fuzzy
-#| msgid "Reset"
 msgid "Edit Presets…"
-msgstr "Reiniciar"
+msgstr "Editar Predefinições…"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 10:35-0300\n"
+"POT-Creation-Date: 2026-05-26 11:39-0300\n"
 "PO-Revision-Date: 2026-05-10 15:53+0300\n"
 "Last-Translator: Cristian Nicolae Lupascu "
 "<cristian.lupascu.nicolae@gmail.com>\n"
@@ -69,116 +69,113 @@ msgstr "Intervallo di concentrazione - Modalità scura"
 msgid "translator-credits"
 msgstr "Cristian Nicolae Lupascu <cristian.lupascu.nicolae@gmail.com>"
 
-#. new preset
 #: src/presets.py:88
 msgid "New Preset"
-msgstr ""
+msgstr "Nuovo preset"
 
 #: src/presets.py:89
 msgid "Add"
-msgstr ""
+msgstr "Aggiungi"
 
-#: src/presets.py:93 src/presets.py:228 src/window.py:141 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:148 src/window.blp:209
 msgid "Default"
-msgstr ""
+msgstr "Predefinito"
 
-#: src/presets.py:120
+#: src/presets.py:125
 msgid "A preset with this name already exists"
-msgstr ""
+msgstr "Esiste già un preset con questo nome"
 
-#: src/presets.py:247 src/cycle-preset.blp:90 src/cycle-preset-deletion.blp:13
+#: src/presets.py:252 src/cycle-preset.blp:91 src/cycle-preset-deletion.blp:13
 msgid "Delete"
-msgstr ""
+msgstr "Elimina"
 
-#: src/window.py:182 src/window.py:209 src/window.blp:148
+#: src/window.py:190 src/window.py:208 src/window.py:217 src/window.blp:148
 msgid "Start"
 msgstr "Comincia"
 
-#: src/window.py:192
+#: src/window.py:200
 msgid "Pause"
 msgstr "Ferma"
 
-#: src/window.py:200
+#: src/window.py:208
 msgid "Resume"
 msgstr "Riprendi"
 
-#: src/window.py:294 src/cycle-preset.blp:44
+#: src/window.py:299 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Durata intervallo di concentrazione"
 
-#: src/window.py:295 src/cycle-preset.blp:55
+#: src/window.py:300 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Durata pausa breve"
 
-#: src/window.py:296 src/cycle-preset.blp:66
+#: src/window.py:301 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Durata pausa lunga"
 
-#: src/window.py:342
+#: src/window.py:347
 msgid "Break Time"
 msgstr "Intervallo di pausa"
 
-#: src/window.py:350
+#: src/window.py:355
 msgid "Time for a short break."
 msgstr "È ora di una pausa breve."
 
-#: src/window.py:352
+#: src/window.py:357
 msgid "Time for a long break."
 msgstr "È ora di una pausa lunga."
 
-#: src/window.py:354
+#: src/window.py:359
 msgid "Start Break"
 msgstr "Comincia pausa"
 
-#: src/window.py:356
+#: src/window.py:361
 msgid "Focus Mode"
 msgstr "Intervallo di concentrazione"
 
-#: src/window.py:357
+#: src/window.py:362
 msgid "Break is over!"
 msgstr "La pausa è finita!"
 
-#: src/window.py:359
+#: src/window.py:364
 msgid "Start Focus"
 msgstr "Concentrati"
 
 #: src/cycle-preset.blp:5
 msgid "Edit Preset"
-msgstr ""
+msgstr "Modifica preset"
 
 #: src/cycle-preset.blp:17 src/cycle-preset-deletion.blp:12
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #: src/cycle-preset.blp:23
 msgid "Save"
-msgstr ""
+msgstr "Salva"
 
 #: src/cycle-preset.blp:37
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
-#: src/cycle-preset.blp:77
+#: src/cycle-preset.blp:78
 msgid "Long Break Interval"
 msgstr "Intervalli fino alla pausa lunga"
 
 #: src/cycle-preset-deletion.blp:5
 msgid "Delete Preset?"
-msgstr ""
+msgstr "Eliminare il preset?"
 
 #: src/cycle-preset-deletion.blp:6
 msgid "Are you sure you want to delete this preset?"
-msgstr ""
+msgstr "Sei sicuro di voler eliminare questo preset?"
 
 #: src/cycle-presets-list.blp:5
-#, fuzzy
-#| msgid "Reset"
 msgid "Presets"
-msgstr "Ricomincia"
+msgstr "Preset"
 
 #: src/cycle-presets-list.blp:16
 msgid "Add New Preset"
-msgstr ""
+msgstr "Aggiungi nuovo preset"
 
 #: src/preferences.blp:59
 msgid "Run in Background"
@@ -203,18 +200,6 @@ msgstr "Comincia pausa automaticamente"
 #: src/window.blp:47
 msgid "Main Menu"
 msgstr "Menù principale"
-
-#: src/window.blp:100
-#, fuzzy
-#| msgid "Focus Mode"
-msgid "Focus Mode Icon"
-msgstr "Intervallo di concentrazione"
-
-#: src/window.blp:116
-#, fuzzy
-#| msgid "Break Session"
-msgid "Break Icon"
-msgstr "Pausa"
 
 #: src/window.blp:134
 msgid "Reset"
@@ -242,4 +227,4 @@ msgstr "Ricomincia intervallo corrente"
 
 #: src/window.blp:202
 msgid "Edit Presets…"
-msgstr ""
+msgstr "Modifica preset…"

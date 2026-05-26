@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 10:35-0300\n"
+"POT-Creation-Date: 2026-05-26 11:39-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,6 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 
-#. new preset
 #: src/presets.py:88
 msgid "New Preset"
 msgstr ""
@@ -71,67 +70,67 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: src/presets.py:93 src/presets.py:228 src/window.py:141 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:148 src/window.blp:209
 msgid "Default"
 msgstr ""
 
-#: src/presets.py:120
+#: src/presets.py:125
 msgid "A preset with this name already exists"
 msgstr ""
 
-#: src/presets.py:247 src/cycle-preset.blp:90 src/cycle-preset-deletion.blp:13
+#: src/presets.py:252 src/cycle-preset.blp:91 src/cycle-preset-deletion.blp:13
 msgid "Delete"
 msgstr ""
 
-#: src/window.py:182 src/window.py:209 src/window.blp:148
+#: src/window.py:190 src/window.py:208 src/window.py:217 src/window.blp:148
 msgid "Start"
 msgstr ""
 
-#: src/window.py:192
+#: src/window.py:200
 msgid "Pause"
 msgstr ""
 
-#: src/window.py:200
+#: src/window.py:208
 msgid "Resume"
 msgstr ""
 
-#: src/window.py:294 src/cycle-preset.blp:44
+#: src/window.py:299 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr ""
 
-#: src/window.py:295 src/cycle-preset.blp:55
+#: src/window.py:300 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr ""
 
-#: src/window.py:296 src/cycle-preset.blp:66
+#: src/window.py:301 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr ""
 
-#: src/window.py:342
+#: src/window.py:347
 msgid "Break Time"
 msgstr ""
 
-#: src/window.py:350
+#: src/window.py:355
 msgid "Time for a short break."
 msgstr ""
 
-#: src/window.py:352
+#: src/window.py:357
 msgid "Time for a long break."
 msgstr ""
 
-#: src/window.py:354
+#: src/window.py:359
 msgid "Start Break"
 msgstr ""
 
-#: src/window.py:356
+#: src/window.py:361
 msgid "Focus Mode"
 msgstr ""
 
-#: src/window.py:357
+#: src/window.py:362
 msgid "Break is over!"
 msgstr ""
 
-#: src/window.py:359
+#: src/window.py:364
 msgid "Start Focus"
 msgstr ""
 
@@ -151,7 +150,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/cycle-preset.blp:77
+#: src/cycle-preset.blp:78
 msgid "Long Break Interval"
 msgstr ""
 
@@ -193,14 +192,6 @@ msgstr ""
 
 #: src/window.blp:47
 msgid "Main Menu"
-msgstr ""
-
-#: src/window.blp:100
-msgid "Focus Mode Icon"
-msgstr ""
-
-#: src/window.blp:116
-msgid "Break Icon"
 msgstr ""
 
 #: src/window.blp:134
