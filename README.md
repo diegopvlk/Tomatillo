@@ -30,9 +30,12 @@ Work for a set time, then take a short break. After some cycles, take a longer b
 <div>
   <details>
     <summary>Other Screenshots (Expand):</summary><br>
-      <p align="center"><img style="height:678px;" src="screenshots/preferences.png" alt="Preferences"/></p>
       <p align="center">
-        <img style="width:410px;height:420px;" src="screenshots/break.png" alt="Break Session" style="margin-right:5%;">
+        <img style="width:410px;height:420px;" src="screenshots/preferences.png" alt="Preferences" style="margin-right:5%;">
+        <img style="width:410px;height:420px;" src="screenshots/presets.png" alt="Presets" >
+      </p>
+      <p align="center">
+        <img style="width:410px;height:420px;" src="screenshots/edit-preset.png" alt="Edit Presets" style="margin-right:5%;">
         <img style="width:410px;height:420px;" src="screenshots/long-break.png" alt="Long Break Session" >
       </p>
   </details>

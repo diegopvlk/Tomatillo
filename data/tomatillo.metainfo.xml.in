@@ -32,23 +32,31 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/09cfff0/screenshots/focus.png</image>
+      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/4c8b53c8bb7ff87e74c64ad0316fca2251320f92/screenshots/focus.png</image>
       <caption>Focus Session</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/09cfff0/screenshots/preferences.png</image>
+      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/4c8b53c8bb7ff87e74c64ad0316fca2251320f92/screenshots/preferences.png</image>
       <caption>Preferences</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/09cfff0/screenshots/break.png</image>
+      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/4c8b53c8bb7ff87e74c64ad0316fca2251320f92/screenshots/presets.png</image>
+      <caption>Presets</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/4c8b53c8bb7ff87e74c64ad0316fca2251320f92/screenshots/edit-preset.png</image>
+      <caption>Edit Preset</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/4c8b53c8bb7ff87e74c64ad0316fca2251320f92/screenshots/break.png</image>
       <caption>Break Session</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/09cfff0/screenshots/long-break.png</image>
+      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/4c8b53c8bb7ff87e74c64ad0316fca2251320f92/screenshots/long-break.png</image>
       <caption>Long Break Session</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/09cfff0/screenshots/focus-dark.png</image>
+      <image>https://raw.githubusercontent.com/diegopvlk/Tomatillo/4c8b53c8bb7ff87e74c64ad0316fca2251320f92/screenshots/focus-dark.png</image>
       <caption>Focus Session - Dark Mode</caption>
     </screenshot>
   </screenshots>
