@@ -27,7 +27,7 @@ gi.require_version("GstPlay", "1.0")
 gi.require_version("Gtk", "4.0")
 gi.require_version("Xdp", "1.0")
 
-from gi.repository import Adw, Gio, GLib, GstPlay, Gtk, Xdp
+from gi.repository import Adw, Gio, GLib, GstPlay, Gtk, Xdp  # type: ignore
 
 from .preferences import settings
 
@@ -206,14 +206,19 @@ class TomatilloWindow(Adw.ApplicationWindow):
             self.btn_start_pause.add_css_class("suggested-action")
             self.timer_box.remove_css_class("fill-timer-box-shadow")
             self.timer_running = False
-            if self.timeout_id:
-                GLib.source_remove(self.timeout_id)
-                self.timeout_id = None
-            self.set_background_string("")
         else:
             self.btn_start_pause.set_label(_("Start"))
 
+        if self.timeout_id:
+            GLib.source_remove(self.timeout_id)
+            self.timeout_id = None
+
+        self.set_background_string("")
+
     def on_tick(self):
+        if not self.timer_running:
+            return GLib.SOURCE_REMOVE
+
         if self.time_left > 0:
             self.time_left -= 1
             self.update_ui_timer()
