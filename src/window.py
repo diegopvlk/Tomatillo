@@ -72,7 +72,6 @@ class TomatilloWindow(Adw.ApplicationWindow):
         self.btn_start_pause.connect("clicked", self.on_start_pause_clicked)
         self.btn_next.connect("clicked", self.on_next_clicked)
 
-        start_cycle = Gio.SimpleAction.new("start-cycle", None)
         reset_session = Gio.SimpleAction.new("reset-session", None)
         reset_curr_timer = Gio.SimpleAction.new("reset-curr-timer", None)
         self.choose_preset = Gio.SimpleAction.new_stateful(
@@ -81,13 +80,11 @@ class TomatilloWindow(Adw.ApplicationWindow):
             GLib.Variant("s", settings.get_string("chosen-cycle-preset")),
         )
 
-        start_cycle.connect("activate", self.on_start_pause_clicked)
         reset_session.connect("activate", self.set_start)
         reset_curr_timer.connect("activate", self.on_reset_timer_activated)
         self.choose_preset.connect("activate", self.on_preset_choise)
 
         if self.app:
-            self.app.add_action(start_cycle)
             self.app.add_action(reset_session)
             self.app.add_action(reset_curr_timer)
             self.app.add_action(self.choose_preset)
