@@ -26,7 +26,7 @@ gi.require_version("Adw", "1")
 gi.require_version("Gtk", "4.0")
 gi.require_version("GLib", "2.0")
 
-from gi.repository import Adw, Gtk, GLib
+from gi.repository import Adw, Gtk, GLib  # type: ignore
 from .preferences import settings
 
 
