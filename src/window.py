@@ -23,11 +23,10 @@ from gettext import gettext as _
 gi.require_version("Adw", "1")
 gi.require_version("Gio", "2.0")
 gi.require_version("GLib", "2.0")
-gi.require_version("GstPlay", "1.0")
 gi.require_version("Gtk", "4.0")
 gi.require_version("Xdp", "1.0")
 
-from gi.repository import Adw, Gio, GLib, GstPlay, Gtk, Xdp  # type: ignore
+from gi.repository import Adw, Gio, GLib, Gtk, Xdp  # type: ignore
 
 from .preferences import settings
 
@@ -56,6 +55,10 @@ class TomatilloWindow(Adw.ApplicationWindow):
     long_b_interval: int
 
     current_preset_id = settings.get_string("chosen-cycle-preset")
+
+    ogg_uri: str = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
+    ogg_file = Gio.File.new_for_uri(ogg_uri)
+    sound_alert = Gtk.MediaFile.new_for_file(ogg_file)
 
     portal = Xdp.Portal()
 
@@ -99,10 +102,6 @@ class TomatilloWindow(Adw.ApplicationWindow):
         if self.current_preset_id != "" and self.current_preset_id is not None:
             self.presets_menu_label.set_label(presets[self.current_preset_id]["name"])
         self.repopulate_presets_section()
-
-        self.sound_alert = GstPlay.Play.new(None)
-        self.ogg_uri = "resource:///io/github/diegopvlk/Tomatillo/alert.ogg"
-        self.sound_alert.set_uri(self.ogg_uri)
 
         self.set_start_values()
         self.set_start()
