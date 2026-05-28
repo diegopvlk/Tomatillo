@@ -80,6 +80,13 @@
   </requires>
 
   <releases>
+    <release version="1.1.0" date="2026-05-28">
+      <description translate="no">
+        <ul>
+          <li>New: Added Presets for different configurations (Thanks to Dmytrii Kolomarenko)</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.5" date="2026-05-13">
       <description translate="no">
         <ul>
