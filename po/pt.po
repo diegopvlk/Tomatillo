@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-26 11:51-0300\n"
+"POT-Creation-Date: 2026-05-27 22:37-0300\n"
 "PO-Revision-Date: 2025-12-15 12:00-0300\n"
 "Last-Translator: Diego Povliuk <diegopvlk@gmail.com>\n"
 "Language-Team: Portuguese <diegopvlk@gmail.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22 src/main.py:69
-#: src/window.py:65 src/window.blp:6
+#: src/window.py:68 src/window.blp:6
 msgid "Tomatillo"
 msgstr "Tomatillo"
 
@@ -82,7 +82,7 @@ msgstr "Nova Predefinição"
 msgid "Add"
 msgstr "Adicionar"
 
-#: src/presets.py:94 src/presets.py:233 src/window.py:148 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:147 src/window.blp:209
 msgid "Default"
 msgstr "Predefinido"
 
@@ -94,55 +94,55 @@ msgstr "Já existe uma predefinição com este nome"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: src/window.py:190 src/window.py:208 src/window.py:217 src/window.blp:148
+#: src/window.py:189 src/window.py:207 src/window.py:212 src/window.blp:148
 msgid "Start"
 msgstr "Começar"
 
-#: src/window.py:200
+#: src/window.py:199
 msgid "Pause"
 msgstr "Pausar"
 
-#: src/window.py:208
+#: src/window.py:207
 msgid "Resume"
 msgstr "Continuar"
 
-#: src/window.py:299 src/cycle-preset.blp:45
+#: src/window.py:303 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Foco"
 
-#: src/window.py:300 src/cycle-preset.blp:56
+#: src/window.py:304 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Pausa Curta"
 
-#: src/window.py:301 src/cycle-preset.blp:67
+#: src/window.py:305 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Pausa Longa"
 
-#: src/window.py:347
+#: src/window.py:351
 msgid "Break Time"
 msgstr "Hora da Pausa"
 
-#: src/window.py:355
+#: src/window.py:359
 msgid "Time for a short break."
 msgstr "Hora de fazer uma pausa curta."
 
-#: src/window.py:357
+#: src/window.py:361
 msgid "Time for a long break."
 msgstr "Hora de fazer uma pausa longa."
 
-#: src/window.py:359
+#: src/window.py:363
 msgid "Start Break"
 msgstr "Começar Pausa"
 
-#: src/window.py:361
+#: src/window.py:365
 msgid "Focus Mode"
 msgstr "Modo Foco"
 
-#: src/window.py:362
+#: src/window.py:366
 msgid "Break is over!"
 msgstr "A pausa terminou!"
 
-#: src/window.py:364
+#: src/window.py:368
 msgid "Start Focus"
 msgstr "Começar Foco"
 
@@ -174,23 +174,23 @@ msgstr "Tem a certeza de que deseja eliminar esta predefinição?"
 msgid "Add New Preset"
 msgstr "Adicionar Nova Predefinição"
 
-#: src/preferences.blp:59
+#: src/preferences.blp:17
 msgid "Run in Background"
 msgstr "Executar em Segundo Plano"
 
-#: src/preferences.blp:65
+#: src/preferences.blp:23
 msgid "Notification Sound"
 msgstr "Som de Notificação"
 
-#: src/preferences.blp:71
+#: src/preferences.blp:29
 msgid "Bypass 'Do Not Disturb'"
 msgstr "Ignorar \"Não Incomodar\""
 
-#: src/preferences.blp:77
+#: src/preferences.blp:35
 msgid "Autostart Focus"
 msgstr "Início Automático de Foco"
 
-#: src/preferences.blp:83
+#: src/preferences.blp:41
 msgid "Autostart Break"
 msgstr "Início Automático de Pausa"
 

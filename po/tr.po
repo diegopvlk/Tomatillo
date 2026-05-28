@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tomatillo master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-26 11:51-0300\n"
+"POT-Creation-Date: 2026-05-27 22:37-0300\n"
 "PO-Revision-Date: 2025-12-16 13:05+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Poedit 3.8\n"
 
 #: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22 src/main.py:69
-#: src/window.py:65 src/window.blp:6
+#: src/window.py:68 src/window.blp:6
 msgid "Tomatillo"
 msgstr "Tomatillo"
 
@@ -80,7 +80,7 @@ msgstr "Yeni Ön Ayar"
 msgid "Add"
 msgstr "Ekle"
 
-#: src/presets.py:94 src/presets.py:233 src/window.py:148 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:147 src/window.blp:209
 msgid "Default"
 msgstr "Varsayılan"
 
@@ -92,55 +92,55 @@ msgstr "Bu adda bir ön ayar zaten var"
 msgid "Delete"
 msgstr "Sil"
 
-#: src/window.py:190 src/window.py:208 src/window.py:217 src/window.blp:148
+#: src/window.py:189 src/window.py:207 src/window.py:212 src/window.blp:148
 msgid "Start"
 msgstr "Başlat"
 
-#: src/window.py:200
+#: src/window.py:199
 msgid "Pause"
 msgstr "Duraklat"
 
-#: src/window.py:208
+#: src/window.py:207
 msgid "Resume"
 msgstr "Sürdür"
 
-#: src/window.py:299 src/cycle-preset.blp:45
+#: src/window.py:303 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Odaklama"
 
-#: src/window.py:300 src/cycle-preset.blp:56
+#: src/window.py:304 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Kısa Mola"
 
-#: src/window.py:301 src/cycle-preset.blp:67
+#: src/window.py:305 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Uzun Mola"
 
-#: src/window.py:347
+#: src/window.py:351
 msgid "Break Time"
 msgstr "Mola Zamanı"
 
-#: src/window.py:355
+#: src/window.py:359
 msgid "Time for a short break."
 msgstr "Kısa mola süresi."
 
-#: src/window.py:357
+#: src/window.py:361
 msgid "Time for a long break."
 msgstr "Uzun mola süresi."
 
-#: src/window.py:359
+#: src/window.py:363
 msgid "Start Break"
 msgstr "Molayı Başlat"
 
-#: src/window.py:361
+#: src/window.py:365
 msgid "Focus Mode"
 msgstr "Odak Kipi"
 
-#: src/window.py:362
+#: src/window.py:366
 msgid "Break is over!"
 msgstr "Mola bitti!"
 
-#: src/window.py:364
+#: src/window.py:368
 msgid "Start Focus"
 msgstr "Odaklanmayı Başlat"
 
@@ -172,23 +172,23 @@ msgstr "Bu ön ayarı silmek istediğinizden emin misiniz?"
 msgid "Add New Preset"
 msgstr "Yeni Ön Ayar Ekle"
 
-#: src/preferences.blp:59
+#: src/preferences.blp:17
 msgid "Run in Background"
 msgstr "Arka Planda Çalış"
 
-#: src/preferences.blp:65
+#: src/preferences.blp:23
 msgid "Notification Sound"
 msgstr "Bildirim Sesi"
 
-#: src/preferences.blp:71
+#: src/preferences.blp:29
 msgid "Bypass 'Do Not Disturb'"
 msgstr "'Rahatsız Etme' Ayarını Esgeç"
 
-#: src/preferences.blp:77
+#: src/preferences.blp:35
 msgid "Autostart Focus"
 msgstr "Odaklanmayı Kendiliğinden Başlat"
 
-#: src/preferences.blp:83
+#: src/preferences.blp:41
 msgid "Autostart Break"
 msgstr "Molayı Kendiliğinden Başlat"
 

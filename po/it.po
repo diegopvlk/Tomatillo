@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-26 11:51-0300\n"
+"POT-Creation-Date: 2026-05-27 22:37-0300\n"
 "PO-Revision-Date: 2026-05-10 15:53+0300\n"
 "Last-Translator: Cristian Nicolae Lupascu "
 "<cristian.lupascu.nicolae@gmail.com>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22 src/main.py:69
-#: src/window.py:65 src/window.blp:6
+#: src/window.py:68 src/window.blp:6
 msgid "Tomatillo"
 msgstr "Tomatillo"
 
@@ -85,7 +85,7 @@ msgstr "Nuovo preset"
 msgid "Add"
 msgstr "Aggiungi"
 
-#: src/presets.py:94 src/presets.py:233 src/window.py:148 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:147 src/window.blp:209
 msgid "Default"
 msgstr "Predefinito"
 
@@ -97,55 +97,55 @@ msgstr "Esiste già un preset con questo nome"
 msgid "Delete"
 msgstr "Elimina"
 
-#: src/window.py:190 src/window.py:208 src/window.py:217 src/window.blp:148
+#: src/window.py:189 src/window.py:207 src/window.py:212 src/window.blp:148
 msgid "Start"
 msgstr "Comincia"
 
-#: src/window.py:200
+#: src/window.py:199
 msgid "Pause"
 msgstr "Ferma"
 
-#: src/window.py:208
+#: src/window.py:207
 msgid "Resume"
 msgstr "Riprendi"
 
-#: src/window.py:299 src/cycle-preset.blp:45
+#: src/window.py:303 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Durata intervallo di concentrazione"
 
-#: src/window.py:300 src/cycle-preset.blp:56
+#: src/window.py:304 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Durata pausa breve"
 
-#: src/window.py:301 src/cycle-preset.blp:67
+#: src/window.py:305 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Durata pausa lunga"
 
-#: src/window.py:347
+#: src/window.py:351
 msgid "Break Time"
 msgstr "Intervallo di pausa"
 
-#: src/window.py:355
+#: src/window.py:359
 msgid "Time for a short break."
 msgstr "È ora di una pausa breve."
 
-#: src/window.py:357
+#: src/window.py:361
 msgid "Time for a long break."
 msgstr "È ora di una pausa lunga."
 
-#: src/window.py:359
+#: src/window.py:363
 msgid "Start Break"
 msgstr "Comincia pausa"
 
-#: src/window.py:361
+#: src/window.py:365
 msgid "Focus Mode"
 msgstr "Intervallo di concentrazione"
 
-#: src/window.py:362
+#: src/window.py:366
 msgid "Break is over!"
 msgstr "La pausa è finita!"
 
-#: src/window.py:364
+#: src/window.py:368
 msgid "Start Focus"
 msgstr "Concentrati"
 
@@ -177,23 +177,23 @@ msgstr "Sei sicuro di voler eliminare questo preset?"
 msgid "Add New Preset"
 msgstr "Aggiungi nuovo preset"
 
-#: src/preferences.blp:59
+#: src/preferences.blp:17
 msgid "Run in Background"
 msgstr "Esegui in sottofondo"
 
-#: src/preferences.blp:65
+#: src/preferences.blp:23
 msgid "Notification Sound"
 msgstr "Notifica con suono"
 
-#: src/preferences.blp:71
+#: src/preferences.blp:29
 msgid "Bypass 'Do Not Disturb'"
 msgstr "Ignora 'Non disturbare'"
 
-#: src/preferences.blp:77
+#: src/preferences.blp:35
 msgid "Autostart Focus"
 msgstr "Comincia intervallo di concentrazione automaticamente"
 
-#: src/preferences.blp:83
+#: src/preferences.blp:41
 msgid "Autostart Break"
 msgstr "Comincia pausa automaticamente"
 
