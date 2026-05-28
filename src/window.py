@@ -200,7 +200,7 @@ class TomatilloWindow(Adw.ApplicationWindow):
             self.btn_start_pause.remove_css_class("suggested-action")
             self.timer_box.add_css_class("fill-timer-box-shadow")
             self.timer_running = True
-            self.timeout_id = GLib.timeout_add(1000, self.on_tick)
+            self.timeout_id = GLib.timeout_add_seconds(1, self.on_tick)
 
     def pause_timer(self, complete=False):
         if self.timer_running:
