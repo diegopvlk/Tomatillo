@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 22:37-0300\n"
+"POT-Creation-Date: 2026-06-22 11:44-0300\n"
 "PO-Revision-Date: 2025-12-15 12:00-0300\n"
 "Last-Translator: Diego Povliuk <diegopvlk@gmail.com>\n"
 "Language-Team: Spanish <diegopvlk@gmail.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22 src/main.py:69
-#: src/window.py:68 src/window.blp:6
+#: src/window.blp:6
 msgid "Tomatillo"
 msgstr "Tomatillo"
 
@@ -81,7 +81,7 @@ msgstr "Nuevo Preajuste"
 msgid "Add"
 msgstr "Añadir"
 
-#: src/presets.py:94 src/presets.py:233 src/window.py:147 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:146 src/window.blp:209
 msgid "Default"
 msgstr "Predeterminado"
 
@@ -93,55 +93,55 @@ msgstr "Ya existe un preajuste con este nombre"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: src/window.py:189 src/window.py:207 src/window.py:212 src/window.blp:148
+#: src/window.py:188 src/window.py:206 src/window.py:211 src/window.blp:148
 msgid "Start"
 msgstr "Iniciar"
 
-#: src/window.py:199
+#: src/window.py:198
 msgid "Pause"
 msgstr "Pausar"
 
-#: src/window.py:207
+#: src/window.py:206
 msgid "Resume"
 msgstr "Reanudar"
 
-#: src/window.py:303 src/cycle-preset.blp:45
+#: src/window.py:302 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Enfoque"
 
-#: src/window.py:304 src/cycle-preset.blp:56
+#: src/window.py:303 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Descanso Corto"
 
-#: src/window.py:305 src/cycle-preset.blp:67
+#: src/window.py:304 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Descanso Largo"
 
-#: src/window.py:351
+#: src/window.py:350
 msgid "Break Time"
 msgstr "Hora del Descanso"
 
-#: src/window.py:359
+#: src/window.py:358
 msgid "Time for a short break."
 msgstr "Hora de un corto descanso."
 
-#: src/window.py:361
+#: src/window.py:360
 msgid "Time for a long break."
 msgstr "Hora de un largo descanso."
 
-#: src/window.py:363
+#: src/window.py:362
 msgid "Start Break"
 msgstr "Iniciar Descanso"
 
-#: src/window.py:365
+#: src/window.py:364
 msgid "Focus Mode"
 msgstr "Modo Enfoque"
 
-#: src/window.py:366
+#: src/window.py:365
 msgid "Break is over!"
 msgstr "¡El descanso ha terminado!"
 
-#: src/window.py:368
+#: src/window.py:367
 msgid "Start Focus"
 msgstr "Iniciar Enfoque"
 

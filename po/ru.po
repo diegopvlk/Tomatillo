@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 22:37-0300\n"
+"POT-Creation-Date: 2026-06-22 11:44-0300\n"
 "PO-Revision-Date: 2026-01-21 11:00+0300\n"
 "Last-Translator: Vladimir Kosolapov\n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22 src/main.py:69
-#: src/window.py:68 src/window.blp:6
+#: src/window.blp:6
 msgid "Tomatillo"
 msgstr "Tomatillo"
 
@@ -82,7 +82,7 @@ msgstr "Новый пресет"
 msgid "Add"
 msgstr "Добавить"
 
-#: src/presets.py:94 src/presets.py:233 src/window.py:147 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:146 src/window.blp:209
 msgid "Default"
 msgstr "По умолчанию"
 
@@ -94,55 +94,55 @@ msgstr "Пресет с таким названием уже существуе�
 msgid "Delete"
 msgstr "Удалить"
 
-#: src/window.py:189 src/window.py:207 src/window.py:212 src/window.blp:148
+#: src/window.py:188 src/window.py:206 src/window.py:211 src/window.blp:148
 msgid "Start"
 msgstr "Начать"
 
-#: src/window.py:199
+#: src/window.py:198
 msgid "Pause"
 msgstr "Пауза"
 
-#: src/window.py:207
+#: src/window.py:206
 msgid "Resume"
 msgstr "Продолжить"
 
-#: src/window.py:303 src/cycle-preset.blp:45
+#: src/window.py:302 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Период работы"
 
-#: src/window.py:304 src/cycle-preset.blp:56
+#: src/window.py:303 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Короткий перерыв"
 
-#: src/window.py:305 src/cycle-preset.blp:67
+#: src/window.py:304 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Длинный перерыв"
 
-#: src/window.py:351
+#: src/window.py:350
 msgid "Break Time"
 msgstr "Время перерыва"
 
-#: src/window.py:359
+#: src/window.py:358
 msgid "Time for a short break."
 msgstr "Время для короткого перерыва."
 
-#: src/window.py:361
+#: src/window.py:360
 msgid "Time for a long break."
 msgstr "Время для длинного перерыва."
 
-#: src/window.py:363
+#: src/window.py:362
 msgid "Start Break"
 msgstr "Начать перерыв"
 
-#: src/window.py:365
+#: src/window.py:364
 msgid "Focus Mode"
 msgstr "Режим работы"
 
-#: src/window.py:366
+#: src/window.py:365
 msgid "Break is over!"
 msgstr "Перерыв окончен!"
 
-#: src/window.py:368
+#: src/window.py:367
 msgid "Start Focus"
 msgstr "Начать работу"
 

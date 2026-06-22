@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegopvlk.Tomatillo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 22:37-0300\n"
+"POT-Creation-Date: 2026-06-22 11:44-0300\n"
 "PO-Revision-Date: 2026-03-16 14:MI+0200\n"
 "Last-Translator: Dmytrii Kolomarenko https://github.com/KolomarenkoDmytrii\n"
 "Language-Team: Ukrainian https://github.com/KolomarenkoDmytrii\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/tomatillo.desktop.in:2 data/tomatillo.metainfo.xml.in:22 src/main.py:69
-#: src/window.py:68 src/window.blp:6
+#: src/window.blp:6
 msgid "Tomatillo"
 msgstr "Tomatillo"
 
@@ -81,7 +81,7 @@ msgstr "Новий набір"
 msgid "Add"
 msgstr "Додати"
 
-#: src/presets.py:94 src/presets.py:233 src/window.py:147 src/window.blp:209
+#: src/presets.py:94 src/presets.py:233 src/window.py:146 src/window.blp:209
 msgid "Default"
 msgstr "Типово"
 
@@ -93,55 +93,55 @@ msgstr "Набір з таким ім’ям уже існує"
 msgid "Delete"
 msgstr "Видалити"
 
-#: src/window.py:189 src/window.py:207 src/window.py:212 src/window.blp:148
+#: src/window.py:188 src/window.py:206 src/window.py:211 src/window.blp:148
 msgid "Start"
 msgstr "Почати"
 
-#: src/window.py:199
+#: src/window.py:198
 msgid "Pause"
 msgstr "Призупинити"
 
-#: src/window.py:207
+#: src/window.py:206
 msgid "Resume"
 msgstr "Продовжити"
 
-#: src/window.py:303 src/cycle-preset.blp:45
+#: src/window.py:302 src/cycle-preset.blp:45
 msgid "Focus"
 msgstr "Зосередження"
 
-#: src/window.py:304 src/cycle-preset.blp:56
+#: src/window.py:303 src/cycle-preset.blp:56
 msgid "Short Break"
 msgstr "Коротка перерва"
 
-#: src/window.py:305 src/cycle-preset.blp:67
+#: src/window.py:304 src/cycle-preset.blp:67
 msgid "Long Break"
 msgstr "Довга перерва"
 
-#: src/window.py:351
+#: src/window.py:350
 msgid "Break Time"
 msgstr "Час для перерви"
 
-#: src/window.py:359
+#: src/window.py:358
 msgid "Time for a short break."
 msgstr "Час для короткої перерви."
 
-#: src/window.py:361
+#: src/window.py:360
 msgid "Time for a long break."
 msgstr "Час для довгої перерви."
 
-#: src/window.py:363
+#: src/window.py:362
 msgid "Start Break"
 msgstr "Почати перерву"
 
-#: src/window.py:365
+#: src/window.py:364
 msgid "Focus Mode"
 msgstr "Режим зосередження"
 
-#: src/window.py:366
+#: src/window.py:365
 msgid "Break is over!"
 msgstr "Перерва закінчилася!"
 
-#: src/window.py:368
+#: src/window.py:367
 msgid "Start Focus"
 msgstr "Зосередитися"
 
